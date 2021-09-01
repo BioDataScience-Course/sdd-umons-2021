@@ -1,0 +1,40 @@
+Type: Book
+Package: placeholder
+Title: SDD I UMONS version 2021
+Version: 4.0.0
+Depends: 
+    learnitdown
+Imports: 
+    bookdown,
+    broom,
+    broom.mixed,
+    car,
+    DiagrammeR,
+    DT,
+    faraway,
+    fortunes,
+    GGally,
+    ggplot2,
+    ggpubr,
+    ggridges,
+    glue,
+    knitr,
+    lmerTest,
+    mosaic,
+    multcomp,
+    nparcomp,
+    pander,
+    pwr,
+    rmarkdown,
+    scales,
+    SciViews,
+    sessioninfo,
+    skimr,
+    vembedr
+Remotes: 
+    SciViews/flow,
+    SciViews/data.io,
+    SciViews/chart,
+    SciViews/exploreit,
+    SciViews/SciViews,
+    SciViews/learnitdown,

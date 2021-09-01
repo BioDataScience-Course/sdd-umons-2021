@@ -1,0 +1,37 @@
+bookdown::gitbook:
+  #dev: svglite
+  highlight: kate
+  css: style.css
+  split_by: section
+  config:
+    toolbar:
+      position: fixed
+    toc:
+      collapse: subsection
+      before: |
+        <li><a href="./">Science des données biologiques I</a></li>
+      after: |
+        <li><a href="https://wp.sciviews.org">Site Web du cours</a></li>
+        <li><a href="https://github.com/BioDataScience-Course">Site Github du cours</a></li>
+        <br/>
+        <li><a href="https://github.com/rstudio/bookdown" target="blank">Publié avec bookdown</a></li>
+    edit: https://github.com/BioDataScience-Course/sdd-umons-2021/edit/master/%s
+    view: https://github.com/BioDataScience-Course/sdd-umons-2021/blob/master/%s
+    #download: ["pdf", "epub"]
+    sharing:
+      facebook: no
+      github: no
+      twitter: yes
+      linkedin: no
+      weibo: no
+      instapaper: no
+      vk: no
+      all: ['github', 'linkedin', 'facebook', 'instapaper']
+bookdown::pdf_book:
+  includes:
+    in_header: preamble.tex
+  latex_engine: xelatex
+  citation_package: natbib
+bookdown::epub_book:
+  stylesheet: style.css
+
