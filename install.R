@@ -1,6 +1,6 @@
 # This bookdown in its version 2021 needs the following R packages
 #  R 4.0.5
-# Use the following to list all demendencies:
+# Use the following to list all dependencies:
 #imports <- unique(c("bookdown", "learnitdown", "SciViews",
 #  attachment::att_from_rmds(".")))
 #attachment::att_to_desc_from_is(path.d = "DESCRIPTION",
