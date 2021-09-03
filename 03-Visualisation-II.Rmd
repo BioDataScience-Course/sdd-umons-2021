@@ -236,8 +236,8 @@ if (exists("assignation"))
   assignation("A03Gb_distribution", part = NULL,
     url = "https://github.com/BioDataScience-Course/A03Gb_distribution",
     course.urls = c(
-      'S-BIOG-006' = "https://classroom.github.com/a/qi2q9R1N",
-      'S-BIOG-921' = "https://classroom.github.com/a/H4su2oCp"),
+      'S-BIOG-006' = "https://classroom.github.com/a/...",
+      'S-BIOG-921' = "https://classroom.github.com/a/..."),
     toc = "Graphiques de distribution sur `zooplankton`")
 ```
 
@@ -390,22 +390,10 @@ if (exists("assignation2"))
   assignation2("A03Ga_urchin", part = NULL,
     url = "https://github.com/BioDataScience-Course/A03Ga_urchin",
     course.urls = c(
-      'S-BIOG-006' = "https://classroom.github.com/g/GDEEO7QD",
-      'S-BIOG-921' = "https://classroom.github.com/g/gqWaZbVm"),
+      'S-BIOG-006' = "https://classroom.github.com/g/...",
+      'S-BIOG-921' = "https://classroom.github.com/g/..."),
     toc = "Biométrie de l'oursin violet")
 ```
-
-::: {.S-BIOG-006 .S-BIOG-027}
-
-##### Votre blog {-}
-
-```{block2, type = "bdd"}
-Dans le cadre d'une collaboration entre le cours English For Science et le cours de Science des données I, vous êtes amené à créer un blog scientifique. Ce blog va comprendre des articles qui traitent d'analyse de la littérature de vulgarisation scientifique et de description de données.
-
-Vous devez à présent ajouter disqus à votre blog. Cliquez sur le lien et suivez les instructions\ : <http://biodatascience-course.sciviews.org/sdd_blog/>
-```
-
-:::
 
 ## Récapitulatif des exercices
 

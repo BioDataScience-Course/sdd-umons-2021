@@ -205,8 +205,8 @@ if (exists("assignation"))
   assignation("A11Ia_anova2", part = "I",
     url = "https://github.com/BioDataScience-Course/A11Ia_anova2",
     course.urls = c(
-      'S-BIOG-006' = "https://classroom.github.com/a/UtYWtzN5",
-      'S-BIOG-921' = "https://classroom.github.com/a/5z5h7IrI"),
+      'S-BIOG-006' = "https://classroom.github.com/a/...",
+      'S-BIOG-921' = "https://classroom.github.com/a/..."),
     toc = "L'anova à 2 facteurs et ces variantes")
 ```
 
@@ -498,8 +498,8 @@ if (exists("assignation"))
   assignation("A11Ia_anova2", part = "II",
     url = "https://github.com/BioDataScience-Course/A11Ia_anova2",
     course.urls = c(
-      'S-BIOG-006' = "https://classroom.github.com/a/UtYWtzN5",
-      'S-BIOG-921' = "https://classroom.github.com/a/5z5h7IrI"),
+      'S-BIOG-006' = "https://classroom.github.com/a/...",
+      'S-BIOG-921' = "https://classroom.github.com/a/..."),
     toc = "L'anova à 2 facteurs et ces variantes")
 ```
 

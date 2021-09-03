@@ -744,8 +744,8 @@ if (exists("assignation2"))
   assignation2("A06Ga_belgium_demo", part = NULL,
     url = "https://github.com/BioDataScience-Course/A06Ga_belgium_demo",
     course.urls = c(
-      'S-BIOG-006' = "https://classroom.github.com/g/h1HgkuuH",
-      'S-BIOG-921' = "https://classroom.github.com/g/RW1vkL7f"),
+      'S-BIOG-006' = "https://classroom.github.com/g/...",
+      'S-BIOG-921' = "https://classroom.github.com/g/..."),
     toc = "Analyse de la démographie en Belgique")
 ```
 

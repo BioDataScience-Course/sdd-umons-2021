@@ -805,8 +805,8 @@ if (exists("assignation"))
   assignation("A09Ia_cardiovascular", part = NULL,
     url = "https://github.com/BioDataScience-Course/A09Ia_cardiovascular",
     course.urls = c(
-      'S-BIOG-006' = "https://classroom.github.com/a/SbW-nS7Q",
-      'S-BIOG-921' = "https://classroom.github.com/a/eBDRw37T"),
+      'S-BIOG-006' = "https://classroom.github.com/a/...",
+      'S-BIOG-921' = "https://classroom.github.com/a/..."),
     toc = "Les maladies cardiovasculaires")
 ```
 
@@ -1011,8 +1011,8 @@ if (exists("assignation2"))
   assignation2("A08Ga_human_health", part = "II",
     url = "https://github.com/BioDataScience-Course/A08Ga_human_health",
     course.urls = c(
-      'S-BIOG-006' = "https://classroom.github.com/g/NVNlyKJH",
-      'S-BIOG-921' = "https://classroom.github.com/g/eOKWHaFp"),
+      'S-BIOG-006' = "https://classroom.github.com/g/...",
+      'S-BIOG-921' = "https://classroom.github.com/g/..."),
     toc = "La biométrie humaine")
 ```
 
@@ -1023,8 +1023,8 @@ if (exists("assignation2"))
   assignation2("A03Ga_urchin", part = "II",
     url = "https://github.com/BioDataScience-Course/A03Ga_urchin",
     course.urls = c(
-      'S-BIOG-006' = "https://classroom.github.com/g/GDEEO7QD",
-      'S-BIOG-921' = "https://classroom.github.com/g/gqWaZbVm"),
+      'S-BIOG-006' = "https://classroom.github.com/g/...",
+      'S-BIOG-921' = "https://classroom.github.com/g/..."),
     toc = "Biométrie de l'oursin violet")
 ```
 
