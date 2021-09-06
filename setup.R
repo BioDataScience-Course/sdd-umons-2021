@@ -49,7 +49,7 @@ learnitdown <- list(
 # `r show_ex_toc()`
 
 img <- function(..., caption = "") {
-  path <- paste(learnitdown$imgbaseurl, ..., collapse = "/")
+  path <- paste(learnitdown$imgbaseurl, ..., sep = "/")
   # Cannot use ` inside R code => use ''' instead
   caption <- gsub("'''", "`", caption)
   paste0("![", caption, "](", path, ")")
