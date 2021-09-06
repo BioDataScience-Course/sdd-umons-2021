@@ -243,6 +243,8 @@ RStudio est un environnement complet et optimisé pour réaliser vos analyses, v
 
 ##### À vous de jouer ! {-}
 
+*Cliquez sur les symboles + pour découvrir le rôle de chaque fenêtre de RStudio.*
+
 `r h5p(16, height = 270, toc = "L'environnement de RStudio")`
 
 Des explications détaillées se trouvent dans l'annexe \@ref(rs) qui présente les bases de l'utilisation de RStudio. Vous avez également à votre disposition un aide-mémoire afin d'appréhender cette interface [RStudio IDE Cheat Sheet](https://github.com/rstudio/cheatsheets/raw/master/rstudio-ide.pdf). 
@@ -261,12 +263,12 @@ Vous allez terminer ce premier module en réalisant votre premier projet individ
 
 ##### À vous de jouer ! {-}
 
-*Note\ : Acceptez cette première assignation **individuelle**en utilisant GitHub Classroom \@ref(github-classroom).Lorsque votre assignation est crée, faites un clone local de votre dépôt*
+*Note\ : Acceptez cette première assignation **individuelle**en utilisant GitHub Classroom \@ref(github-classroom). Lorsque votre assignation est crée, faites un clone local de votre dépôt*
 
 ```{r, echo=FALSE, results='asis'}
 if (exists("assignation"))
-  assignation("A01Ga_....", part = NULL,
-    url = "https://github.com/BioDataScience-Course",
+  assignation("A01Ia_21M_covid19", part = NULL,
+    url = "https://github.com/BioDataScience-Course/A01Ia_21M_covid19",
     course.urls = c(
       'S-BIOG-006' = "https://classroom.github.com/a/...",
       'S-BIOG-921' = "https://classroom.github.com/a/..."),

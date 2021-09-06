@@ -135,11 +135,11 @@ Tout ce matériel est accessible à partir du [site Web du cours](https://wp.sci
 :::
 
 ::: {.S-BIOG-006 .S-BIOG-027 .S-BIOG-921}
-Tout ce matériel est accessible à partir du [site Web du cours](https://wp.sciviews.org){target='top'}, du présent syllabus interactif et de Moodle pour les étudiants de l'UMONS. Ces derniers ont aussi accès au dossier ` SDD` sur `StudentTemp` en Intranet à l'UMONS.
+Tout ce matériel est accessible à partir du [site Web du cours](https://wp.sciviews.org){target='top'}, du présent syllabus interactif et de Moodle pour les étudiants de l'UMONS.
 
 Les travaux personnels seront à réaliser en utilisant un espace de travail en ligne dédié à la science des données (renku) ou sur un machine virtuelle préconfigurée, la **'SciViews Box'**, que nous installerons ensemble à la fin du premier module avec les étudiants possédant un ordinateur adapté.
 
-Vous pourrez poser vos questions par mail à l'adresse [sdd@sciviews.org](mailto:sdd@sciviews.org) ou dans les [issues du dépôt Github de ce cours](...). L'accès à se dépôt vous sera donné lors du premier module du cours.
+Vous pourrez poser vos questions par mail à l'adresse [sdd@sciviews.org](mailto:sdd@sciviews.org) ou dans les issues du dépôt Github de ce cours. L'accès à se dépôt vous sera donné lors du premier module du cours.
 
 Un **outil d'annotation** et de surlignage est intégré dans le cours en ligne. Il vous permet\ :
 
@@ -168,11 +168,11 @@ N'hésitez pas à expérimenter, tester ou essayer des nouvelles idées (même a
 vembedr::embed_youtube("9vJRopau0g0", width = 770, height = 433)
 ```
 
-## Approche pédagogique
+## Approche pédagogique {-}
 
 Ce livre en ligne ainsi que tout le matériel pédagogique cité plus haut a été développé pour être employé en pédagogie active en classe inversée. On peut résumer cette approche en deux phases. Vous apprenez d’abord à la maison, nous appliquons *ensuite* en présentiel. 
 
-### Classe inversée & pédagogie active
+### Classe inversée & pédagogie active {-}
 
 Jusqu'à présent, la plus grande partie de vos cours vous ont été donné de manière classique. Vous avez donc suivi **passivement** un cours *ex cathedra* suivi par une séance d'exercice ou de travaux pratiques. 
 
@@ -188,7 +188,7 @@ Le cours de science des données I utilise une autre approche et se donne en cla
 
 ::: {.S-BIOG-006 .S-BIOG-027}
 
-### Quatre niveaux d'exercices
+### Quatre niveaux d'exercices {-}
 
 Quatre niveaux d'exercices de difficultés croissantes vous seront proposé.
 
@@ -205,7 +205,7 @@ L'ensemble de vos réponses sont collectées et utilisée afin de construire la 
 
 Votre progression au sein de exercices de chaque module est mis à votre disposition à la fin de chaque module ou bien depuis moodle.
 
-### Plan du cours
+### Plan du cours {-}
 
 Le plan du cours est une forme de contrat entre l'étudiants et les encadrants. Ce document structure les attentes de vos encadrants vis à vis de vous. Veuillez consulter ce document attentivement. 
 
