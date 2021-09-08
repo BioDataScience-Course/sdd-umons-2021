@@ -186,8 +186,6 @@ Le cours de science des données I utilise une autre approche et se donne en cla
 
 ![](images/sdd1_00/organisation2.png)
 
-::: {.S-BIOG-006 .S-BIOG-027}
-
 ### Quatre niveaux d'exercices {-}
 
 Quatre niveaux d'exercices de difficultés croissantes vous seront proposé.
@@ -207,8 +205,29 @@ Votre progression au sein de exercices de chaque module est mis à votre disposi
 
 ### Plan du cours {-}
 
-Le plan du cours est une forme de contrat entre l'étudiants et les encadrants. Ce document structure les attentes de vos encadrants vis à vis de vous. Veuillez consulter ce document attentivement. 
+Le plan du cours est une forme de contrat entre l'étudiants et les encadrants. Ce document structure les attentes de vos encadrants. Veuillez consulter ce document attentivement. 
 
 - [Plan du cours de Science des données biologiques I : années 2021-2022](https://github.com/BioDataScience-Course/sdd_lessons/blob/2021-2022/A01/sdd1_plan_cours.md) 
 
-:::
+##### À vous de jouer ! {-}
+
+*Note\ : lorsque vous voyez le petit logo "H5P" comme ci-dessous, cela signifie que vous avez maintenant un exercice interactif. Cet exercice peut prendre différentes formes (quiz, présentation ou vidéo contenant des questions, vrai ou faux, cliquer sur une image ...).*
+
+`r h5p(133, height = 270, toc = "Charge de travail")`
+
+## Questions {-} 
+
+Toutes les questions relatives aux exercices sont à poser dans les issues GitHub. 
+
+```{r, echo=FALSE, results='asis'}
+if (exists("assignation2"))
+  assignation("sdd_issues", part = NULL,
+    url = "https://github.com/BioDataScience-Course/sdd_issues",
+    course.urls = c(
+      'S-BIOG-006' = "https://classroom.github.com/g/qqAiEV2e",
+      'S-BIOG-921' = "https://classroom.github.com/a/..."),
+    toc = "Poser ses questions dans une issue.")
+```
+
+*Note : vos enseignants sont également accessibles par mail sdd@sciviews.org.*
+

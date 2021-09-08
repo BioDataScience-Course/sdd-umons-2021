@@ -18,7 +18,14 @@ SciViews::R
 
 ##### Prérequis {-}
 
-Si ce n'est déjà fait, vous devez installer et vous familiariser avec la 'SciViews Box', RStudio, Markdown. Vous devez aussi maîtriser les bases de Git et de GitHub (avoir un compte GitHub, savoir cloner un dépôt localement, travailler avec GitHub Desktop pour faire ses "commits", "push" et "pull"). L'ensemble de ces outils a été abordé au module \@ref(intro).
+Avant de vous lancer dans le module suivant, assurez d'avoir appris les notions essentiels de GitHub, de Git, Renku, Rstudio, Commit, Push. 
+
+Le premier module de ce cours vous a permit de découvrir de nouveaux outils comme GitHub, Git, ou encore RStudio. Ces outils vont être employé tout au long de votre formation en science des données (et donc de ce cours). Il est indipensable de les maîtriser.
+
+##### À vous de jouer ! {-}
+
+`r h5p(139, height = 270, toc = "Les outils de la science des données")`
+
 
 ##### À vous de jouer ! {-}
 

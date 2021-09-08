@@ -12,13 +12,30 @@
 
 ##### Prérequis {-}
 
-Avant de vous lancer dans ce premier module, assurez-vous d'avoir lu et compris le préambule de ce cours. Il est important d'avoir pris connaissance de l'approche pédagogique de ce cours.
+Tous les exercices de ce cours vont être réalisés sur un ordinateur. De ce fait, vous devez maitriser les éléments de base d'un ordinateur.
+
+<!-- TODO Il faut encore ajouter des informations relatives à  la structuration des dossiers et les bases de l'utilisation d'un ordinateur. Je n'ai pas encore trouvé de ressources intéressantes.
+-->
+
+- Les raccourcis clavier 
+
+Les raccourcis clavier sont prévu afin d'optimiser votre temps et donc votre productivité. Prenez le temps de les revoir [sous Windows 10](https://www.lecotentin.fr/raccourcis-clavier), [sous Mac](https://www.journaldunet.com/solutions/dsi/1194040-raccourci-clavier-mac/) ou encore [sous Ubuntu](https://www.clubic.com/tutoriels/article-862426-1-raccourcis-clavier-ubuntu-indispensables.html)
+
+- Les captures d'écran
+
+Lorsque l'on a un problème sur un ordinateur, une capture d'écran bien réalisée permet souvent de cibler un problème et peut remplacer une longue explication texuelle. Vous pouvez retrouver des tutoriels pour réaliser une capture d'écran [sous Windows](https://www.commentcamarche.net/informatique/windows/149-faire-des-captures-d-ecran-avec-windows-10/) ou [sous Mac](https://www.commentcamarche.net/informatique/macos/737-faire-des-captures-d-ecran-sur-mac/). Le plus important est de cibler la problématique que vous souhaitez capturer. Il est bien souvent inutile de sélectionner tout le bureau de l'ordinateur.
 
 ##### À vous de jouer ! {-}
 
 *Note\ : lorsque vous voyez le petit logo "H5P" comme ci-dessous, cela signifie que vous avez maintenant un exercice interactif. Cet exercice peut prendre différentes formes (quiz, présentation ou vidéo contenant des questions, vrai ou faux, cliquer sur une image ...).*
 
-`r h5p(135, height = 270, toc = "Validation des connaissances prérequises")`
+`r h5p(140, height = 270, toc = "Taille des captures d'écran")`
+
+Le préambule de ce cours vous a permit d'en apprendre d'avantage sur le matériel pédagogique, l'approche pédagoqie ou encore la méthode d'évaluation. Vérifiez votre compréhension des notions vues avec l'exercice suivant.
+
+##### À vous de jouer ! {-}
+
+`r h5p(135, height = 270, toc = "Organisation du cours et approche pédagogique")`
 
 ## Le monde depuis 30 ans {#donnees}
 
@@ -62,7 +79,11 @@ Pour bien débuter ce cours, vous avez été guidé pour créer un compte sur [G
 
 Partons du projet [dplyr](https://github.com/tidyverse/dplyr) partagé par l'organisation [tidyverse](https://github.com/tidyverse) afin d'explorer quelques éléments de GitHub. Nous nous attardons uniquement sur certains éléments clés.
 
-![Dépot [dplyr](https://github.com/tidyverse/dplyr) de l'organisation [tidyverse](https://github.com/tidyverse) sur [GitHub](https://github.com)](images/sdd1_01/gh_dplyr1.png)
+##### À vous de jouer ! {-}
+
+*Cliquez sur les symboles + pour découvrir les éléments importants d'un projet sur GitHub*
+
+`r h5p(141, height = 270, toc = "Le projet dplyr sur Github")`
 
 Ce projet comprend une multitude de fichiers que vous ne devez pas comprendre (pour le moment ;) ). Ce projet comprend 7112 commits. Pour le moment, retenez qu'un commit est un état de sauvegarde du projet. Ce projet traite de la manipulation de données et comprend un site web associé <dplyr.tidyverse.org>. Un grand nombre de contributeurs ont participé à ce projet (plus de 240). Un fichier README.md sert de page de présentation. dplyr propose des outils (nous verrons par la suite qu'il s'agit de fonctions) comme `mutate()`, `select()`, `filter()`, `summarise()`, `arrange()`. 
 
@@ -265,6 +286,8 @@ Vous allez terminer ce premier module en réalisant votre premier projet individ
 
 *Note\ : Acceptez cette première assignation **individuelle**en utilisant GitHub Classroom \@ref(github-classroom). Lorsque votre assignation est crée, faites un clone local de votre dépôt*
 
+<!-- G.E. procédure à modifier en fonction de renku -->
+
 ```{r, echo=FALSE, results='asis'}
 if (exists("assignation"))
   assignation("A01Ia_21M_covid19", part = NULL,
@@ -285,6 +308,6 @@ Afin de terminer ce module en beauté, il est temps d'auto-évaluer votre appren
 
 ## Récapitulatif des exercices
 
-Bravo ! Vous venez de terminer votre premier module de cours. Cette dernière section vous permet de vérifier que vous avez bien réalisé tous les exercices de ce module. Ce module est consacré aux outils informatiques que nous utiliserons dans la suite du cours, vous aviez à réaliser les exercices suivants\ :
+Bravo ! Vous arrivez au bout de votre premier module. Cette dernière section vous permet de vérifier que vous avez bien réalisé tous les exercices de ce module et compris les éléments clés du module. Ce module est consacré aux outils informatiques que nous utiliserons dans la suite du cours, vous aviez à réaliser les exercices suivants\ :
 
 `r show_ex_toc()`
