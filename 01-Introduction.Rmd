@@ -19,19 +19,19 @@ Tous les exercices de ce cours vont être réalisés sur un ordinateur. De ce fa
 
 - Les raccourcis clavier 
 
-Les raccourcis clavier sont prévu afin d'optimiser votre temps et donc votre productivité. Prenez le temps de les revoir [sous Windows 10](https://www.lecotentin.fr/raccourcis-clavier), [sous Mac](https://www.journaldunet.com/solutions/dsi/1194040-raccourci-clavier-mac/) ou encore [sous Ubuntu](https://www.clubic.com/tutoriels/article-862426-1-raccourcis-clavier-ubuntu-indispensables.html)
+Les raccourcis clavier sont prévus afin d'optimiser votre temps et donc votre productivité. Prenez le temps de les revoir [sous Windows 10](https://www.lecotentin.fr/raccourcis-clavier), [sous Mac](https://www.journaldunet.com/solutions/dsi/1194040-raccourci-clavier-mac/) ou encore [sous Ubuntu](https://www.clubic.com/tutoriels/article-862426-1-raccourcis-clavier-ubuntu-indispensables.html).
 
 - Les captures d'écran
 
-Lorsque l'on a un problème sur un ordinateur, une capture d'écran bien réalisée permet souvent de cibler un problème et peut remplacer une longue explication texuelle. Vous pouvez retrouver des tutoriels pour réaliser une capture d'écran [sous Windows](https://www.commentcamarche.net/informatique/windows/149-faire-des-captures-d-ecran-avec-windows-10/) ou [sous Mac](https://www.commentcamarche.net/informatique/macos/737-faire-des-captures-d-ecran-sur-mac/). Le plus important est de cibler la problématique que vous souhaitez capturer. Il est bien souvent inutile de sélectionner tout le bureau de l'ordinateur.
+Lorsque l'on a un problème sur un ordinateur, une capture d'écran bien réalisée permet souvent de cibler un problème et peut remplacer une longue explication textuelle. Vous pouvez retrouver des tutoriels pour réaliser une capture d'écran [sous Windows](https://www.commentcamarche.net/informatique/windows/149-faire-des-captures-d-ecran-avec-windows-10/) ou [sous Mac](https://www.commentcamarche.net/informatique/macos/737-faire-des-captures-d-ecran-sur-mac/). Le plus important est de cibler la problématique que vous souhaitez capturer. Il est bien souvent inutile de sélectionner tout le bureau de l'ordinateur.
 
 ##### À vous de jouer ! {-}
 
-*Note\ : lorsque vous voyez le petit logo "H5P" comme ci-dessous, cela signifie que vous avez maintenant un exercice interactif. Cet exercice peut prendre différentes formes (quiz, présentation ou vidéo contenant des questions, vrai ou faux, cliquer sur une image ...).*
+*Note\ : lorsque vous voyez le petit logo "H5P" comme ci-dessous, cela signifie que vous avez maintenant un exercice interactif. Cet exercice peut prendre différentes formes (quiz, présentation ou vidéo contenant des questions, vrais ou faux, cliquer sur une image ...).*
 
 `r h5p(140, height = 270, toc = "Taille des captures d'écran")`
 
-Le préambule de ce cours vous a permit d'en apprendre d'avantage sur le matériel pédagogique, l'approche pédagoqie ou encore la méthode d'évaluation. Vérifiez votre compréhension des notions vues avec l'exercice suivant.
+Le préambule de ce cours vous a permis d'en apprendre davantage sur le matériel pédagogique, l'approche pédagogie ou encore la méthode d'évaluation. Vérifiez votre compréhension des notions vues avec l'exercice suivant.
 
 ##### À vous de jouer ! {-}
 
@@ -69,15 +69,17 @@ Ce petit rappel historique et ces quelques informations concernant les données 
 
 ## Découverte des outils
 
-![Les outils logiciels que vous apprendrez à utiliser dans ce cours vont littéralement vous transformer. Vos capacités d'analyse et de compréhension du vivant seront transcendées grâce au regard que vous deviendrez capable d'apporter à l'information de base\ : les données biologiques issues d'observations de terrain ou d'expériences en laboratoire.](images/sdd1_01/before_after.png)
+A la fin de ce premier module, vous aurez réalisé votre première analyse complète en biologie. Nous avons cependant besoin d'outils.
 
 La science des données requiert d'employer des outils performants que nous avons sélectionnés pour vous parmi la multitude de logiciels disponibles parce que nous faisons le pari que ce seront les outils qui vous seront les plus utiles... dans les 30 prochaines années, c'est-à-dire pendant une bonne partie de votre carrière (voir un [poster présentant la philosophie du cours](https://github.com/BioDataScience-Course/sdd_presentations/raw/master/2018_rennes/poster_rennes_ge.pdf)).
+
+![Les outils logiciels que vous apprendrez à utiliser dans ce cours vont littéralement vous transformer. Vos capacités d'analyse et de compréhension du vivant seront transcendées.](images/sdd1_01/before_after.png)
 
 ### GitHub
 
 Pour bien débuter ce cours, vous avez été guidé pour créer un compte sur [GitHub](https://github.com). Il est temps de définir ce premier outil. GitHub est un réseau social permettant de sauvegarder vos projets sur le "cloud", les partager et collaborer avec d'autres personnes. Les utilisateurs peuvent se regrouper sous une organisation afin de faciliter la collaboration. Ce réseau social à la particularité d'être centré sur les projets et utilise un gestionnaire de version de projet nommé [Git](https://git-scm.com/) (Nous aborderons git plus loin dans ce module). Ce nom provient de l'association  "Git", la gestion de version et "Hub" relatif au réseau.
 
-Partons du projet [dplyr](https://github.com/tidyverse/dplyr) partagé par l'organisation [tidyverse](https://github.com/tidyverse) afin d'explorer quelques éléments de GitHub. Nous nous attardons uniquement sur certains éléments clés.
+Découvrons un projet qui s'intéresse à la manipulation de tableau de données (filtrer des lignes spécifiques, calculer des nouvelles colonnes, trier le tableau en fonction d'une colonne spécifique…). Nous utiliserons ce projet dans ce cours. Le projet [dplyr](https://github.com/tidyverse/dplyr) est partagé par l'organisation [tidyverse](https://github.com/tidyverse). Ce projet va nous permettre d'explorer quelques éléments de GitHub. Nous nous attardons uniquement sur certains éléments clés.
 
 ##### À vous de jouer ! {-}
 
@@ -85,13 +87,15 @@ Partons du projet [dplyr](https://github.com/tidyverse/dplyr) partagé par l'org
 
 `r h5p(141, height = 270, toc = "Le projet dplyr sur Github")`
 
-Ce projet comprend une multitude de fichiers que vous ne devez pas comprendre (pour le moment ;) ). Ce projet comprend 7112 commits. Pour le moment, retenez qu'un commit est un état de sauvegarde du projet. Ce projet traite de la manipulation de données et comprend un site web associé <dplyr.tidyverse.org>. Un grand nombre de contributeurs ont participé à ce projet (plus de 240). Un fichier README.md sert de page de présentation. dplyr propose des outils (nous verrons par la suite qu'il s'agit de fonctions) comme `mutate()`, `select()`, `filter()`, `summarise()`, `arrange()`. 
+Ce projet comprend une multitude de fichiers que vous ne devez pas comprendre (pour le moment ;) ). Ce projet comprend 7112 commits. Pour le moment, retenez qu'un commit est un état de sauvegarde du projet. Ce projet traite de la manipulation de données et comprend un site web associé <dplyr.tidyverse.org>. Un grand nombre de contributeurs ont participé à ce projet (plus de 240). Un fichier README.md sert de page de présentation.
 
 En haut de cette page, on peut voir une première barre d'outils comprenant les sections `Code`, `Issues`, `Pull requests`, `Actions`, `Security` et `Insights` (toutes les sections ne seront pas détaillées dans cet ouvrage). 
 
 ![Dépot dplyr de l'organisation tidyversesur GitHub](images/sdd1_01/gh_dplyr2.png)
 
-La section `Issues` permet de mettre en avant un problème ou une idée afin d'améliorer ce projet. Cette section sert à poser des questions. Une issue est un espace de discussion et de collaboration centré autour d'une question. Le projet dplyr comprend 70 issues ouvertes et 4281 issues fermées. On peut en déduire que 70 idées ou bugs sont en cours de correction ou de réflexion et que 4281 sont considérés comme terminés. Ce projet est assez dynamique. Cliquez sur l'une de ces issues et observez la structure de cet espace de réflexion.
+Lors d'un travail en équipe, vous allez vous poser des questions et avoir l'e besoin'envie d'échanger vos idées. GitHub met à votre disposition un espace dédié à la discussion et à la collaboration. Il s'agit des `Issues`. La section `Issues` permet de mettre en avant un problème ou une idée afin d'améliorer ce projet. Une issue est un espace de discussion et de collaboration centré autour d'une question. Par exemple, le projet dplyr comprend 70 issues ouvertes et 4281 issues fermées. On peut en déduire que 70 idées ou bugs sont en cours de correction ou de réflexion et que 4281 sont considérés comme terminés. Ce projet est assez dynamique. Cliquez sur l'une de ces issues et observez la structure de cet espace de réflexion.
+
+**Quand vous aurez un problème ou une idée, utilisez donc les issues pour discuter avec vos encadrants ou vos collaborateurs.**
 
 ##### À vous de jouer ! {-}
 
@@ -103,11 +107,23 @@ GitHub n'est pas le seul réseau social centré sur git. D'autres réseaux équi
 
 #### GitHub Classroom {#classroom}
 
-**[GitHub Classroom](https://classroom.github.com)** est une extension de GitHub qui facilite le travail avec GitHub dans le contexte d'exercices à réaliser dans le cadre d'un cours. Vous serez amené modifier des dépôts issus de GitHub Classroom pour réaliser vos exercices. **Ces dépôts seront privés**. Seuls vous-mêmes et vos enseignants aurez accès à ces dépôts, mais vous pourrez aussi les rendre publics, si vous voulez *valoriser votre travail* de manière plus large.
+**[GitHub Classroom](https://classroom.github.com)** est une extension de GitHub qui facilite le travail avec GitHub dans le contexte d'exercices de niveau III ou de niveau IV à réaliser dans le cadre d'un cours. Vous serez amené à modifier des dépôts issus de GitHub Classroom pour réaliser vos exercices. **Ces dépôts seront privés**. Seuls vous-mêmes et vos enseignants aurez accès à ces dépôts, mais vous pourrez aussi les rendre publics, si vous voulez *valoriser votre travail* de manière plus large.
 
 ### Markdown 
 
+Lorsque l'on rédige un document, on perd beaucoup de temps à décider de l'interligne, de choisir la taille et la police... On peut diviser en 2 grandes étapes la rédaction d'un document. Il y a le fond et la forme. Nous vous proposons un outil pour booster votre **productivité** (et donc de gagner du temps) avec le Markdown. Dans un premier temps, on va s'intéresser uniquement au fond. Ensuite, on va déterminer une fiche de style qui va s'attarder sur la forme de notre document. 
+
 Le markdown est relativement simple et intuitif à l'usage, même si un petit effort est nécessaire, naturellement, au début. Il permet de baliser le texte pour indiquer le sens des différentes parties (par exemple, pour indiquer les différents niveaux de titres) et de se concentrer sur l'écriture dans un premier temps en dissociant le fond de la mise en forme. 
+
+##### À vous de jouer ! {-}
+
+*Utilise la flèche pour découvrir la forme de ce court paragraphe rédigé en markdwon.*
+
+`r h5p(142, height = 200, toc = "Le fond versus la forme.")`
+
+En partant du fond proposé ci-dessus, on peut également obtenir les formes suivantes.
+
+![](images/sdd1_01/markdown.png)
 
 Ce langage est utilisé dans les issues sur GitHub, sur des forums comme Reddit ou encore pour la rédaction de document avec des éditeurs professionnels de projets.
 
@@ -137,7 +153,9 @@ Consultez les liens [Mastering Markdown](https://guides.github.com/features/mast
 
 ##### À vous de jouer ! {-}
 
-*Note\ : les assignations GitHub sont marquées du logo "Octocat" (mascotte mi-chat mi-poulpe de GitHub). Ils vous permettent de mettre vos acquis en pratique. L'accès a cette tâche, qui est ici un travail **en groupe**, se fait en utilisant GitHub Classroom \@ref(github-classroom).*
+On va mettre en pratique les nombreuses nouvelles notions vues jusqu'à présent. On va travailler tous ensemble dans un dépôt bac à sable afin de poser des questions via des Issues sur GitHub en utilisant le markdown.
+
+*Note\ : les assignations GitHub sont marquées du logo "Octocat" (mascotte mi-chat mi-poulpe de GitHub). Il s'agit d'exercices de niveau III ou IV. L'accès a cette tâche, qui est ici un travail **en groupe**, se fait en utilisant GitHub Classroom \@ref(github-classroom).*
 
 ```{r, echo=FALSE, results='asis'}
 if (exists("assignation2"))

@@ -110,7 +110,7 @@ digraph general_flow {
 ", width = 600, height = 600)
 ```
 
-## Matériel pédagogique {-}
+## Matériel pédagogique {-} 
 
 Le matériel pédagogique est aussi varié que possible. Vous pourrez ainsi piocher dans l'offre en fonction de vos envies et de votre profil d'apprenant pour optimiser votre travail. Vous trouverez\ :
 
