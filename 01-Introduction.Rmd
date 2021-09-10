@@ -159,7 +159,7 @@ On va mettre en pratique les nombreuses nouvelles notions vues jusqu'à présent
 
 ```{r, echo=FALSE, results='asis'}
 if (exists("assignation2"))
-  assignation("A01Ga_biology_challenge", part = NULL,
+  assignation2("A01Ga_biology_challenge", part = NULL,
     url = "https://github.com/BioDataScience-Course/A01Ga_biology_challenge",
     course.urls = c(
       'S-BIOG-006' = "https://classroom.github.com/a/...",
@@ -276,9 +276,9 @@ TODO
 
 ### RStudio
 
-RStudio est un environnement complet et optimisé pour réaliser vos analyses, vos graphiques et vos rapports. RStudio travaille main dans la main avec le logiciel R qui effectue l'ensemble des traitements. 
+Il nous manque encore un outil afin de pouvoir réaliser la rédaction de nos rapports et pouvoir y intégrer des graphiques, des tableaux ou encore des analyses statistiques. Des éditeurs classiques comme [Google Docs](https://www.google.com/intl/fr_be/docs/about/) ou Microsoft Word ne permettent pas d'ajouter facilement des graphiques ou des analyses. Nous vous proposons d'utiliser un environnement complet et optimisé pour réaliser vos analyses, vos graphiques et vos rapports [RStudio](https://www.rstudio.com/). Ce logiciel travaille main dans la main avec le logiciel R qui effectue l'ensemble des traitements (Nous découvrirons le logiciel R lors du second module.). Il est lié à Git et Github. Il permet également des connexions simplifiées à des bases de données. 
 
-`r img("sdd1_01/rstudio.gif")`
+RStudio comprend 4 fenêtres principales que vous pouvez découvrir ci-dessous 
 
 ##### À vous de jouer ! {-}
 
@@ -296,7 +296,64 @@ Des explications détaillées se trouvent dans l'annexe \@ref(rs) qui présente 
 
 - [RStudio : sa vie, son oeuvre, ses ressources](https://elementr.hypotheses.org/237). Un autre site Web consacré à RStudio en français.
 
+#### Projet RStudio
+
+RStudio permet de gérer des projets efficacement. Un projet va regrouper l’ensemble des jeux de données, des rapports, des présentations, des scripts d’une analyse généralement en relation avec une ou plusieurs expériences ou observations réalisées sur le terrain ou en laboratoire. 
+
+##### À vous de jouer ! {-}
+
+Observez les deux images et tentez de repérer chaque différence entre les deux interfaces. Tentez de trouver les *4 différences* avant de lire la section suivante.
+
+*Cliquez sur les symboles + pour découvrir le rôle de chaque fenêtre de RStudio.*
+
+`r h5p(143, height = 270, toc = "Les projets dans RStudio")`
+
+
+1. Dans les onglets, on passe de Project (None) vers mon_projet. On peut donc facilement repérer si l'on est dans un projet ou non.
+2. Le chemin d'accès spécifié dans la fenêtre `Console` change et spécifie le chemin d'accès du projet. Le dossier du projet devient le dossier racine.
+3. La fenêtre Environment change et comprend un onglet en plus nommé Git. Lorsque l'on est dans un projet, il est possible de réaliser des commits, des pull ou encore des push depuis RStudio
+4. La fenêtre comprenant l'onglet `Files` change de dossier pour afficher le dossier lié à `mon_projet`. Deux fichiers sont ajoutés par défaut au projet.
+  - `.gitignore` : Ce fichier permet de spécifier les fichiers que l'on souhaite exclure de gestionnaire de version. Ce fichier est très utile pour exclure de gros fichiers ou bien les versions compilées des R Markdown par exemple.
+  -  `mon_projet.Rproj` : À la base d'un projet RStudio, on retrouve un  mon_projet.Rproj. Ce fichier est placé automatiquement par RStudio. Il s'agit du nom du projet avec l'extension `.Rproj`. Ce fichier contient les paramètres de configuration de votre projet. Il ne faut pas le modifier. Il est utile pour s'assurer que l'on se trouve dans un projet.
+
+Nous avons donc la structuration suivante
+
+```
+/mon_projet          # Le répertoire de base du projet
+  .gitignore         # Fichier relatif à la gestion de version
+  mon_projet.Rproj   # Fichier de configuration du projet créé par RStudio
+```
+
+On retrouve trois dossiers principaux dans un projet en science des données. Il y a le dossier `data`, le dossier `docs` et le dossier `R`.
+
+```
+/mon_projet          # Le répertoire de base du projet
+  .gitignore         # Fichier relatif à la gestion de version
+  data               # Le dossier qui comprend toutes les données
+  docs               # Le dossier qui comprend toutes les analyses (rapport, présentation,...)
+  mon_projet.Rproj   # Fichier de configuration du projet créé par RStudio
+  R                  # Le dossier qui comprend tous les scripts d'analyse
+```
+
+##### À vous de jouer ! {-}
+
+`r h5p(144, height = 270, toc = "Organisation d'un projet RStudio")`
+
+Des explications détaillées se trouvent dans l'annexe \@ref(rs) qui présente les bases de l'utilisation de RStudio et des projets.
+
+##### À vous de jouer ! {-}
+
+Il est temps d'auto-évaluer votre apprentissage via un **tutoriel learnr** dans RStudio.
+
+*Note\ : les tutoriels learnrs vous permettent d'auto-évaluation votre progression dans la matière et sont marqués d'une icône en forme de toque verte. Ils s'exécutent directement dans RStudio à l'intérieur de la SciViews Box*
+
+`r learnr("A01La_outils", title = "Les différents outils", toc = "Auto-évaluation sur les outils")`
+
 ## Premier projet {#premier-projet}
+
+Avec tous les outils présentés dans ce module, vous avez toutes les clés afin de réaliser un projet en science des données.
+
+<!--# G.E. TODO il faut ajouter une petite situation concrete -->
 
 Vous allez terminer ce premier module en réalisant votre premier projet individuel en science des données.
 
@@ -304,7 +361,7 @@ Vous allez terminer ce premier module en réalisant votre premier projet individ
 
 *Note\ : Acceptez cette première assignation **individuelle**en utilisant GitHub Classroom \@ref(github-classroom). Lorsque votre assignation est crée, faites un clone local de votre dépôt*
 
-<!-- G.E. procédure à modifier en fonction de renku -->
+<!--# G.E. procédure à modifier en fonction de renku -->
 
 ```{r, echo=FALSE, results='asis'}
 if (exists("assignation"))
@@ -317,12 +374,6 @@ if (exists("assignation"))
 ```
 
 Si vous souhaitez plus d'information sur Github Classroom, vous pouvez vous référer à l'Appendice \@ref(github-classroom).
-
-Afin de terminer ce module en beauté, il est temps d'auto-évaluer votre apprentissage via un **tutoriel learnr** dans RStudio.
-
-*Note\ : les tutoriels learnrs vous permettent d'auto-évaluation votre progression dans la matière et sont marqués d'une icône en forme de toque verte. Ils s'exécutent directement dans RStudio à l'intérieur de la SciViews Box*
-
-`r learnr("A01La_outils", title = "Les différents outils", toc = "Auto-évaluation sur les outils")`
 
 ## Récapitulatif des exercices
 
