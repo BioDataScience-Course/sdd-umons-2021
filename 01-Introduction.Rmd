@@ -12,10 +12,22 @@
 
 ##### Prérequis {-}
 
-Tous les exercices de ce cours vont être réalisés sur un ordinateur. De ce fait, vous devez maitriser les éléments de base d'un ordinateur.
+```{block2, type='note'}
 
-<!-- TODO Il faut encore ajouter des informations relatives à  la structuration des dossiers et les bases de l'utilisation d'un ordinateur. Je n'ai pas encore trouvé de ressources intéressantes.
--->
+Les liens cliquables qui vont sont proposés dans ce cours ont été sélectionné pour vous. La section prérequis vous permet de vous assurer que vous avez toutes les connaissances nécessaire afin de suivre le module dans les meilleurs conditions possibles.
+
+**Cliquez sur ces liens**
+
+```
+
+Tous les exercices de ce cours vont être réalisés sur un ordinateur. De ce fait, vous devez en  maitriser les éléments de base. Un [ordinateur](https://www.coursinfo.fr/decouverte/ordinateur/) peut sembler être un outil simple et familier. Il est pourtant bien plus complexe qu'il n'y parait. 
+- Les comptes sur un ordinateur
+
+Il n'est pas rare d'avoir un ordinateur qui est utilisé par plusieurs personnes. Afin que chaque utilisateur puisse avoir un espace personnel dédié, on va créer plusieurs compte. Vous retrouvez la procédure [sous Windows](https://support.microsoft.com/fr-fr/windows/ajouter-ou-supprimer-des-comptes-sur-votre-pc-104dc19f-6430-4b49-6a2b-e4dbd1dcdf32) et [sous Mac](https://support.apple.com/fr-be/guide/mac-help/mtusr001/mac). Chaque type de compte ne se vaut pas. Le compte administrateur est le compte qui a la plus de droit sur un ordinateur. Il faut par exemple avoir l'accès un compte administrateur pour installer certains programmes.
+
+- L'organisation des fichiers sur un ordinateur
+
+Un ordinateur est composé d'un ou de plusieurs disque dur. Une [arborescence de dossiers](https://www.coursinfo.fr/decouverte/windows/quest-ce-quun-dossier-un-fichier-et-une-arborescence-de-dossiers/) va être mis en place afin de ranger les fichiers sur chaque disque dur. On peut se représenter chaque disque comme une armoire avec des tiroirs. Les principaux dossiers sont le dossier `bureau` (*desktop*), `documents` (*documents*) ou encore `téléchargements` (*downloads*). 
 
 - Les raccourcis clavier 
 
@@ -31,7 +43,11 @@ Lorsque l'on a un problème sur un ordinateur, une capture d'écran bien réalis
 
 `r h5p(140, height = 270, toc = "Taille des captures d'écran")`
 
-Le préambule de ce cours vous a permis d'en apprendre davantage sur le matériel pédagogique, l'approche pédagogie ou encore la méthode d'évaluation. Vérifiez votre compréhension des notions vues avec l'exercice suivant.
+- Les navigateurs Web
+
+Un [navigateurs web](https://www.1min30.com/dictionnaire-du-web/navigateur-web-browser) est un logiciel qui permet d'accèder au web. Le web n'est pas un synonime d'internet comme vous pouvez le lire sur la formation [comprendre le web](https://openclassrooms.com/fr/courses/1946386-comprendre-le-web/6874966-distinguez-le-web-et-internet) d'[Open Classroom](https://openclassrooms.com/fr/). Vous avez déjà tous entendu d'au moins l'un de ces logiciels Google Chrome, Microsoft Edge, Mozilla Firefox ou encore Safari. Google Chrome est le logiciel que nous vous conseillons. Il est parfaitement compatible avec les outils lié à ce cours.
+
+Le préambule de ce cours vous a égalment permis d'en apprendre davantage sur le matériel pédagogique, l'approche pédagogie ou encore la méthode d'évaluation. Vérifiez votre compréhension des notions vues avec l'exercice suivant.
 
 ##### À vous de jouer ! {-}
 
