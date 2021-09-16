@@ -14,7 +14,7 @@
 
 ```{block2, type='note'}
 
-Les liens cliquables qui vont sont proposés dans ce cours ont été sélectionné pour vous. La section prérequis vous permet de vous assurer que vous avez toutes les connaissances nécessaire afin de suivre le module dans les meilleurs conditions possibles.
+Les liens cliquables qui vont sont proposés dans ce cours ont été sélectionné pour vous. La section prérequis vous permet de vous assurer que vous avez toutes les connaissances nécessaires afin de suivre le module dans les meilleures conditions possibles.
 
 **Cliquez sur ces liens**
 
@@ -23,11 +23,11 @@ Les liens cliquables qui vont sont proposés dans ce cours ont été sélectionn
 Tous les exercices de ce cours vont être réalisés sur un ordinateur. De ce fait, vous devez en  maitriser les éléments de base. Un [ordinateur](https://www.coursinfo.fr/decouverte/ordinateur/) peut sembler être un outil simple et familier. Il est pourtant bien plus complexe qu'il n'y parait. 
 - Les comptes sur un ordinateur
 
-Il n'est pas rare d'avoir un ordinateur qui est utilisé par plusieurs personnes. Afin que chaque utilisateur puisse avoir un espace personnel dédié, on va créer plusieurs compte. Vous retrouvez la procédure [sous Windows](https://support.microsoft.com/fr-fr/windows/ajouter-ou-supprimer-des-comptes-sur-votre-pc-104dc19f-6430-4b49-6a2b-e4dbd1dcdf32) et [sous Mac](https://support.apple.com/fr-be/guide/mac-help/mtusr001/mac). Chaque type de compte ne se vaut pas. Le compte administrateur est le compte qui a la plus de droit sur un ordinateur. Il faut par exemple avoir l'accès un compte administrateur pour installer certains programmes.
+Il n'est pas rare d'avoir un ordinateur qui est utilisé par plusieurs personnes. Afin que chaque utilisateur puisse avoir un espace personnel dédié, on va créer plusieurs comptes. Vous retrouvez la procédure [sous Windows](https://support.microsoft.com/fr-fr/windows/ajouter-ou-supprimer-des-comptes-sur-votre-pc-104dc19f-6430-4b49-6a2b-e4dbd1dcdf32) et [sous Mac](https://support.apple.com/fr-be/guide/mac-help/mtusr001/mac). Chaque type de compte ne se vaut pas. Le compte administrateur est le compte qui a le plus de droits sur un ordinateur. Il faut par exemple avoir l'accès un compte administrateur pour installer certains programmes.
 
 - L'organisation des fichiers sur un ordinateur
 
-Un ordinateur est composé d'un ou de plusieurs disque dur. Une [arborescence de dossiers](https://www.coursinfo.fr/decouverte/windows/quest-ce-quun-dossier-un-fichier-et-une-arborescence-de-dossiers/) va être mis en place afin de ranger les fichiers sur chaque disque dur. On peut se représenter chaque disque comme une armoire avec des tiroirs. Les principaux dossiers sont le dossier `bureau` (*desktop*), `documents` (*documents*) ou encore `téléchargements` (*downloads*). 
+Un ordinateur est composé d'un ou de plusieurs disques durs. Une [arborescence de dossiers](https://www.coursinfo.fr/decouverte/windows/quest-ce-quun-dossier-un-fichier-et-une-arborescence-de-dossiers/) va être mise en place afin de ranger les fichiers sur chaque disque dur. On peut se représenter chaque disque comme une armoire avec des tiroirs. Les principaux dossiers sont le dossier `bureau` (*desktop*), `documents` (*documents*) ou encore `téléchargements` (*downloads*). 
 
 - Les raccourcis clavier 
 
@@ -43,11 +43,11 @@ Lorsque l'on a un problème sur un ordinateur, une capture d'écran bien réalis
 
 `r h5p(140, height = 270, toc = "Taille des captures d'écran")`
 
-- Les navigateurs Web
+- Les navigateurs web
 
-Un [navigateurs web](https://www.1min30.com/dictionnaire-du-web/navigateur-web-browser) est un logiciel qui permet d'accèder au web. Le web n'est pas un synonime d'internet comme vous pouvez le lire sur la formation [comprendre le web](https://openclassrooms.com/fr/courses/1946386-comprendre-le-web/6874966-distinguez-le-web-et-internet) d'[Open Classroom](https://openclassrooms.com/fr/). Vous avez déjà tous entendu d'au moins l'un de ces logiciels Google Chrome, Microsoft Edge, Mozilla Firefox ou encore Safari. Google Chrome est le logiciel que nous vous conseillons. Il est parfaitement compatible avec les outils lié à ce cours.
+Un [navigateurs web](https://www.1min30.com/dictionnaire-du-web/navigateur-web-browser) est un logiciel qui permet d'accéder au web. Le web n'est pas un synonyme d'internet comme vous pouvez le lire sur la formation [comprendre le web](https://openclassrooms.com/fr/courses/1946386-comprendre-le-web/6874966-distinguez-le-web-et-internet) d'[Open Classroom](https://openclassrooms.com/fr/). Vous avez déjà tous entendu d'au moins l'un de ces logiciels Google Chrome, Microsoft Edge, Mozilla Firefox ou encore Safari. Google Chrome est le logiciel que nous vous conseillons. Il est parfaitement compatible avec les outils liés à ce cours.
 
-Le préambule de ce cours vous a égalment permis d'en apprendre davantage sur le matériel pédagogique, l'approche pédagogie ou encore la méthode d'évaluation. Vérifiez votre compréhension des notions vues avec l'exercice suivant.
+Le préambule de ce cours vous a également permis d'en apprendre davantage sur le matériel pédagogique, l'approche pédagogie ou encore la méthode d'évaluation. Vérifiez votre compréhension des notions vues avec l'exercice suivant.
 
 ##### À vous de jouer ! {-}
 
@@ -63,7 +63,7 @@ Il y a 30 ans, pas d'internet (ou un embryon d'internet disponible uniquement po
     * 1770 (1756) révolution 1\ : mécanisation
     * 1870 révolution 2\ : maîtrise de l'énergie
     * 1970 (1979) révolution 3\ : informatique
-    * 1990 révolution 4\ : internet (1990 Web, 1992 ISOC = Internet society, 1993 = premier navigateur web)
+    * 1990 révolution 4\ : internet (1990 web, 1992 ISOC = Internet society, 1993 = premier navigateur web)
     * 2000 révolution 5\ : numérique. GAFA = Google - Apple - Facebook - Amazon + Microsoft = GAFAM aux USA et BATX en Chine = Baidu - Alibaba - Tencent - Xiaomi. Aussi NATU = Netflix - Airbnb - Tesla - Uber.
     * 2010 révolution 6\ : NBIC = nanotechnologies - biotechnologies - informatique - sciences cognitives.
     * 2020 \ : l'ordinateur est toujours plus puissant, l'intelligence artificielle toujours plus présente. Les métiers changent parce que les machines remplacent l'homme pour différentes tâches ("ubérisation").
@@ -85,7 +85,7 @@ Ce petit rappel historique et ces quelques informations concernant les données 
 
 ## Découverte des outils
 
-A la fin de ce premier module, vous aurez réalisé votre première analyse complète en biologie. Nous avons cependant besoin d'outils.
+À la fin de ce premier module, vous aurez réalisé votre première analyse complète en biologie. Nous avons cependant besoin d'outils.
 
 La science des données requiert d'employer des outils performants que nous avons sélectionnés pour vous parmi la multitude de logiciels disponibles parce que nous faisons le pari que ce seront les outils qui vous seront les plus utiles... dans les 30 prochaines années, c'est-à-dire pendant une bonne partie de votre carrière (voir un [poster présentant la philosophie du cours](https://github.com/BioDataScience-Course/sdd_presentations/raw/master/2018_rennes/poster_rennes_ge.pdf)).
 
@@ -93,15 +93,15 @@ La science des données requiert d'employer des outils performants que nous avon
 
 ### GitHub
 
-Pour bien débuter ce cours, vous avez été guidé pour créer un compte sur [GitHub](https://github.com). Il est temps de définir ce premier outil. GitHub est un réseau social permettant de sauvegarder vos projets sur le "cloud", les partager et collaborer avec d'autres personnes. Les utilisateurs peuvent se regrouper sous une organisation afin de faciliter la collaboration. Ce réseau social à la particularité d'être centré sur les projets et utilise un gestionnaire de version de projet nommé [Git](https://git-scm.com/) (Nous aborderons git plus loin dans ce module). Ce nom provient de l'association  "Git", la gestion de version et "Hub" relatif au réseau.
+Pour bien débuter ce cours, vous avez été guidé pour créer un compte sur [GitHub](https://github.com). Il est temps de définir ce premier outil. GitHub est un réseau social permettant de sauvegarder vos projets sur le "cloud", les partager et collaborer avec d'autres personnes. Les utilisateurs peuvent se regrouper sous une organisation afin de faciliter la collaboration. Ce réseau social à la particularité d'être centré sur les projets et utilise un gestionnaire de version de projet nommé [Git](https://git-scm.com/) (nous aborderons git plus loin dans ce module). Ce nom provient de l'association  "Git", la gestion de version et "Hub" relatif au réseau.
 
-Découvrons un projet qui s'intéresse à la manipulation de tableau de données (filtrer des lignes spécifiques, calculer des nouvelles colonnes, trier le tableau en fonction d'une colonne spécifique…). Nous utiliserons ce projet dans ce cours. Le projet [dplyr](https://github.com/tidyverse/dplyr) est partagé par l'organisation [tidyverse](https://github.com/tidyverse). Ce projet va nous permettre d'explorer quelques éléments de GitHub. Nous nous attardons uniquement sur certains éléments clés.
+Découvrons un projet qui s'intéresse à la manipulation de tableau de données (filtrer des lignes spécifiques, calculer de nouvelles colonnes, trier le tableau en fonction d'une colonne spécifique…). Nous utiliserons ce projet dans ce cours. Le projet [dplyr](https://github.com/tidyverse/dplyr) est partagé par l'organisation [tidyverse](https://github.com/tidyverse). Ce projet va nous permettre d'explorer quelques éléments de GitHub. Nous nous attardons uniquement sur certains éléments clés.
 
 ##### À vous de jouer ! {-}
 
 *Cliquez sur les symboles + pour découvrir les éléments importants d'un projet sur GitHub*
 
-`r h5p(141, height = 270, toc = "Le projet dplyr sur Github")`
+`r h5p(141, height = 270, toc = "Le projet dplyr sur GitHub")`
 
 Ce projet comprend une multitude de fichiers que vous ne devez pas comprendre (pour le moment ;) ). Ce projet comprend 7112 commits. Pour le moment, retenez qu'un commit est un état de sauvegarde du projet. Ce projet traite de la manipulation de données et comprend un site web associé <dplyr.tidyverse.org>. Un grand nombre de contributeurs ont participé à ce projet (plus de 240). Un fichier README.md sert de page de présentation.
 
@@ -292,7 +292,7 @@ TODO
 
 ### RStudio
 
-Il nous manque encore un outil afin de pouvoir réaliser la rédaction de nos rapports et pouvoir y intégrer des graphiques, des tableaux ou encore des analyses statistiques. Des éditeurs classiques comme [Google Docs](https://www.google.com/intl/fr_be/docs/about/) ou Microsoft Word ne permettent pas d'ajouter facilement des graphiques ou des analyses. Nous vous proposons d'utiliser un environnement complet et optimisé pour réaliser vos analyses, vos graphiques et vos rapports [RStudio](https://www.rstudio.com/). Ce logiciel travaille main dans la main avec le logiciel R qui effectue l'ensemble des traitements (Nous découvrirons le logiciel R lors du second module.). Il est lié à Git et Github. Il permet également des connexions simplifiées à des bases de données. 
+Il nous manque encore un outil afin de pouvoir réaliser la rédaction de nos rapports et pouvoir y intégrer des graphiques, des tableaux ou encore des analyses statistiques. Des éditeurs classiques comme [Google Docs](https://www.google.com/intl/fr_be/docs/about/) ou Microsoft Word ne permettent pas d'ajouter facilement des graphiques ou des analyses. Nous vous proposons d'utiliser un environnement complet et optimisé pour réaliser vos analyses, vos graphiques et vos rapports [RStudio](https://www.rstudio.com/). Ce logiciel travaille main dans la main avec le logiciel R qui effectue l'ensemble des traitements (nous découvrirons le logiciel R lors du second module.). Il est lié à Git et GitHub. Il permet également des connexions simplifiées à des bases de données. 
 
 RStudio comprend 4 fenêtres principales que vous pouvez découvrir ci-dessous 
 
@@ -306,11 +306,11 @@ Des explications détaillées se trouvent dans l'annexe \@ref(rs) qui présente 
 
 ##### Pour en savoir plus {-}
 
-- [RStudio](https://www.rstudio.com/). Site Web de RStudio comprenant un ensemble de ressources en anglais
+- [RStudio](https://www.rstudio.com/). Site web de RStudio comprenant un ensemble de ressources en anglais
 
 - [RStudio, un environnement de développement pour R](https://quanti.hypotheses.org/488/). Brève explication de RStudio en français.
 
-- [RStudio : sa vie, son oeuvre, ses ressources](https://elementr.hypotheses.org/237). Un autre site Web consacré à RStudio en français.
+- [RStudio : sa vie, son oeuvre, ses ressources](https://elementr.hypotheses.org/237). Un autre site web consacré à RStudio en français.
 
 #### Projet RStudio
 
@@ -369,7 +369,7 @@ Il est temps d'auto-évaluer votre apprentissage via un **tutoriel learnr** dans
 
 Avec tous les outils présentés dans ce module, vous avez toutes les clés afin de réaliser un projet en science des données.
 
-<!--# G.E. TODO il faut ajouter une petite situation concrete -->
+<!--# G.E. TODO il faut ajouter une petite situation concrète -->
 
 Vous allez terminer ce premier module en réalisant votre premier projet individuel en science des données.
 
