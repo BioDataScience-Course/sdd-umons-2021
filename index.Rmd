@@ -207,7 +207,7 @@ Votre progression au sein de exercices de chaque module est mis à votre disposi
 
 Le plan du cours est une forme de contrat entre l'étudiants et les encadrants. Ce document structure les attentes de vos encadrants. Veuillez consulter ce document attentivement. 
 
-- [Plan du cours de Science des données biologiques I : années 2021-2022](https://github.com/BioDataScience-Course/BioDataScience-Common/blob/main/docs/plan_de_cours/2021_sdd1_plan_cours.md) 
+- [Plan du cours de Science des données biologiques I : années 2021-2022](https://github.com/BioDataScience-Course/BioDataScience-Common/blob/main/docs/plan_de_cours/sdd1_plan_cours_2021-2022.md) 
 
 ##### À vous de jouer ! {-}
 
