@@ -149,7 +149,7 @@ Consultez les liens [Mastering Markdown](https://guides.github.com/features/mast
 
 *Cet exercice H5P comprend plusieurs exercices. N'oubliez pas de faire l'ensemble des exercices.*
 
-`r h5p(17, height = 200, toc = "Premiers exercices relatifs à Markdown")`
+`r h5p(145, height = 200, toc = "Premiers exercices relatifs à Markdown")`
 
 ##### Pour en savoir plus {-}
 
@@ -241,7 +241,7 @@ On réalise un envoi (**push**) lorsque l'on souhaite synchroniser nos changemen
 
 *Note\ : l'image suivante est interactive. Il vous est maintenant demandé de cliquer dessus pour indiquer quelles flèches représentent une action particulière dans le schéma présenté.*
 
-`r h5p(15, height = 270, toc = "GitHub : repérer les pushs")`
+`r h5p(146, height = 270, toc = "GitHub : repérer les pushs")`
 
 L'avantage principal de **GitHub** ne réside pas vraiment dans la possibilité de réaliser une sauvegarde en ligne, mais plutôt dans la possibilité de collaborer avec d'autres personnes présentes sur ce réseau comme l'illustre la figure ci-dessous. Deux scientifiques (les versions représentées par des boules bleues et des boules vertes) collaborent sur un même projet que l'on appelle un **dépôt** (**repository** en anglais) lorsqu'il est en ligne. Le premier chercheur (boules bleues) initie le dépôt et réalise un "push" pour rendre son travail accessible sur le réseau (boules oranges). Son collaborateur (boules vertes) **clône** (**clone** en anglais) ensuite le dépôt sur son ordinateur afin de pouvoir y travailler en local sur son PC. Après avoir fait des changements, il réalise également un **push** sur le réseau. Le premier scientifique, avant de travailler à nouveau sur le projet, devra donc réaliser un **pull** afin d'obtenir en local l'ensemble des modifications fournies par son ou ses collaborateurs. Après des modifications en local il effectuera à nouveau un "push".
 
@@ -249,7 +249,7 @@ L'avantage principal de **GitHub** ne réside pas vraiment dans la possibilité 
 
 *Pour être certain que vous ayez bien compris, encore une image interactive à cliquer...*
 
-`r h5p(14, height = 270, toc = "GitHub : repérer les pulls")`
+`r h5p(147, height = 270, toc = "GitHub : repérer les pulls")`
 
 ```{block2, type='note'}
 
@@ -300,7 +300,7 @@ RStudio comprend 4 fenêtres principales que vous pouvez découvrir ci-dessous
 
 *Cliquez sur les symboles + pour découvrir le rôle de chaque fenêtre de RStudio.*
 
-`r h5p(16, height = 270, toc = "L'environnement de RStudio")`
+`r h5p(148, height = 270, toc = "L'environnement de RStudio")`
 
 Des explications détaillées se trouvent dans l'annexe \@ref(rs) qui présente les bases de l'utilisation de RStudio. Vous avez également à votre disposition un aide-mémoire afin d'appréhender cette interface [RStudio IDE Cheat Sheet](https://github.com/rstudio/cheatsheets/raw/master/rstudio-ide.pdf). 
 
