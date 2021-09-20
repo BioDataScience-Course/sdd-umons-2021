@@ -477,6 +477,48 @@ Dans GitHub Desktop, vous devez sélectionner le menu `File`, puis `Add Local Re
 
 Lorsque vous souhaitez apporter votre aide sur un projet qui n'est pas le vôtre. Vous devez réaliser un `Fork` puis un `Clone`. N'oubliez pas que la base de GitHub est de faciliter la collaboration. Afin de soumettre vos modifications au projet de départ, il faut faire un `Pull requests`. Cette étape permet de proposer vos modifications au responsable du projet original sous une forme qui lui permet de visualiser et de discuter les changements proposés. Ce dernier pourra accepter ou refuser vos modifications.
 
+### Personal Access Token
+
+L'authentification sur GitHub requiert l'utilisation d'un *Personal Access Token* (PAT). Ce système d'authentification ne doit être réalisé qu'une seule fois dans RStudio. La procédure est la suivante.
+
+1. Dans RStudio (que vous aurez lancé au préalable via la machine virtuelle ou Renku), entrez la commande suivante dans votre console et tapez sur <Enter>
+
+```
+usethis::create_github_token()
+```
+
+![](images/annexe_a2/github_pat1.png)
+
+Vous êtes automatiquement redirigé vers GitHub dans votre browser Web (il faut peut-être s’y identifier). Vous êtes face à une page qui s’appelle “New personal access token”. Les champs sont déjà préremplis. 
+
+![](images/annexe_a2/github_pat2.png)
+2. Modifiez la date d'expériation de ce dernier
+
+Vous pouvez conserver tout cela tel quel. Cependant, votre clé d'authentification (*token*) a un durée limitée de validité par défaut de 30 jours. Dans le champ `Expiration`, nous vous conseillons de changer cette valeur pour couvrir toute votre année acédémique.
+
+![](images/annexe_a2/github_pat3.png)
+
+3. Générez votre token en cliquant sur le bouton vert “Generate token” tout en bas de la page.
+
+Vous vous retrouver à présent dans une nouvelle page GitHub qui liste tous vos PATs (vous n’en aurez probablement qu’un seul à ce stade). La valeur de votre token est affichée dans un encadré en vert avec une petite icône de presse-papier à sa droite. Cliquez sur cette icône presse-papier pour copier la valeur de votre token. Attention: une fois sorti de la page, vous ne pourrez plus jamais voir ce token (mais vous pourrez en recréer d’autres si nécessaire, pas de panique).
+
+![](images/annexe_a2/github_pat4.png)
+4. Revenez dans RStudio dans l’onglet Console. Comme indiqué dans les instructions, exécutez maintenant la commande suivante (puis <enter>):
+
+```
+gitcreds::gitcreds_set()
+```
+
+5. Vous avez un message qui vous demande votre token. Collez-le dans la Console à l’aide du raccourci <Ctrl+V> (ou <Command+V> sur le Mac) ou clic bouton droit dans la Console et sélection de l’entrée de menu contextuel Paste. La chaîne de caractère correspondante de votre token est collée dans la Console. Tapez ensuite sur la touche <enter>. 
+
+![](images/annexe_a2/github_pat5.png)
+
+Votre token doit à présent être enregistré dans la SciViews Box.
+
+![](images/annexe_a2/github_pat6.png)
+
+Une fois cela réalisé, vous pourrez de nouveau faire vos push et pull dans GitHub… 
+
 ## GitHub Classroom {#github-classroom}
 
 **GitHub Classroom** est une extension de GitHub qui facilite le travail avec GitHub dans le contexte d'exercices à réaliser dans le cadre d'un cours. Vous serez amené à cloner et modifier des dépôts issus de GitHub Classroom pour réaliser vos assignations GitHub dans nos cours de Science des Données Biologiques.
