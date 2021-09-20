@@ -185,6 +185,8 @@ if (exists("assignation2"))
 
 Si vous souhaitez plus d'information sur Github Classroom, vous pouvez vous référer à l'Appendice \@ref(github-classroom).
 
+Vous êtes à présent des experts dans l'utilisation des issues. Il est temps de rejoindre le dépôt didié aux issues présenté dans le préambule de ce cours \@ref(issues).
+
 ### Gestionnaire de version
 
 Nous avons jusqu'à présent utilisé la partie collaborative de GitHub. Nous allons maintenant nous intéresser à Git le gestionnaire de version de projet utilisé par GitHub.

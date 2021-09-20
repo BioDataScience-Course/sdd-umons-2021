@@ -347,7 +347,7 @@ Nous pouvons observer pas moins de 270 `commits` (Rappelez vous qu'un état d'av
 `r img("annexe_a2/github6.gif")`
 
 
-#### `Issues`
+#### `Issues` {#issues-annexe}
 
 Cette section est prévue afin de discuter, de réfléchir et de collaborer sur un projet commun. 
 

@@ -215,19 +215,29 @@ Le plan du cours est une forme de contrat entre l'étudiants et les encadrants. 
 
 `r h5p(133, height = 270, toc = "Charge de travail")`
 
-## Questions {-} 
+## Issues {-} 
 
-Toutes les questions relatives aux exercices sont à poser dans les issues GitHub. 
+Toutes les questions relatives aux exercices sont à poser dans les issues GitHub dédiées à ce cours. lors de la première lecture de ce préambule, vous ne connaissez pas encore les issues. Nous allons découvrir ces termes lors du premier module du cours. Vous rejoindrez cet espace de discussion par la suite. 
+
+Afin d'accéder à cet espace de discussion, cliquez sur `Assignation GitHub Classroom dédiée aux issues pour les étudiants inscrits au cours de Science des Données Biologiques I à l’UMONS`. Si cette instruction n'apparait pas, c'est que vous n'êtes pas reconnu comme un étudiant de ce cours.
+
 
 ```{r, echo=FALSE, results='asis'}
 if (exists("assignation2"))
-  assignation("sdd_issues", part = NULL,
+  assignation2("sdd_issues", part = NULL,
     url = "https://github.com/BioDataScience-Course/sdd_issues",
     course.urls = c(
       'S-BIOG-006' = "https://classroom.github.com/g/qqAiEV2e",
       'S-BIOG-921' = "https://classroom.github.com/a/..."),
-    toc = "Poser ses questions dans une issue.")
+    toc = "Poser ses questions dans une issue.",
+    texts = learnitdown::assignation2_fr(
+      title = "Rejoignez l'assignation",
+      course = "Assignation GitHub Classroom d\u00e9di\u00e9e aux issues pour les \u00e9tudiants inscrits au cours de", 
+      alt = "Les issues ne sont pas accessibles aux \u00e9tudiants externes."))
 ```
 
 *Note : vos enseignants sont également accessibles par mail sdd@sciviews.org.*
 
+Une fois que vous avez rejoint l'équipe `A21`, il n'est plus nécessaire d'utiliser cette assignation. Vous pouvez retrouver directement ce dépôt via la bannière du site.
+
+![](images/sdd1_00/issues.png)
