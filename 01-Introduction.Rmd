@@ -41,7 +41,7 @@ Lorsque l'on a un problème sur un ordinateur, une capture d'écran bien réalis
 
 *Note\ : lorsque vous voyez le petit logo "H5P" comme ci-dessous, cela signifie que vous avez maintenant un exercice interactif. Cet exercice peut prendre différentes formes (quiz, présentation ou vidéo contenant des questions, vrais ou faux, cliquer sur une image ...).*
 
-`r h5p(140, height = 270, toc = "Taille des captures d'écran")`
+`r h5p(140, height = 270, toc = NULL)`
 
 - Les navigateurs web
 
@@ -51,7 +51,7 @@ Le préambule de ce cours vous a également permis d'en apprendre davantage sur 
 
 ##### À vous de jouer ! {-}
 
-`r h5p(135, height = 270, toc = "Organisation du cours et approche pédagogique")`
+`r h5p(135, height = 270, toc = NULL)`
 
 ## Le monde depuis 30 ans {#donnees}
 
