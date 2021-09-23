@@ -18,30 +18,50 @@ SciViews::R
 
 ##### Prérequis {-}
 
-Avant de vous lancer dans le module suivant, assurez d'avoir appris les notions essentiels de GitHub, de Git, Renku, Rstudio, Commit, Push. 
-
-Le premier module de ce cours vous a permit de découvrir de nouveaux outils comme GitHub, Git, ou encore RStudio. Ces outils vont être employé tout au long de votre formation en science des données (et donc de ce cours). Il est indipensable de les maîtriser.
+Le premier module de ce cours vous a permis de découvrir de nouveaux outils comme GitHub, Git, ou encore RStudio. Ces outils vont être employés tout au long de votre formation en science des données (et donc de ce cours). Il est indispensable de les maitriser.
 
 ##### À vous de jouer ! {-}
 
-`r h5p(139, height = 270, toc = "Les outils de la science des données")`
+`r h5p(139, height = 270, toc = NULL)`
+
+Ce second module va s'intéresser à la réalisation de nuages de points. Il est important de maitriser les [éléments de base de la géométrie](https://mathix.org/cours_interactif/index.php?l=fr&n=3e&c=Rep%C3%A9rage) : origine, abscisse, ordonnée, coordonnées d'un point sur un plan,...
+
+##### À vous de jouer ! {-}
+
+Le graphique ci-dessous présente la variation de la hauteur du test en fonction de la masse d'oursins. (Nous vous avions prévenu, ce cours parle de biologie. N'hésitez à faire des petites recherches par vous-même, si vous ne connaissez pas le test d'un oursin.)
+
+`r h5p(154, height = 270, toc = NULL)`
+
+Ce second module va également s'intéresser à des fonctions mathématiques. Vous devez maitriser les éléments suivants : [les puissances](https://fr.khanacademy.org/math/algebra-basics/alg-basics-expressions-with-exponents), [les logarithmes, dont le logarithme népérien et les exponentielles](https://fr.khanacademy.org/math/algebra2/exponential-and-logarithmic-functions).
+
+## R, les éléments de base
+
+Dans le module précédent, vous avez pu découvrir que le logiciel `R` allait être un logiciel central dans cette formation en science des données.  Par exemple, vous avez édité votre premier document Rmarkdown qui est la combinaison du R et du markdown. Nous avons volontairement laissé ce logiciel pour le second module. 
+
+![](images/sdd1_02/Rlogo.png)
+
+[R](https://www.r-project.org/about.html) est un logiciel **open source**  axé sur l'analyse de données. Le langage de programmation R qu'il implémente est mature et développé depuis 1993. Il prend ses sources dans le langage S (spécialement conçu pour les statistiques dans les années 1970). R permet entre autres la manipulation, la visualisation et l'application de calculs statistiques sur des données. C'est l'un des environnements les plus utilisés et les plus puissants pour l'analyse des données. Donc, étudier R sera un **investissement clé** pour votre future carrière de biologiste, car des données, vous en aurez tous à analyser dans votre travail\ !
 
 
 ##### À vous de jouer ! {-}
 
-*Avant de poursuivre, vous allez maintenant découvrir les premiers rudiments de R afin de pouvoir réaliser par la suite vos premiers graphiques. Pour cela, vous aurez à lire attentivement et effectuer tous les exercices de deux tutoriels^[Reportez-vous à l'Appendice \@ref(learnr) pour apprendre à utiliser ces tutoriels.].*
+Vous allez maintenant découvrir les premiers rudiments de R afin de pouvoir réaliser par la suite vos premiers graphiques. Lors du premier module, vous avez réalisé un premier tutoriel qui comprenait uniquement des questions à choix multiples. Dans ces tutoriels, on peut également s'entrainer à écrire des instructions en R. Avant de vous lancer dans ces exercices, consultez l'Appendice \@ref(learnr) pour apprendre à utiliser correctement ces tutoriels. 
+
+Lancez-vous dans votre exploration des bases de R.
 
 `r learnr("A02La_base", title = "Les bases de R", toc = "Notions de base de R")`
 
-*Ensuite vous pouvez également parcourir un second tutoriel qui vous permettra de découvrir un peu plus R à partir d'une analyse concrète.*
+Vous venez de découvrir les assignations, les fonctions, le chainage d'instructions... Lancez-vous à présent dans une première une analyse concrète.
 
 `r learnr("A02Lb_progression", title = "Progression R", toc = "Progression en R")`
 
 ([BioDataScience1](https://github.com/BioDataScience-Course/BioDataScience1) est un package R spécialement développé pour ce cours et que vous avez dû installer lors de la configuration de votre SciViews Box, voir Appendice \@ref(install-tuto)).
 
+`r h5p(156, height = 270, toc = "Sélection de la fonction adéquate")`
+
 ## Nuage de points
 
-Dès que vous vous sentez familiarisé avec les principes de base de R, vous allez pouvoir réaliser assez rapidement des beaux graphiques. Par exemple, si vous souhaitez représenter une variable numérique en fonction d'une autre variable numérique, vous pouvez exprimer cela sous la forme d'une **formule**^[Dans R, une **formule** permet de spécifier les variables avec lesquelles on souhaite travailler, et leur rôle. Par exemple ici, la variable _x_ sur l'axe des abscisses et la variable _y_ sur l'axe des ordonnées.]
+Dès que vous vous sentez familiarisé avec les principes de base de R, vous allez pouvoir réaliser assez rapidement de beaux graphiques. Par exemple, si vous souhaitez représenter une variable numérique en fonction d'une autre variable numérique, vous pouvez exprimer cela sous la forme d'une **formule**^[Dans R, une **formule** permet de spécifier les variables avec lesquelles on souhaite travailler, et leur rôle. Par exemple ici, la variable _x_ sur l'axe des abscisses et la variable _y_ sur l'axe des ordonnées.]
 
 $$y \sim x$$
 
@@ -65,7 +85,7 @@ chart(data = urchin, height ~  weight) +
 Les éléments indispensables à la compréhension d'un graphique en nuage de points sont mis en évidence à la Fig. \@ref(fig:first-scatterplot)\ :
 
 - Les axes avec les graduations (en rouge),
-- les labels et les unités des axes (en bleu).
+- Les labels et les unités des axes (en bleu).
 
 Les instructions dans R pour produire un tel nuage de points sont\ :
 
@@ -91,9 +111,9 @@ La fonction `chart()` n'est pas accessible dans R de base, mais l'extension char
 
 ##### À vous de jouer ! {-}
 
-*Note : la vidéo ci-dessous vous expliquant la création du nuage de points dans R sur le jeu de données `urchin` est affublée du signe "H5P", ce qui signifie qu'elle contient également des questions auxqeulles vous devez répondre dans le cadre de votre progression dans la matière.*
+*Note : la vidéo ci-dessous vous expliquant la création du nuage de points dans R sur le jeu de données `urchin` est affublée du signe "H5P", ce qui signifie qu'elle contient également des questions auxquelles vous devez répondre dans le cadre de votre progression dans la matière.*
 
-`r h5p(10, height = 270, toc = "Vidéo d'introduction au graphique en nuage de points")`
+`r h5p(157, height = 270, toc = "Vidéo d'introduction au graphique en nuage de points")`
 
 ```{r, echo=FALSE}
 #vembedr::embed_youtube("-QzG3Xr202w", width = 770, height = 433)
@@ -103,15 +123,17 @@ La fonction `chart()` n'est pas accessible dans R de base, mais l'extension char
 
 `r learnr("A02Lc_nuage", title = "Nuage de points", toc = "Graphiques en nuages de points")`
 
-### Echelles de graphiques
+`r h5p(155, height = 270, toc = "Les fonctions chart() et geom_point()")`
 
-Vous devez être vigilant lors de la réalisation d'un nuage de point particulièrement sur l'étendue des valeurs présentées sur vos axes. Vous devez utilisez votre expertise de biologiste pour vous posez les deux questions suivantes\ :
+### Échelles de graphiques
 
-- Est ce que l'axe représente des valeurs plausibles de hauteurs et de masses de ces oursins appartenant à l'espèce *Paracentrotus lividus*\ ?
+Vous devez être vigilant lors de la réalisation d'un nuage de point particulièrement sur l'étendue des valeurs présentées sur vos axes. Vous devez utiliser votre expertise de biologiste pour vous posez les deux questions suivantes\ :
 
-- Quels est la précision des mesures effectuées\ ?
+- Est-ce que l'axe représente des valeurs plausibles de hauteurs et de masses de ces oursins appartenant à l'espèce *Paracentrotus lividus*\ ?
 
-Dans certains cas, la forme du nuage de points peut être distendu par la présence de valeurs aberrantes. Ce n'est pas le cas ici, mais nous pouvons le simuler en distendant artificiellement soit l'axe X, soit l'axe Y, soit les deux\ :
+- Quelle est la précision des mesures effectuées\ ?
+
+Dans certains cas, la forme du nuage de points peut être distendue par la présence de valeurs aberrantes. Ce n'est pas le cas ici, mais nous pouvons le simuler en distendant artificiellement soit l'axe X, soit l'axe Y, soit les deux\ :
 
 ```{r, echo=FALSE, fig.cap="Piège du nuage de points. A) graphique initial montrant la variation de la hauteur [mm] en fonction de la masse [g]. B) graphique A avec la modification de l'échelle de l'axe X. C) Graphique A avec une seconde modification de l'axe X. D) Graphique A avec modification simultanée des deux axes."}
 a <- chart(data = urchin, height ~  weight) + 
@@ -128,7 +150,7 @@ combine_charts(list(a, b, c, d))
 
 ##### À vous de jouer ! {-} 
 
-*Note\ : l'exercice suivant est une **application Shiny**. Il s'agit d'un petit programme interactif écrit en R et qui vise à expérimenter librement avec un concept. Vous pouvez lancer cette exercice directement dans cette page ou l'exécuter dans RStudio à l'intérieur de votre machine virtuelle. Vérifiez d'être bien enregistré (message à l'ouverture de l'app) et n'oubliez pas de cliquer sur le bouton `Submit` pour tester votre choix, mais également sur le bouton `Save & Quit` pour valider définitivement votre réponse pour la prendre en compte dans votre rapport de progression.*
+*Note\ : l'exercice suivant est une **application Shiny**. Il s'agit d'un petit programme interactif écrit en R et qui vise à expérimenter librement avec un concept. Vous pouvez lancer cet exercice directement dans cette page. Vérifiez d'être bien enregistré (message à l'ouverture de l'app) et n'oubliez pas de cliquer sur le bouton `Submit` pour tester votre choix, mais également sur le bouton `Save & Quit` pour valider définitivement votre réponse pour la prendre en compte dans votre rapport de progression.*
 
 `r launch_shiny("https://sdd.umons.ac.be/A02Sa_limits/", height = 500, delay = 10, toc = "Étendue des axes d'un graphique")`
 
@@ -165,7 +187,6 @@ if (exists("assignation"))
     toc = "Graphiques sur `urchin_bio`, partie I : script R")
 ```
 
-Inspirez-vous du script dans le dépôt **[sdd1_iris](https://github.com/BioDataScience-Course/sdd1_iris)**. Vous devez commencer par faire un "fork" du dépôt, puis un clone sur votre ordinateur en local pour pouvoir l'utiliser. 
 
 Prêtez une attention toute particulière à l'organisation d'un script R. En plus des instructions R, il contient aussi sous forme de commentaires, un titre , la date de la dernière mise à jour, le nom de l'auteur, et des sections qui organisent de façon claire le contenu du script. A ce sujet, vous trouverez des explications détaillées concernant l'utilisation des scripts R dans l'annexe \@ref(script).
 
@@ -192,7 +213,7 @@ Un fichier R Markdown est un fichier avec une extension `.Rmd`. Il permet de com
 
 *La vidéo ci-dessous vous montre ce qu'est R Markdown, un format hybride entre Markdown et R bien pratique pour inclure vos graphiques directement dans un rapport. Elle vous montre aussi comment transformer un script R en document R Markdown (ou R Notebook, qui en est une variante). Elle contient des questions "H55P" également.*
 
-`r h5p(8, height = 270, toc = "Vidéo de présentation de R Markdown")`
+`r h5p(158, height = 270, toc = "Vidéo de présentation de R Markdown")`
 
 ```{r, echo=FALSE}
 #vembedr::embed_youtube("NDuHBMh690I", width = 770, height = 433)
