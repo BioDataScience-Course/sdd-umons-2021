@@ -185,7 +185,7 @@ if (exists("assignation2"))
 
 Si vous souhaitez plus d'information sur Github Classroom, vous pouvez vous référer à l'Appendice \@ref(github-classroom).
 
-Vous êtes à présent des experts dans l'utilisation des issues. Il est temps de rejoindre le dépôt didié aux issues présenté dans le préambule de ce cours \@ref(issues).
+Vous êtes à présent des experts dans l'utilisation des issues. Il est temps de rejoindre le dépôt dédié aux issues présenté dans le préambule de ce cours \@ref(Issues).
 
 ### Gestionnaire de version
 
@@ -289,14 +289,42 @@ Ceci n'est qu'une explication très succincte. Vous trouverez plus de détails d
 
 ### Renku
 
-TODO
-<!-- G.E Ajouter une explication sur renku et sur la machine virtuelle -->
+Dans ce cours, nous utiliserons différents logiciels qui nécessitent une installation et un configuration en plusieurs étapes. Afin de vous économiser ces étapes fastidieuses, nous utiliserons un système complètement pré-configuré. Il s'agit d'une **machine virtuelle**, un ordinateur complet mais dématérialisé en quelque sorte. Nous utiliserons l'une de ces deux formes\ :
+
+- un système fonctionnant sur un serveur distant et appelé **Renku**,
+
+- un système local installé sur votre ordinateur et appelé **SciViews Box**
+
+Renku ne nécessite pas un ordinateur puissant pour fonctionner, mais il faut une bonne connexion Internet. Il faut aussi que le serveur distant soit disponible et offre les ressources suffisantes pour travailler. *Cette année, nous l'utiliserons pour la première fois... c'est un peu expérimental, en somme.* Par contre, nous utilisons (et développons) la **SciViews Box** depuis 2015, et pourrons donc passer à cette seconde solution en fonction des besoins. Si Renku ne fonctionne pas bien et/ou si votre ordinateur permet un travail plus rapide avec la SciViews Box, vous pourrez choisir cette seconde option plus tard. Pour le moment, nous allons donc créer notre instance Renku. Suivez le guide...
+
+```{r, echo=FALSE}
+vembedr::embed_youtube("zbj0WeChuDg", width = 770, height = 433)
+```
+
+1. Assurez-vous d'être bien reconnu•e dans le site du cours https://wp.sciviews.org. Pour cela, vous avez suivi les instructions et vous avez cliqué sur le bouton bleu pour lier votre compte GitHub ou cours. Ensuite (et dans cet ordre\ !) vous avez cliqué dans la bannière supérieure sur l"item "Moodle", et de là, vous vous êtes connecté avec votre compte GitHub étudiant, vous avez sélectionné votre cours **Science des Données I\ : visualisation**, et enfin, vous avez cliqué sur le lien vers le **cours** depuis cet espace Moodle. Ainsi, le site a reçu maintenant toute l'information nécessaire sur votre identité UMONS. Vous pouvez vérifier cela en allant lire l'encadré d'identification dans le préambule de **Science des données Biologiques I**. Normalement, ces opérations doivent être familères si bvous avez bien suivi la première séance (sinon, demandez de l'aide).
+
+2. Cliquez sur le bouton bleu **RStudio** dans la bannière supérieure. Le browser web ne trouve pas la machine virtuelle. C'est normal puisque vous ne l'avez pas installée. Vous êtes redirigé•e vers une page qui explique comment installer Renku ou SciViews Box.
+
+3. Suivez les instructions concernant Renku. Vous devez ouvrir une page pour créer un nouveau projet après vous être enregistré•e via GitHub. **Attention\ : les trois derniers champs doivent être remplis avec des informations précises. Suivez les instructions.** Tout ceci est à faire une seule fois. Une fois votre projet créé, nommé par défaut "mybox", vous pourrez repartir de l'étape (4) ou (5) plus tard.
+
+4. Une fois le projet créé, vous allez dans l'onglet **Environments**. Vous en créez un nouveau (bouton **New**) s'il n'y en a pas. Sinon, passez à l'étape (5)
+
+5. Si un environnement existe et qu'il est disponible, une icône verte apparaît en début de ligne, et un bouton **Connect** est disponible à droite... Sinon, attendez que votre machine virtuelle soit prête\ : cela peut prendre plusieurs minutes. Cliquez sur ce bouton **Connect** pour ouvrir une fenêtre pour travailler dans votre machine virtuelle via le logiciel RStudio (voir ci-dessous).
+
+Renku "tue" les environnements inutilisés pendant plus de 24h. Pensez donc à toujours bien sauvegarder vos fichiers, et faites bien vos commits et pull/push en fin de session au minimum. Lorsque Renku tue une machine, il fait un backup de certains fichiers et il vous prévient de cela lorsque vous recréerez à nouveau un environnement (étape 4), mais ne vous fiez pas à 100% à ce mécanisme\ !
+
+```{block2, type='note'}
+Pour sauvegarder durablement la configuration de sa machine Renku, vous pouvez entrer dans l'onglet **console** l'instruction suivante\ : `renku_save()`, suivie de la touche `<entrée>` pour valider la commande.
+
+![](images/sdd1_01/renku_save.png)
+
+```
+
+Si vous avez une machine virtuelle Renku opérationnelle, vous pouvez passer à la section suivante et vous familiariser avec RStudio. Si pas, pas de panique\ : nous installerons la SciViews Box qui offrira des services similaires à partir d'une installation locale sur votre PC. Suivez les instructions de vos enseignants dans ce cas.
 
 ### RStudio
 
-Il nous manque encore un outil afin de pouvoir réaliser la rédaction de nos rapports et pouvoir y intégrer des graphiques, des tableaux ou encore des analyses statistiques. Des éditeurs classiques comme [Google Docs](https://www.google.com/intl/fr_be/docs/about/) ou Microsoft Word ne permettent pas d'ajouter facilement des graphiques ou des analyses. Nous vous proposons d'utiliser un environnement complet et optimisé pour réaliser vos analyses, vos graphiques et vos rapports [RStudio](https://www.rstudio.com/). Ce logiciel travaille main dans la main avec le logiciel R qui effectue l'ensemble des traitements (nous découvrirons le logiciel R lors du second module.). Il est lié à Git et GitHub. Il permet également des connexions simplifiées à des bases de données. 
-
-RStudio comprend 4 fenêtres principales que vous pouvez découvrir ci-dessous 
+Il nous manque encore un outil afin de pouvoir réaliser la rédaction de nos rapports et pouvoir y intégrer des graphiques, des tableaux ou encore des analyses statistiques. Des éditeurs classiques comme [Google Docs](https://www.google.com/intl/fr_be/docs/about/) ou Microsoft Word ne permettent pas d'ajouter facilement des graphiques ou des analyses. Nous vous proposons d'utiliser un environnement complet et optimisé pour réaliser vos analyses, vos graphiques et vos rapports : [R](http://www.r-project.org). Nous complétons cet environnement par un éditeur de documents appelé [RStudio](https://www.rstudio.com/). Ce logiciel travaille main dans la main avec R. Il est lié à git et GitHub. Il permet également des connexions simplifiées à des bases de données. RStudio propose quatre sous-fenêtres que vous pouvez découvrir ci-dessous.
 
 ##### À vous de jouer ! {-}
 
@@ -358,8 +386,6 @@ On retrouve trois dossiers principaux dans un projet en science des données. Il
 `r h5p(144, height = 270, toc = "Organisation d'un projet RStudio")`
 
 Des explications détaillées se trouvent dans l'annexe \@ref(rs) qui présente les bases de l'utilisation de RStudio et des projets.
-
-##### À vous de jouer ! {-}
 
 Il est temps d'auto-évaluer votre apprentissage via un **tutoriel learnr** dans RStudio.
 
