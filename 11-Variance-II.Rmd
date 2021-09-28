@@ -942,4 +942,4 @@ Vous venez de terminer le module 11. Ce module vous a permis d'apprendre une gra
 
 ##### Progression {-}
 
-`r launch_report("11", height = 500)`
+`r launch_report("11", height = 800)`

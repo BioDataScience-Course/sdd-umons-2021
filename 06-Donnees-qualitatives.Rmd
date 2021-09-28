@@ -761,4 +761,4 @@ Vous venez de terminer le module 6 qui clôture la première partie du cours. Ce
 
 ##### Progression {-}
 
-`r launch_report("06", height = 500)`
+`r launch_report("06", height = 800)`

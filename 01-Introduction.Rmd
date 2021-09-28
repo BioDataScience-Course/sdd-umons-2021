@@ -442,4 +442,4 @@ Bravo ! Vous arrivez au bout de votre premier module. Cette dernière section vo
 
 ##### Progression {-}
 
-`r launch_report("01", height = 500)`
+`r launch_report("01", height = 800)`

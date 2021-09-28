@@ -1036,4 +1036,4 @@ Vous venez de terminer le module 9. Ce module vous a permis d'apprendre une gran
 
 ##### Progression {-}
 
-`r launch_report("09", height = 500)`
+`r launch_report("09", height = 800)`

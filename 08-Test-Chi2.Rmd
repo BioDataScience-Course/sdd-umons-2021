@@ -670,4 +670,4 @@ Vous venez de terminer le module 8. Ce module vous a permis d'apprendre à réal
 
 ##### Progression {-}
 
-`r launch_report("08", height = 500)`
+`r launch_report("08", height = 800)`

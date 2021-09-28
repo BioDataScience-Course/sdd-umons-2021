@@ -708,4 +708,4 @@ Pour évaluer votre compréhension de ce dernier, vous aviez les exercices suiva
 
 ##### Progression {-}
 
-`r launch_report("12", height = 500)`
+`r launch_report("12", height = 800)`

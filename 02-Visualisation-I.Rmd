@@ -286,4 +286,4 @@ Ce second module vous a permis de réaliser vos premiers graphiques pour visuali
 
 ##### Progression {-}
 
-`r launch_report("02", height = 500)`
+`r launch_report("02", height = 800)`

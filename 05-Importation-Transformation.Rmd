@@ -781,5 +781,5 @@ Le module 5 vous venez de terminer vous a permis d'apprendre à importer des don
 
 ##### Progression {-}
 
-`r launch_report("05", height = 500)`
+`r launch_report("05", height = 800)`
 

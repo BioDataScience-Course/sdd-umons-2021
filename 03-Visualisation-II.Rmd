@@ -403,4 +403,4 @@ Ce module 3 vous a permis de réaliser différents graphiques uni- et bivariés 
 
 ##### Progression {-}
 
-`r launch_report("03", height = 500)`
+`r launch_report("03", height = 800)`

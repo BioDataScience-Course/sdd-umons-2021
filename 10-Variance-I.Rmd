@@ -543,7 +543,7 @@ Vous venez de terminer le module 10. Ce module vous a permis d'apprendre une gra
 
 ##### Progression {-}
 
-`r launch_report("10", height = 500)`
+`r launch_report("10", height = 800)`
 
 <!--- G.E. Gardons nous cet exercice ?  
 ## Sciences des données et littérature

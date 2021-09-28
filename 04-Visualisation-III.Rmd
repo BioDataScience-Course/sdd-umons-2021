@@ -900,4 +900,4 @@ Ce module 4 vous a permis de réaliser et de découvrir de nouveau graphiques. V
 
 ##### Progression {-}
 
-`r launch_report("04", height = 500)`
+`r launch_report("04", height = 800)`
