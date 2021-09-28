@@ -397,15 +397,30 @@ Il est temps d'auto-évaluer votre apprentissage via un **tutoriel learnr** dans
 
 Avec tous les outils présentés dans ce module, vous avez toutes les clés afin de réaliser un projet en science des données.
 
-<!--# G.E. TODO il faut ajouter une petite situation concrète -->
+On commence par lancer le Easy launcher de la SciViews Box et on sélectionne le logo du cours. Cette étape va lancer la machine virtuelle et ouvrir le cours en ligne de Science des données.
+
+![](images/sdd1_01/svbox_launcher.png)
+
+Si vous ne disposez pas la machine virtuelle, rendez vous directement sur le cours en ligne <https://wp.sciviews.org>. Lancez ensuite RStudio. Vous pouvez aussi bien utilisé Renku que la SciViews Box. 
+
+![](images/sdd1_01/rstudio_launch.png)
+
+```{block2, type='note'}
+Si ce n'est pas encore réalisé, les utilisateurs de la Sciviews Box vont devoir lier RStudio de la machine virtuelle avec GitHub à l'aide d'un *Personal Acces Token*. Cette étape ne doit être réalisé qu'une seule fois. Chaque étape se trouve dans l'annexe \@ref(github-pat).
+```
+
+RStudio permet de cloner directement un projet disponible sur GitHub en quelques étapes comme vous pouvez le voir ci-dessous.
+
+`r img("sdd1_01/clone.gif")`
+
+Des explications détaillées se trouvent dans l'annexe \@ref(github-clone) qui présente 2 méthodes afin de cloner un projet.
 
 Vous allez terminer ce premier module en réalisant votre premier projet individuel en science des données.
 
 ##### À vous de jouer ! {-}
 
-*Note\ : Acceptez cette première assignation **individuelle**en utilisant GitHub Classroom \@ref(github-classroom). Lorsque votre assignation est crée, faites un clone local de votre dépôt*
+*Note\ : Acceptez cette première assignation **individuelle** en utilisant GitHub Classroom \@ref(github-classroom). Lorsque votre assignation est crée, faites un clone local de votre dépôt. Lisez le README afin de connaitre les consignes de ce projet.*
 
-<!--# G.E. procédure à modifier en fonction de renku -->
 
 ```{r, echo=FALSE, results='asis'}
 if (exists("assignation"))

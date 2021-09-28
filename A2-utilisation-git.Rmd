@@ -477,7 +477,7 @@ Dans GitHub Desktop, vous devez sélectionner le menu `File`, puis `Add Local Re
 
 Lorsque vous souhaitez apporter votre aide sur un projet qui n'est pas le vôtre. Vous devez réaliser un `Fork` puis un `Clone`. N'oubliez pas que la base de GitHub est de faciliter la collaboration. Afin de soumettre vos modifications au projet de départ, il faut faire un `Pull requests`. Cette étape permet de proposer vos modifications au responsable du projet original sous une forme qui lui permet de visualiser et de discuter les changements proposés. Ce dernier pourra accepter ou refuser vos modifications.
 
-### Personal Access Token
+### Personal Access Token {#github-pat}
 
 L'authentification sur GitHub requiert l'utilisation d'un *Personal Access Token* (PAT). Ce système d'authentification ne doit être réalisé qu'une seule fois dans RStudio. La procédure est la suivante.
 
