@@ -811,3 +811,7 @@ Si quasiment tous les points sont compris dans l'enveloppe de confiance à 95%, 
 Vous venez de terminer le module 7. Ce module vous a permis d'apprendre les base des probabilités et les principales lois de distribution. Pour évaluer votre compréhension de cette matière vous aviez les exercices suivants à réaliser\ :
 
 `r show_ex_toc()`
+
+##### Progression {-}
+
+`r launch_report("07", height = 500)`

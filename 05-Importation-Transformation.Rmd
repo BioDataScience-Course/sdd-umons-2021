@@ -778,3 +778,8 @@ Consignez vos résultats dans une document R Markdown avec une explication de vo
 Le module 5 vous venez de terminer vous a permis d'apprendre à importer des données depuis différents formats et sources grâce à la fonction `read()` et de transformer un tableau de données. Pour évaluer votre compréhension de cette matière vous aviez les exercices suivants à réaliser\ :
 
 `r show_ex_toc()`
+
+##### Progression {-}
+
+`r launch_report("05", height = 500)`
+

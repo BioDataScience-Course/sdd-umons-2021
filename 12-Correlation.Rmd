@@ -705,3 +705,7 @@ Vous venez de terminer le module 12. Ce module vous a permis d'apprendre une gra
 Pour évaluer votre compréhension de ce dernier, vous aviez les exercices suivants à réaliser\ :
 
 `r show_ex_toc()`
+
+##### Progression {-}
+
+`r launch_report("12", height = 500)`

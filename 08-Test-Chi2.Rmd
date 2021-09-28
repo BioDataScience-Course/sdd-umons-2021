@@ -667,3 +667,7 @@ Les instructions sont détaillées ici\ :
 Vous venez de terminer le module 8. Ce module vous a permis d'apprendre à réaliser vos premiers tests d'hypothèses. Pour évaluer votre compréhension de cette matière vous aviez les exercices suivants à réaliser\ :
 
 `r show_ex_toc()`
+
+##### Progression {-}
+
+`r launch_report("08", height = 500)`

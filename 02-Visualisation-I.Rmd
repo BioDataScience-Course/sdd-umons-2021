@@ -283,3 +283,7 @@ if (exists("assignation"))
 Ce second module vous a permis de réaliser vos premiers graphiques pour visualiser des données et vous a introduit à R Markdown, un système qui allie la facilité de Markdown pour l'écriture de documents textuels et la puissance de calcul de R pour y inclure des analyses directement. Pour évaluer votre compréhension de cette matière vous aviez les exercices suivants à réaliser\ :
 
 `r show_ex_toc()`
+
+##### Progression {-}
+
+`r launch_report("02", height = 500)`

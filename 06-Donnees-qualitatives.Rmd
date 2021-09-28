@@ -758,3 +758,7 @@ if (exists("assignation2"))
 Vous venez de terminer le module 6 qui clôture la première partie du cours. Ce module vous a permis d'apprendre à recombiner, remodeler et fusionner des tableaux. Pour évaluer votre compréhension de cette matière vous aviez les exercices suivants à réaliser\ :
 
 `r show_ex_toc()`
+
+##### Progression {-}
+
+`r launch_report("06", height = 500)`

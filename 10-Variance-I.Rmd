@@ -541,6 +541,9 @@ Vous venez de terminer le module 10. Ce module vous a permis d'apprendre une gra
 
 `r show_ex_toc()`
 
+##### Progression {-}
+
+`r launch_report("10", height = 500)`
 
 <!--- G.E. Gardons nous cet exercice ?  
 ## Sciences des données et littérature

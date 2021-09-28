@@ -897,3 +897,7 @@ A l'issue de cette comparaison, vous pourrez décider du moteur graphique que vo
 Ce module 4 vous a permis de réaliser et de découvrir de nouveau graphiques. Vous savez maintenant réaliser des graphiques en barres, des graphiques en camembert et des boites de dispersion. Vous êtes aussi capable de réaliser des graphiques composés. Pour évaluer votre compréhension de cette matière vous aviez les exercices suivants à réaliser\ :
 
 `r show_ex_toc()`
+
+##### Progression {-}
+
+`r launch_report("04", height = 500)`

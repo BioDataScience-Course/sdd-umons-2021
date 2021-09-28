@@ -215,11 +215,11 @@ Le plan du cours est une forme de contrat entre l'étudiants et les encadrants. 
 
 `r h5p(133, height = 270, toc = "Charge de travail")`
 
-## Issues {-} 
+## Issues {.unnumbered #issues}
 
 Toutes les questions relatives aux exercices sont à poser dans les issues GitHub dédiées à ce cours. lors de la première lecture de ce préambule, vous ne connaissez pas encore les issues. Nous allons découvrir ces termes lors du premier module du cours. Vous rejoindrez cet espace de discussion par la suite. 
 
-Afin d'accéder à cet espace de discussion, cliquez sur `Assignation GitHub Classroom dédiée aux issues pour les étudiants inscrits au cours de Science des Données Biologiques I à l’UMONS`. Si cette instruction n'apparait pas, c'est que vous n'êtes pas reconnu comme un étudiant de ce cours.
+Afin d'accéder à cet espace de discussion, cliquez sur `Assignation GitHub Classroom dédiée aux issues pour les étudiants inscrits au cours de Science des Données Biologiques I à l’UMONS`. Si cette instruction n’apparaît pas, c'est que vous n'êtes pas reconnu comme un étudiant de ce cours.
 
 
 ```{r, echo=FALSE, results='asis'}

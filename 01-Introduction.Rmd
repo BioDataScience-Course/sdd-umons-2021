@@ -185,7 +185,7 @@ if (exists("assignation2"))
 
 Si vous souhaitez plus d'information sur Github Classroom, vous pouvez vous référer à l'Appendice \@ref(github-classroom).
 
-Vous êtes à présent des experts dans l'utilisation des issues. Il est temps de rejoindre le dépôt dédié aux issues présenté dans le préambule de ce cours \@ref(Issues).
+Vous êtes à présent des experts dans l'utilisation des issues. Il est temps de rejoindre le dépôt dédié aux issues présenté dans le préambule de ce cours (voir [Issues](#issues)).
 
 ### Gestionnaire de version
 
@@ -439,3 +439,7 @@ Si vous souhaitez plus d'information sur Github Classroom, vous pouvez vous réf
 Bravo ! Vous arrivez au bout de votre premier module. Cette dernière section vous permet de vérifier que vous avez bien réalisé tous les exercices de ce module et compris les éléments clés du module. Ce module est consacré aux outils informatiques que nous utiliserons dans la suite du cours, vous aviez à réaliser les exercices suivants\ :
 
 `r show_ex_toc()`
+
+##### Progression {-}
+
+`r launch_report("01", height = 500)`
