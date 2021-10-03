@@ -167,8 +167,6 @@ Consultez les liens [Mastering Markdown](https://guides.github.com/features/mast
 
 `r h5p(138, height = 200, toc = "Les ressources supplémentaires")`
 
-##### À vous de jouer ! {-}
-
 On va mettre en pratique les nombreuses nouvelles notions vues jusqu'à présent. On va travailler tous ensemble dans un dépôt bac à sable afin de poser des questions via des Issues sur GitHub en utilisant le markdown.
 
 *Note\ : les assignations GitHub sont marquées du logo "Octocat" (mascotte mi-chat mi-poulpe de GitHub). Il s'agit d'exercices de niveau III ou IV. L'accès a cette tâche, qui est ici un travail **en groupe**, se fait en utilisant GitHub Classroom \@ref(github-classroom).*
@@ -298,7 +296,7 @@ Dans ce cours, nous utiliserons différents logiciels qui nécessitent une insta
 Renku ne nécessite pas un ordinateur puissant pour fonctionner, mais il faut une bonne connexion Internet. Il faut aussi que le serveur distant soit disponible et offre les ressources suffisantes pour travailler. *Cette année, nous l'utiliserons pour la première fois... c'est un peu expérimental, en somme.* Par contre, nous utilisons (et développons) la **SciViews Box** depuis 2015, et pourrons donc passer à cette seconde solution en fonction des besoins. Si Renku ne fonctionne pas bien et/ou si votre ordinateur permet un travail plus rapide avec la SciViews Box, vous pourrez choisir cette seconde option plus tard. Pour le moment, nous allons donc créer notre instance Renku. Suivez le guide...
 
 ```{r, echo=FALSE}
-vembedr::embed_youtube("zbj0WeChuDg", width = 770, height = 433)
+vembedr::embed_youtube("tntEsq339wQ", width = 770, height = 433)
 ```
 
 1. Assurez-vous d'être bien reconnu•e dans le site du cours https://wp.sciviews.org. Pour cela, vous avez suivi les instructions et vous avez cliqué sur le bouton bleu pour lier votre compte GitHub ou cours. Ensuite (et dans cet ordre\ !) vous avez cliqué dans la bannière supérieure sur l"item "Moodle", et de là, vous vous êtes connecté avec votre compte GitHub étudiant, vous avez sélectionné votre cours **Science des Données I\ : visualisation**, et enfin, vous avez cliqué sur le lien vers le **cours** depuis cet espace Moodle. Ainsi, le site a reçu maintenant toute l'information nécessaire sur votre identité UMONS. Vous pouvez vérifier cela en allant lire l'encadré d'identification dans le préambule de **Science des données Biologiques I**. Normalement, ces opérations doivent être familères si bvous avez bien suivi la première séance (sinon, demandez de l'aide).
@@ -321,6 +319,12 @@ Pour sauvegarder durablement la configuration de sa machine Renku, vous pouvez e
 ```
 
 Si vous avez une machine virtuelle Renku opérationnelle, vous pouvez passer à la section suivante et vous familiariser avec RStudio. Si pas, pas de panique\ : nous installerons la SciViews Box qui offrira des services similaires à partir d'une installation locale sur votre PC. Suivez les instructions de vos enseignants dans ce cas.
+
+Contrairement à la SciViews Box, la machine dans le projet Renku est figée. si une mise à jour est nécessaire, il faut créer un nouveau projet comme ci-dessus. Pour éviter de conserver des vieux projets inutilisés, vous pouvez les éliminer, ... mais ce n'est pas évident à faire. Voyez la vidéo ci-dessous...
+
+```{r, echo=FALSE}
+vembedr::embed_youtube("VxPpmf-OahU", width = 770, height = 433)
+```
 
 ### RStudio
 

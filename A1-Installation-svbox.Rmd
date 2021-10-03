@@ -328,7 +328,7 @@ Dans ca cas, vous devez cliquer sur "Open System Preferences". Vous voyez alors 
 
 </center>
 
-Ici, vous devez d'abord déverrouiller la boite de dialogue en cliquant sur le cadenas en bas à gauche et en entrant votre mot de passe. Ensuite, vous pourrez cocher l'entrée "SciViews Box 2021" pour accorder les droits. Enfin, vous cliquez à nouveau sur le cadenas pour reverrouiller le système et vous fermez cette boite de dialogue. Finalement, il se peut que vous voyiez le message suivant\ :
+Ici, vous devez d'abord déverrouiller la boite de dialogue en cliquant sur le cadenas en bas à gauche et en entrant votre mot de passe. Ensuite, vous pourrez cocher les entrées relatives à "SciViews Box 2021" pour accorder les droits. Enfin, vous cliquez à nouveau sur le cadenas pour reverrouiller le système et vous fermez cette boite de dialogue. Finalement, il se peut que vous voyiez le message suivant\ :
 
 <center>
 
@@ -649,11 +649,11 @@ A partir de ce moment, vous voyez tous les deux la même SciViews Box, et vos de
 
 ### Accès aux fichiers
 
-Le disque physique de votre ordinateur hôte, et le disque virtuel de la SciViews Box sont deux choses différentes. Cela signifie que vous avez, en réalité deux ordinateurs et deux disques indépendants. Donc, vous n'accédez **pas** aux fichiers d'une machine à partir de l'autre^[Le presse-papier est synchronisé entre les deux machines pour le texte qui y est copié, mais à condition d'avoir installé la bonne version de VirtualBox.]. Ce n'est pas pratique, mais heureusement ce n'est pas vrai pour un dossier particulier nommé **shared**. Le schéma suivant représente l'organisation des fichiers pour la SciViews Box 2018a, mais elle reste valable pour sa version 2021.
+Le disque physique de votre ordinateur hôte, et le disque virtuel de la SciViews Box sont deux choses différentes. Cela signifie que vous avez, en réalité deux ordinateurs et deux disques indépendants. Donc, vous n'accédez **pas** aux fichiers d'une machine à partir de l'autre^[Le presse-papier est synchronisé entre les deux machines pour le texte qui y est copié, mais à condition d'avoir installé la bonne version de VirtualBox.]. Ce n'est pas pratique, mais heureusement ce n'est pas vrai pour un dossier particulier nommé **shared**.
 
 <center>
 
-![](images/annexe_a1/svbox-diagram.svg)
+![](images/annexe_a1/svbox-diagram.png)
 
 </center>
 
@@ -665,26 +665,23 @@ Une fois dans le dossier **shared**, nous vous conseillons d'épingler le sous-d
 
 ```{block2, type='win'}
 Sous Windows, cliquez bouton droit sur **projects**, et sélectionnez "épingler dans Accès rapide".
+```
 
 `r img("annexe_a1/pin-projects-win.gif")`
 
-```
-
 ```{block2, type='mac'}
 Sous MacOS, vous glissez-déposez **projects** dans la barre latérale du Finder.
+```
 
 `r img("annexe_a1/svbox_mac-pin-projects.gif")`
-
-```
 
 Dans la **SciViews Box**, ce dossier est accessible depuis deux endroits: `/media/sf_shared` et `~/shared` (`~` représente le répertoire de l'utilisateur, c'est-à-dire `/home/sv`). Ici aussi vous pouvez épingler votre dossier **projects** pour en faciliter l'accès\ :
 
 ```{block2, type='svbox'}
 Les deux moyens d'accéder au dossier **projects** dans la SciViews Box (à partir de `sf_shared` ou de `sv`, puis `shared) et comment l'épingler sur le côté.
+```
 
 `r img("annexe_a1/pin-projects-svbox.gif")`
-
-```
 
 **A retenir\ :** le dossier **shared** et ses sous-dossiers comme **projects** sont considérés un peu comme des dossiers réseau par la SciViews Box. Cela implique que certaines fonctions du système de fichiers n'y sont pas accessibles. Parmi celles-ci, la **poubelle**. Donc, vous ne pourrez qu'effacer complètement des items en cliquant bouton droit et sélectionnant "Delete" dans le menu contextuel dans le gestionnaire de fichiers. Si vous essayer de placer des fichiers ou dossiers depuis **shared** dans la poubelle de la SciViews Box, cela vous sera refusé (voir copie d'écran ci-dessous). _Par contre, cela fonctionne très bien depuis l'ordinateur hôte (Windows, MacOS, ...)._
 
