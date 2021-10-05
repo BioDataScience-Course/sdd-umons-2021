@@ -135,7 +135,7 @@ Vous devez être vigilant lors de la réalisation d'un nuage de point particuli�
 
 Dans certains cas, la forme du nuage de points peut être distendue par la présence de valeurs aberrantes. Ce n'est pas le cas ici, mais nous pouvons le simuler en distendant artificiellement soit l'axe X, soit l'axe Y, soit les deux\ :
 
-```{r, echo=FALSE, fig.cap="Piège du nuage de points. A) graphique initial montrant la variation de la hauteur [mm] en fonction de la masse [g]. B) graphique A avec la modification de l'échelle de l'axe X. C) Graphique A avec une seconde modification de l'axe X. D) Graphique A avec modification simultanée des deux axes."}
+```{r, echo=FALSE, fig.cap="Piège du nuage de points. A) Graphique initial montrant la variation de la hauteur [mm] en fonction de la masse [g]. B) Graphique A avec la modification de l'échelle de l'axe X. C) Graphique A avec une seconde modification de l'axe X. D) Graphique A avec modification simultanée des deux axes."}
 a <- chart(data = urchin, height ~  weight) + 
   geom_point() +
   theme(text = element_text(size = 10)) # Réduction des labels
@@ -211,7 +211,7 @@ Un fichier R Markdown est un fichier avec une extension `.Rmd`. Il permet de com
 
 ##### À vous de jouer ! {-}
 
-*La vidéo ci-dessous vous montre ce qu'est R Markdown, un format hybride entre Markdown et R bien pratique pour inclure vos graphiques directement dans un rapport. Elle vous montre aussi comment transformer un script R en document R Markdown (ou R Notebook, qui en est une variante). Elle contient des questions "H55P" également.*
+*La vidéo ci-dessous vous montre ce qu'est R Markdown, un format hybride entre Markdown et R bien pratique pour inclure vos graphiques directement dans un rapport. Elle vous montre aussi comment transformer un script R en document R Markdown (ou R Notebook, qui en est une variante). Elle contient des questions "H5P" également.*
 
 `r h5p(158, height = 270, toc = "Vidéo de présentation de R Markdown")`
 
