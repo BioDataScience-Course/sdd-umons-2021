@@ -179,8 +179,8 @@ Vous avez à votre disposition un ensemble de snippets que vous pouvez retrouver
 
 ```{r, echo=FALSE, results='asis'}
 if (exists("assignation"))
-  assignation("A02Ga_nuagepoints", part = "I",
-    url = "https://github.com/BioDataScience-Course/A02Ga_nuagepoints",
+  assignation("A02Ia_21_nuagepoints", part = "I",
+    url = "https://github.com/BioDataScience-Course/A02Ia_21_nuagepoints",
     course.urls = c(
       'S-BIOG-006' = "https://classroom.github.com/a/iqyTXntV",
       'S-BIOG-921' = "https://classroom.github.com/a/..."),
@@ -258,22 +258,22 @@ Vous ne devez bien évidemment pas commencer avec un script R. Vous pouvez comme
 
 ```{r, echo=FALSE, results='asis'}
 if (exists("assignation"))
-  assignation("A02Ga_nuagepoints", part = "II",
-    url = "https://github.com/BioDataScience-Course/A02Ga_nuagepoints",
+  assignation("A02Ia_21_nuagepoints", part = "II",
+    url = "https://github.com/BioDataScience-Course/A02Ia_21_nuagepoints",
     course.urls = c(
       'S-BIOG-006' = "https://classroom.github.com/a/iqyTXntV",
       'S-BIOG-921' = "https://classroom.github.com/a/..."),
     toc = "Graphiques sur `urchin_bio`, partie II : R Markdown")
 ```
 
-- Comparaison du flux de travail en biologie\ : R et Microsoft Word *versus* R et R Markdown.
+- Comparaison du flux de travail en biologie en binôme \ : R et Microsoft Word *versus* R et R Markdown.
 
 ```{r, echo=FALSE, results='asis'}
 if (exists("assignation"))
-  assignation("A02Gb_workflow", part = NULL,
-    url = "https://github.com/BioDataScience-Course/A02Gb_workflow",
+  assignation("A02Ga_21_workflow", part = NULL,
+    url = "https://github.com/BioDataScience-Course/A02Ga_21_workflow",
     course.urls = c(
-      'S-BIOG-006' = "https://classroom.github.com/a/...",
+      'S-BIOG-006' = "https://classroom.github.com/a/x7pTmarS",
       'S-BIOG-921' = "https://classroom.github.com/g/..."),
     toc = "Comparaison de workflows R-Word *versus* R-R Markdown")
 ```
