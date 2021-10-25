@@ -265,10 +265,10 @@ Ici, nous utilisons donc la fonction `geom_density()`.
 
 ```{r, echo=FALSE, results='asis'}
 if (exists("assignation"))
-  assignation("A03Gb_distribution", part = NULL,
-    url = "https://github.com/BioDataScience-Course/A03Gb_distribution",
+  assignation("A03Ia_distributions", part = NULL,
+    url = "https://github.com/BioDataScience-Course/A03Ia_distributions",
     course.urls = c(
-      'S-BIOG-006' = "https://classroom.github.com/a/...",
+      'S-BIOG-006' = "https://classroom.github.com/a/0LYLOJgj",
       'S-BIOG-921' = "https://classroom.github.com/a/..."),
     toc = "Graphiques de distribution sur `zooplankton`")
 ```
@@ -426,7 +426,7 @@ if (exists("assignation2"))
   assignation2("A03Ga_urchin", part = NULL,
     url = "https://github.com/BioDataScience-Course/A03Ga_urchin",
     course.urls = c(
-      'S-BIOG-006' = "https://classroom.github.com/g/...",
+      'S-BIOG-006' = "hhttps://classroom.github.com/a/FB5UbPvX",
       'S-BIOG-921' = "https://classroom.github.com/g/..."),
     toc = "Biométrie de l'oursin violet")
 ```
