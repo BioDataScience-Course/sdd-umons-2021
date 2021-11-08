@@ -89,7 +89,7 @@ vembedr::embed_youtube("Zd1mOPOmM0w", width = 770, height = 433)
 ```
 
 Une fois l'installation terminée, si l'assistant a été téléchargé, il peut être effacé pour regagner de la place sur le disque (le fichier `svbox2021_windows.zip` et le sous-dossier `svbox2021_windows` dans le dossier `Téléchargements`). Si vous prévoyez d'installer un autre ordinateur, ou si vous voulez conserver l'assistant d'installation, vous pouvez placer le contenu du dossier `svbox2021_windows` sur une clé USB d'au moins 8Go
-avant d'effacer tout cela de votre disque dur. Si vous avez affectué l'installation à partir de la clé USB, vous pouvez maintenant l'éjecter et la ranger.
+avant d'effacer tout cela de votre disque dur. Si vous avez effectué l'installation à partir de la clé USB, vous pouvez maintenant l'éjecter et la ranger.
 
 #### Erreurs courantes {#erreurswin}
 
@@ -320,7 +320,7 @@ Durant ces différentes étapes, vous verrez plusieurs messages de sécurité ap
 
 </center>
 
-Dans ca cas, vous devez cliquer sur "Open System Preferences". Vous voyez alors une boite de dialogue de ce genre\ :
+Dans ce cas, vous devez cliquer sur "Open System Preferences". Vous voyez alors une boite de dialogue de ce genre\ :
 
 <center>
 
@@ -347,7 +347,7 @@ Dans ce cas, cliquez sur le bouton "Later" pour permettre à l'installation de s
 ```{block, type='warning'}
 En dépit de toutes les précautions prises pour autoriser VirtualBox et le lanceur rapide SciViews Box 2021 sur votre Mac, il se peut que le lanceur et/ou VirtualBox ne fonctionnent toujours pas. Si le lanceur ne s'affiche pas et qu'une fenêtre contenant un long message incompréhensible apparaît, alors voyez avec vos enseignants. Il s'agit probablement d'un problème avec Python, le langage dans lequel le lanceur est écrit.
 
-Si vous avez un message d'erreur indiquant que le kernel de la machine virtuelle n'est pas accessible lors du démarrage de la SciViews Box, cela signifie que VirtualBox n'est toujours pas correctement installé. Vérifiez dans les préférences systèmes -> 'Sécurité et confidentialité' si un message indiquant un blocage de l'installeur de VirtualBox n'y apparaît pas. Si oui, cliquez sur le cadenas pour déverrouiller, et autorisez l'application. Relancez une installation de VirtualBox ensuite. Vous devrez peut-être aussi redémarrer votre ordinateur pour que Virtualbox fonctionne complètement.
+Si vous avez un message d'erreur indiquant que le kernel de la machine virtuelle n'est pas accessible lors du démarrage de la SciViews Box, cela signifie que VirtualBox n'est toujours pas correctement installé. Vérifiez dans les préférences systèmes -> 'Sécurité et confidentialité' si un message indiquant un blocage de l'installeur de VirtualBox n'y apparaît pas. Si oui, cliquez sur le cadenas pour déverrouiller, et autorisez l'application. Relancez une installation de VirtualBox ensuite. Vous devrez peut-être aussi redémarrer votre ordinateur pour que VirtualBox fonctionne complètement.
 ```
 
 Un peu plus tard, lorsque la machine virtuelle démarre pour la première fois, elle peut chercher un CD (virtuel lui aussi\ !) et afficher une fenêtre similaire à celle-ci\ :

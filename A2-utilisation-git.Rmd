@@ -239,7 +239,7 @@ Un document R Markdown / R Notebook se structure de la manière suivante\ :
 
 - Un préambule, encore appelé entête YAML (du nom du langage utilisé pour y encoder des informations)
 - Des zones d'édition
-    + Le language employé est le Markdown
+    + Le langage employé est le Markdown
 - Des zones de code R
     + Ces zones de codes sont appelées des **chunks**
 
@@ -289,7 +289,7 @@ Le bouton `Run` propose plusieurs actions intéressantes\ :
 
 ![](images/annexe_a2/rmd4.png)
 
-Aprés la phase d'édition du texte (et des intructions dans les chunks pour un document R Notebook), vous pouvez visualiser votre rapport final en cliquant sur le bouton `Preview` (Notebook) ou `Knit` (Markdown).
+Après la phase d'édition du texte (et des instructions dans les chunks pour un document R Notebook), vous pouvez visualiser votre rapport final en cliquant sur le bouton `Preview` (Notebook) ou `Knit` (Markdown).
 
 ![](images/annexe_a2/rmd5.png)
 
@@ -399,7 +399,7 @@ Il est intéressant de configurer le dépôt avec un fichier `.gitignore` orient
 
 - `license`
 
-Nous pouvons adjoindre à notre projet une licence. Il en existe plusieurs afin d'expliquer précisemment ce que l'on a le droit de faire ou non avec votre dépôt.
+Nous pouvons adjoindre à notre projet une licence. Il en existe plusieurs afin d'expliquer précisément ce que l'on a le droit de faire ou non avec votre dépôt.
 
 Le site <https://choosealicense.com> peut vous aider à définir votre licence.
 
@@ -440,7 +440,7 @@ Cette fonction n'est disponible que sur la version Mac et Windows de GitHub Desk
 
 ### Déposer un projet déjà créé
 
-Nous avons créé un projet dans RStudio et l'avons configuré avec le gestionnaire de version Git comme présenté dans l'annexe \@ref(create-project). Cependant, après avoir progressé dans ce projet (et réalisé plusieurs `Commit`), nous souhaitons le partager sur GitHub. Rassurez-vous, il ne faut pas tout recommencer. Il aurait cependant été plus simple de réfléchir dès le début du projet à cette éventualité, mais cela reste parfaitemenbt faisable à ce stade.
+Nous avons créé un projet dans RStudio et l'avons configuré avec le gestionnaire de version Git comme présenté dans l'annexe \@ref(create-project). Cependant, après avoir progressé dans ce projet (et réalisé plusieurs `Commit`), nous souhaitons le partager sur GitHub. Rassurez-vous, il ne faut pas tout recommencer. Il aurait cependant été plus simple de réfléchir dès le début du projet à cette éventualité, mais cela reste parfaitement faisable à ce stade.
 
 >  Une bonne pratique avant de vous lancer dans un nouveau projet et de se poser et de réfléchir aux objectifs du projets et aux moyens à mettre en œuvre pour atteindre ces objectifs. 
 
@@ -492,9 +492,9 @@ usethis::create_github_token()
 Vous êtes automatiquement redirigé vers GitHub dans votre browser Web (il faut peut-être s’y identifier). Vous êtes face à une page qui s’appelle “New personal access token”. Les champs sont déjà préremplis. 
 
 ![](images/annexe_a2/github_pat2.png)
-2. Modifiez la date d'expériation de ce dernier
+2. Modifiez la date d'expiration de ce dernier
 
-Vous pouvez conserver tout cela tel quel. Cependant, votre clé d'authentification (*token*) a un durée limitée de validité par défaut de 30 jours. Dans le champ `Expiration`, nous vous conseillons de changer cette valeur pour couvrir toute votre année acédémique.
+Vous pouvez conserver tout cela tel quel. Cependant, votre clé d'authentification (*token*) a un durée limitée de validité par défaut de 30 jours. Dans le champ `Expiration`, nous vous conseillons de changer cette valeur pour couvrir toute votre année académique.
 
 ![](images/annexe_a2/github_pat3.png)
 

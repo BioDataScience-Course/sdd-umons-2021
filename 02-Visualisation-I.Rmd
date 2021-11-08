@@ -18,13 +18,13 @@ SciViews::R
 
 ##### Prérequis {-}
 
-Le premier module de ce cours vous a permis de découvrir de nouveaux outils comme GitHub, Git, ou encore RStudio. Ces outils vont être employés tout au long de votre formation en science des données (et donc de ce cours). Il est indispensable de les maitriser.
+Le premier module de ce cours vous a permis de découvrir de nouveaux outils comme GitHub, Git, ou encore RStudio. Ces outils vont être employés tout au long de votre formation en science des données (et donc de ce cours). Il est indispensable de les maîtriser.
 
 ##### À vous de jouer ! {-}
 
 `r h5p(139, height = 270, toc = NULL)`
 
-Ce second module va s'intéresser à la réalisation de nuages de points. Il est important de maitriser les [éléments de base de la géométrie](https://mathix.org/cours_interactif/index.php?l=fr&n=3e&c=Rep%C3%A9rage) : origine, abscisse, ordonnée, coordonnées d'un point sur un plan,...
+Ce second module va s'intéresser à la réalisation de nuages de points. Il est important de maîtriser les [éléments de base de la géométrie](https://mathix.org/cours_interactif/index.php?l=fr&n=3e&c=Rep%C3%A9rage) : origine, abscisse, ordonnée, coordonnées d'un point sur un plan,...
 
 ##### À vous de jouer ! {-}
 
@@ -32,11 +32,11 @@ Le graphique ci-dessous présente la variation de la hauteur du test en fonction
 
 `r h5p(154, height = 270, toc = NULL)`
 
-Ce second module va également s'intéresser à des fonctions mathématiques. Vous devez maitriser les éléments suivants : [les puissances](https://fr.khanacademy.org/math/algebra-basics/alg-basics-expressions-with-exponents), [les logarithmes, dont le logarithme népérien et les exponentielles](https://fr.khanacademy.org/math/algebra2/exponential-and-logarithmic-functions).
+Ce second module va également s'intéresser à des fonctions mathématiques. Vous devez maîtriser les éléments suivants : [les puissances](https://fr.khanacademy.org/math/algebra-basics/alg-basics-expressions-with-exponents), [les logarithmes, dont le logarithme népérien et les exponentielles](https://fr.khanacademy.org/math/algebra2/exponential-and-logarithmic-functions).
 
 ## R, les éléments de base
 
-Dans le module précédent, vous avez pu découvrir que le logiciel `R` allait être un logiciel central dans cette formation en science des données.  Par exemple, vous avez édité votre premier document Rmarkdown qui est la combinaison du R et du markdown. Nous avons volontairement laissé ce logiciel pour le second module. 
+Dans le module précédent, vous avez pu découvrir que le logiciel `R` allait être un logiciel central dans cette formation en science des données.  Par exemple, vous avez édité votre premier document Rmarkdown qui est la combinaison du R et du Markdown. Nous avons volontairement laissé ce logiciel pour le second module. 
 
 ![](images/sdd1_02/Rlogo.png)
 
@@ -45,13 +45,13 @@ Dans le module précédent, vous avez pu découvrir que le logiciel `R` allait �
 
 ##### À vous de jouer ! {-}
 
-Vous allez maintenant découvrir les premiers rudiments de R afin de pouvoir réaliser par la suite vos premiers graphiques. Lors du premier module, vous avez réalisé un premier tutoriel qui comprenait uniquement des questions à choix multiples. Dans ces tutoriels, on peut également s'entrainer à écrire des instructions en R. Avant de vous lancer dans ces exercices, consultez l'Appendice \@ref(learnr) pour apprendre à utiliser correctement ces tutoriels. 
+Vous allez maintenant découvrir les premiers rudiments de R afin de pouvoir réaliser par la suite vos premiers graphiques. Lors du premier module, vous avez réalisé un premier tutoriel qui comprenait uniquement des questions à choix multiples. Dans ces tutoriels, on peut également s’entraîner à écrire des instructions en R. Avant de vous lancer dans ces exercices, consultez l'Appendice \@ref(learnr) pour apprendre à utiliser correctement ces tutoriels. 
 
 Lancez-vous dans votre exploration des bases de R.
 
 `r learnr("A02La_base", title = "Les bases de R", toc = "Notions de base de R")`
 
-Vous venez de découvrir les assignations, les fonctions, le chainage d'instructions... Lancez-vous à présent dans une première une analyse concrète.
+Vous venez de découvrir les assignations, les fonctions, le chaînage d'instructions... Lancez-vous à présent dans une première une analyse concrète.
 
 `r learnr("A02Lb_progression", title = "Progression R", toc = "Progression en R")`
 

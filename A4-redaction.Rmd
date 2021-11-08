@@ -69,7 +69,7 @@ Le but permet de synthétiser la question posée en fonction du contexte de l'ex
 
 ### Matériel & méthodes
 
-La section matériel & méthodes permet de décrire les aspects techniques de l'étude comme le matériel employé et les méthodes mises en oœuvre (protocoles des manipulations et des mesures effectuées) afin d'acquérir les données. Cette section est également le lieu de description des techniques statistiques utilisées pour analyser les données, des programmes informatiques employés, ...
+La section matériel & méthodes permet de décrire les aspects techniques de l'étude comme le matériel employé et les méthodes mises en œuvre (protocoles des manipulations et des mesures effectuées) afin d'acquérir les données. Cette section est également le lieu de description des techniques statistiques utilisées pour analyser les données, des programmes informatiques employés, ...
 
 ### Résultats
 

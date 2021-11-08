@@ -196,7 +196,7 @@ chart(data = zooplankton, aes(y = class)) +
 
 Pourquoi ne peut-on pas utiliser de formule dans ce cas\ ? En fait, il faudrait écrire `class ~`, ... seulement voilà, une formule ne *peut pas* avoir un membre de droite vide. Donc, on est dans une impasse et on doit utiliser la forme explicite `aes()` pour "aesthetics" en anglais qui indique quelle variable est utilisée pour quoi dans le graphique en indiquant `y=`.
 
-Avec la fonction `coord_flip()` ajoutée à votre graphique, vous pouvez effectuer une rotation des axes (l'axe X devient Y et inversément) pour obtenir un **graphique en barres horizontales**. De plus, l’œil humain perçoit plus distinctement les différences de longueurs horizontales que verticales. Donc, de ce point de vue, le graphe en barres horizontales est considéré comme meilleur que le graphe en barres verticales.
+Avec la fonction `coord_flip()` ajoutée à votre graphique, vous pouvez effectuer une rotation des axes (l'axe X devient Y et inversement) pour obtenir un **graphique en barres horizontales**. De plus, l’œil humain perçoit plus distinctement les différences de longueurs horizontales que verticales. Donc, de ce point de vue, le graphe en barres horizontales est considéré comme meilleur que le graphe en barres verticales.
 
 ```{r barres-rotation2, fig.cap="Dénombrement des classes du jeu de données zooplankton (version avec barres horizontales en utilisant `coord_flip()`)."}
 chart(data = zooplankton, ~ class) +
@@ -600,7 +600,7 @@ tooth_growth <- labelise(tooth_growth, self = FALSE,
 
 Petits commentaires sur ce code\ :
 
-- La fonction `labelise()` appliquée au tableau tout entier et avec l'argument `self= FALSE` s'applique aux **colonnes** du tableau, c'est-à-dire aux variables. Ensuite, les arguments `label=` et `units=` reçoivent une `list()` nommée pour en modifier les attributs (`nom = "valeur"`). C'est une manière pratique et efficace de changer tous les labels et unités des variables en une seule étape (il n'est pas indispensable de reprendre *toutes* lesvariables, on peut indiquer seulement celles que l'on veut modifier).
+- La fonction `labelise()` appliquée au tableau tout entier et avec l'argument `self= FALSE` s'applique aux **colonnes** du tableau, c'est-à-dire aux variables. Ensuite, les arguments `label=` et `units=` reçoivent une `list()` nommée pour en modifier les attributs (`nom = "valeur"`). C'est une manière pratique et efficace de changer tous les labels et unités des variables en une seule étape (il n'est pas indispensable de reprendre *toutes* les variables, on peut indiquer seulement celles que l'on veut modifier).
  
 - Nous avons utilisé `as.ordered()` à la place de `as.factor()`. Les objets "facteurs ordonnés" dans R (ou **ordered**) sont identiques aux facteurs à ceci près que l'ordre de niveaux a aussi un sens du plus petit au plus grand. Ainsi, des niveaux de `supp`\ : soit "VC" pour vitamine C ou "OJ" pour vitamine C dans du jus d'orange n'ont pas d'ordre précis. Nous utilisons un objet **factor**.  Par contre, les doses de vitamines C `0.5 < 1 < 2` exprimées en mg/J ont un ordre. Dans ce cas, nous préférons les objets **ordered**, qui s'utilisent en pratique comme les objets **factor** dans R (mais notez bien l'indication de l'ordre des niveaux de la variable à l'aide de `<` dans `Levels:`, c'est ce qui distingue un objet **ordered** d'un objet **factor**).
 
@@ -689,10 +689,10 @@ Il existe d'autres fonctions permettant de combiner plusieurs graphiques comme [
 
 ```{r, echo=FALSE, results='asis'}
 if (exists("assignation"))
-  assignation("A04Ga_graphe_avance", part = NULL,
-    url = "https://github.com/BioDataScience-Course/A04Ga_graphe_avance",
+  assignation("A04Ia_graphe_avance", part = NULL,
+    url = "https://github.com/BioDataScience-Course/A04Ia_graphe_avance",
     course.urls = c(
-      'S-BIOG-006' = "https://classroom.github.com/a/...",
+      'S-BIOG-006' = "https://classroom.github.com/a/ncOdTu9s",
       'S-BIOG-921' = "https://classroom.github.com/a/..."),
     toc = "Graphiques avancés et libres")
 ```
@@ -833,12 +833,15 @@ chart$xyplot(data = urchin, height ~ weight | origin,
   xlab = "Masse totale [g]", ylab = "Hauteur du test [mm]")
 ```
 
-Mise à part les instructions additionnelles encore nécessaires dans cette version de `chart()`, l'appel et le rendu sont très similaires par rapport à la version {ggplot2} du même graphique avec `chart()` :
+Mise à part les instructions additionnelles encore nécessaires dans cette version de `chart()`, l'appel et le rendu sont très similaires par rapport à la version {ggplot2} du même graphique avec `chart()`\ :
 
-```{r ggplot2-facets2, fig.cap= "Graphique à facettes, avec `chart()` version {ggplot2}."}
-chart(data = urchin, height ~ weight | origin) + 
-  geom_point()
+```{r ggplot2-facets2, fig.cap= "Graphique à facettes, avec `chart()` version {lattice}."}
+chart$xyplot(data = urchin, height ~ weight | origin,
+  scales = list(alternating = 1),
+  ylab = "Hauteur du test [mm]", xlab = "Masse totale [g]")
 ```
+
+Vous noterez que pour réaliser un graphique {lattice} à l'aide de `chart()`, vous devez rajouter `$nom_de_function_lattice` après chart. Aussi, le thème spécifique SciViews et les labels et unités automatiques ne sont pas encore supportés. Les graphiques {lattice} ne supportant pas l'opérateur `+` pour ajouter des couches comme pour {ggplot2}, vous devez spécifier l'ensemble des options comme arguments de la fonction `chart$fun()`. Cela peut devenir pénible s'il y en a beaucoup. Toutefois, {lattice} peut rendre d'énormes services pour des graphiques très compliqués, grâce à sa vitesse nettement supérieure à {ggplot2}.
 
 ### Graphiques de base
 

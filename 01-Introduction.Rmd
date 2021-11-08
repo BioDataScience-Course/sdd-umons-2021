@@ -20,7 +20,7 @@ Les liens cliquables qui vont sont proposés dans ce cours ont été sélectionn
 
 ```
 
-Tous les exercices de ce cours vont être réalisés sur un ordinateur. De ce fait, vous devez en  maitriser les éléments de base. Un [ordinateur](https://www.coursinfo.fr/decouverte/ordinateur/) peut sembler être un outil simple et familier. Il est pourtant bien plus complexe qu'il n'y parait. 
+Tous les exercices de ce cours vont être réalisés sur un ordinateur. De ce fait, vous devez en  maîtriser les éléments de base. Un [ordinateur](https://www.coursinfo.fr/decouverte/ordinateur/) peut sembler être un outil simple et familier. Il est pourtant bien plus complexe qu'il n'y parait. 
 - Les comptes sur un ordinateur
 
 Il n'est pas rare d'avoir un ordinateur qui est utilisé par plusieurs personnes. Afin que chaque utilisateur puisse avoir un espace personnel dédié, on va créer plusieurs comptes. Vous retrouvez la procédure [sous Windows](https://support.microsoft.com/fr-fr/windows/ajouter-ou-supprimer-des-comptes-sur-votre-pc-104dc19f-6430-4b49-6a2b-e4dbd1dcdf32) et [sous Mac](https://support.apple.com/fr-be/guide/mac-help/mtusr001/mac). Chaque type de compte ne se vaut pas. Le compte administrateur est le compte qui a le plus de droits sur un ordinateur. Il faut par exemple avoir l'accès un compte administrateur pour installer certains programmes.
@@ -109,7 +109,7 @@ En haut de cette page, on peut voir une première barre d'outils comprenant les 
 
 ![Dépot dplyr de l'organisation tidyversesur GitHub](images/sdd1_01/gh_dplyr2.png)
 
-Lors d'un travail en équipe, vous allez vous poser des questions et avoir l'e besoin'envie d'échanger vos idées. GitHub met à votre disposition un espace dédié à la discussion et à la collaboration. Il s'agit des `Issues`. La section `Issues` permet de mettre en avant un problème ou une idée afin d'améliorer ce projet. Une issue est un espace de discussion et de collaboration centré autour d'une question. Par exemple, le projet dplyr comprend 70 issues ouvertes et 4281 issues fermées. On peut en déduire que 70 idées ou bugs sont en cours de correction ou de réflexion et que 4281 sont considérés comme terminés. Ce projet est assez dynamique. Cliquez sur l'une de ces issues et observez la structure de cet espace de réflexion.
+Lors d'un travail en équipe, vous allez vous poser des questions et avoir envie d'échanger vos idées. GitHub met à votre disposition un espace dédié à la discussion et à la collaboration. Il s'agit des `Issues`. La section `Issues` permet de mettre en avant un problème ou une idée afin d'améliorer ce projet. Une issue est un espace de discussion et de collaboration centré autour d'une question. Par exemple, le projet dplyr comprend 70 issues ouvertes et 4281 issues fermées. On peut en déduire que 70 idées ou bugs sont en cours de correction ou de réflexion et que 4281 sont considérés comme terminés. Ce projet est assez dynamique. Cliquez sur l'une de ces issues et observez la structure de cet espace de réflexion.
 
 **Quand vous aurez un problème ou une idée, utilisez donc les issues pour discuter avec vos encadrants ou vos collaborateurs.**
 
@@ -129,11 +129,11 @@ GitHub n'est pas le seul réseau social centré sur git. D'autres réseaux équi
 
 Lorsque l'on rédige un document, on perd beaucoup de temps à décider de l'interligne, de choisir la taille et la police... On peut diviser en 2 grandes étapes la rédaction d'un document. Il y a le fond et la forme. Nous vous proposons un outil pour booster votre **productivité** (et donc de gagner du temps) avec le Markdown. Dans un premier temps, on va s'intéresser uniquement au fond. Ensuite, on va déterminer une fiche de style qui va s'attarder sur la forme de notre document. 
 
-Le markdown est relativement simple et intuitif à l'usage, même si un petit effort est nécessaire, naturellement, au début. Il permet de baliser le texte pour indiquer le sens des différentes parties (par exemple, pour indiquer les différents niveaux de titres) et de se concentrer sur l'écriture dans un premier temps en dissociant le fond de la mise en forme. 
+Le Markdown est relativement simple et intuitif à l'usage, même si un petit effort est nécessaire, naturellement, au début. Il permet de baliser le texte pour indiquer le sens des différentes parties (par exemple, pour indiquer les différents niveaux de titres) et de se concentrer sur l'écriture dans un premier temps en dissociant le fond de la mise en forme. 
 
 ##### À vous de jouer ! {-}
 
-*Utilise la flèche pour découvrir la forme de ce court paragraphe rédigé en markdwon.*
+*Utilise la flèche pour découvrir la forme de ce court paragraphe rédigé en Markdwon.*
 
 `r h5p(142, height = 200, toc = "Le fond versus la forme.")`
 
@@ -143,7 +143,7 @@ En partant du fond proposé ci-dessus, on peut également obtenir les formes sui
 
 Ce langage est utilisé dans les issues sur GitHub, sur des forums comme Reddit ou encore pour la rédaction de document avec des éditeurs professionnels de projets.
 
-Consultez les liens [Mastering Markdown](https://guides.github.com/features/mastering-markdown/) et la première section de [R Markdown Reference Guide](https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf) afin d'apprendre la syntaxe du markdown. 
+Consultez les liens [Mastering Markdown](https://guides.github.com/features/mastering-markdown/) et la première section de [R Markdown Reference Guide](https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf) afin d'apprendre la syntaxe du Markdown. 
 
 ##### À vous de jouer ! {-}
 
@@ -167,7 +167,7 @@ Consultez les liens [Mastering Markdown](https://guides.github.com/features/mast
 
 `r h5p(138, height = 200, toc = "Les ressources supplémentaires")`
 
-On va mettre en pratique les nombreuses nouvelles notions vues jusqu'à présent. On va travailler tous ensemble dans un dépôt bac à sable afin de poser des questions via des Issues sur GitHub en utilisant le markdown.
+On va mettre en pratique les nombreuses nouvelles notions vues jusqu'à présent. On va travailler tous ensemble dans un dépôt bac à sable afin de poser des questions via des Issues sur GitHub en utilisant le Markdown.
 
 *Note\ : les assignations GitHub sont marquées du logo "Octocat" (mascotte mi-chat mi-poulpe de GitHub). Il s'agit d'exercices de niveau III ou IV. L'accès a cette tâche, qui est ici un travail **en groupe**, se fait en utilisant GitHub Classroom \@ref(github-classroom).*
 
@@ -299,7 +299,7 @@ Renku ne nécessite pas un ordinateur puissant pour fonctionner, mais il faut un
 vembedr::embed_youtube("tntEsq339wQ", width = 770, height = 433)
 ```
 
-1. Assurez-vous d'être bien reconnu•e dans le site du cours https://wp.sciviews.org. Pour cela, vous avez suivi les instructions et vous avez cliqué sur le bouton bleu pour lier votre compte GitHub ou cours. Ensuite (et dans cet ordre\ !) vous avez cliqué dans la bannière supérieure sur l"item "Moodle", et de là, vous vous êtes connecté avec votre compte GitHub étudiant, vous avez sélectionné votre cours **Science des Données I\ : visualisation**, et enfin, vous avez cliqué sur le lien vers le **cours** depuis cet espace Moodle. Ainsi, le site a reçu maintenant toute l'information nécessaire sur votre identité UMONS. Vous pouvez vérifier cela en allant lire l'encadré d'identification dans le préambule de **Science des données Biologiques I**. Normalement, ces opérations doivent être familères si bvous avez bien suivi la première séance (sinon, demandez de l'aide).
+1. Assurez-vous d'être bien reconnu•e dans le site du cours https://wp.sciviews.org. Pour cela, vous avez suivi les instructions et vous avez cliqué sur le bouton bleu pour lier votre compte GitHub ou cours. Ensuite (et dans cet ordre\ !) vous avez cliqué dans la bannière supérieure sur l"item "Moodle", et de là, vous vous êtes connecté avec votre compte GitHub étudiant, vous avez sélectionné votre cours **Science des Données I\ : visualisation**, et enfin, vous avez cliqué sur le lien vers le **cours** depuis cet espace Moodle. Ainsi, le site a reçu maintenant toute l'information nécessaire sur votre identité UMONS. Vous pouvez vérifier cela en allant lire l'encadré d'identification dans le préambule de **Science des données Biologiques I**. Normalement, ces opérations doivent être familières si vous avez bien suivi la première séance (sinon, demandez de l'aide).
 
 2. Cliquez sur le bouton bleu **RStudio** dans la bannière supérieure. Le browser web ne trouve pas la machine virtuelle. C'est normal puisque vous ne l'avez pas installée. Vous êtes redirigé•e vers une page qui explique comment installer Renku ou SciViews Box.
 
@@ -359,14 +359,14 @@ Observez les deux images et tentez de repérer chaque différence entre les deux
 `r h5p(143, height = 270, toc = "Les projets dans RStudio")`
 
 
-1. Dans les onglets, on passe de Project (None) vers mon_projet. On peut donc facilement repérer si l'on est dans un projet ou non.
+1. Dans la barre d'outils supérieure, on passe de `Project (None)` vers `mon_projet`. On peut donc facilement repérer si l'on est dans un projet ou non.
 2. Le chemin d'accès spécifié dans la fenêtre `Console` change et spécifie le chemin d'accès du projet. Le dossier du projet devient le dossier racine.
-3. La fenêtre Environment change et comprend un onglet en plus nommé Git. Lorsque l'on est dans un projet, il est possible de réaliser des commits, des pull ou encore des push depuis RStudio
-4. La fenêtre comprenant l'onglet `Files` change de dossier pour afficher le dossier lié à `mon_projet`. Deux fichiers sont ajoutés par défaut au projet.
+3. La fenêtre `Environment` change et un nouvel onglet nommé `Git` vient s'ajouter. Lorsque l'on est dans un projet, il est possible de réaliser des commits, des pull ou encore des push depuis RStudio via cet onglet.
+4. La fenêtre contenant l'onglet `Files` change de dossier pour afficher le dossier lié à `mon_projet`. Deux fichiers sont ajoutés par défaut au projet.
   - `.gitignore` : Ce fichier permet de spécifier les fichiers que l'on souhaite exclure de gestionnaire de version. Ce fichier est très utile pour exclure de gros fichiers ou bien les versions compilées des R Markdown par exemple.
-  -  `mon_projet.Rproj` : À la base d'un projet RStudio, on retrouve un  mon_projet.Rproj. Ce fichier est placé automatiquement par RStudio. Il s'agit du nom du projet avec l'extension `.Rproj`. Ce fichier contient les paramètres de configuration de votre projet. Il ne faut pas le modifier. Il est utile pour s'assurer que l'on se trouve dans un projet.
+  -  `mon_projet.Rproj` : À la base d'un projet RStudio, on retrouve un `mon_projet.Rproj`. Ce fichier est placé automatiquement par RStudio. Il s'agit du nom du projet avec l'extension `.Rproj`. Ce fichier contient les paramètres de configuration de votre projet. Il ne faut pas le modifier. Il est utile pour s'assurer que l'on se trouve dans un projet.
 
-Nous avons donc la structuration suivante
+Nous avons donc la structure suivante\ :
 
 ```
 /mon_projet          # Le répertoire de base du projet
