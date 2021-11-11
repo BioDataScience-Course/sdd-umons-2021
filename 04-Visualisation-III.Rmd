@@ -895,6 +895,33 @@ A l'issue de cette comparaison, vous pourrez décider du moteur graphique que vo
 
 - [ggplot2 comparé aux graphiques R de base](https://flowingdata.com/2016/03/22/comparing-ggplot2-and-r-base-graphics/). Un point de vue différent d'un utilisateur habitué aux graphiques R de base (en anglais).
 
+## Challenge
+
+Tout au long des quatre premiers modules, vous avez appris à utiliser R et RStudio, à écrire des documents en R Markdown, à utiliser git et GitHub, ... Vous avez également appris à réaliser des graphiques clairs qui présentent visuellement l'information contenue dans des jeux de données. Il est maintenant temps de faire un bilan de tout cela sous une forme ludique\ : un **challenge de rapidité pour la réalisation de graphiques.** Vous vous confronterez entre vous de manière individuelle pour déterminer celui ou celle qui arrivera à reproduire fidèlement le plus de graphiques possibles.
+
+##### À vous de jouer ! {-}
+
+```{r, echo=FALSE, results='asis'}
+if (exists("challenge"))
+  challenge("A04Ca_charts", part = NULL,
+    url = "https://github.com/BioDataScience-Course/A04Ca_charts",
+    course.urls = c(
+      'S-BIOG-006' = "https://classroom.github.com/a/8jo-RgSe"),
+    toc = "Challenge pour reproduire un maximum de graphiques")
+```
+
+::: {.nocourse}
+Vous n'êtes pas correctement enregistré pour ce cours. Vous ne pouvez pas participer à ce challenge. Si vous êtes étudiant•e de l'UMONS, vérifiez que vous vous êtes bien enregistré via Moodle...
+:::
+
+::: {.S-BIOG-006 .S-BIOG-027 .S-BIOG-921}
+Vous pouvez soumettre vos résultats pendant une période de temps précise via l'application ci-dessous\ :
+
+`r launch_shiny("https://sdd.umons.ac.be/A04Ca_charts/", height = 800, delay = 20, toc = NULL, alt1 = "*Cliquez pour visualiser le classement.*", alt2 = "*Cliquez pour visualiser le classement.*")`
+
+<!-- <iframe width="780" height="800" frameborder="0" scrolling="auto" class="shiny-app" id=\"A04Ca_charts\" src="https://sdd.umons.ac.be/A04CA_charts"></iframe> -->
+:::
+
 ## Récapitulatif des exercices
 
 Ce module 4 vous a permis de réaliser et de découvrir de nouveau graphiques. Vous savez maintenant réaliser des graphiques en barres, des graphiques en camembert et des boites de dispersion. Vous êtes aussi capable de réaliser des graphiques composés. Pour évaluer votre compréhension de cette matière vous aviez les exercices suivants à réaliser\ :
