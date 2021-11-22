@@ -35,13 +35,13 @@ small_dataset <- tribble(
 small_dataset
 ```
 
-Dans la plupart des cas, vous utiliserez ou collecterez des données stockées dans des formats divers\ : feuilles Excel, fichiers CSV ("comma-separated-values", un format standard d'encodage d'un tableau de données sous forme textuelle), formats spécifiques à divers logiciels statistiques comme SAS, Stata ou Systat, ... Ces données peuvent être sur un disque local ou disponibles depuis un lien URL sur le net^[R permet également d'interroger des bases de données spécialisées, mais nous n'aborderons ce sujet spécifique qu'au cours de Science des Données Biologique 5 en Master 2.]. De nombreuses fonctions existent dans R pour importer toutes ces données. La fonction `read()` du package `data.io` est l'une des plus simples et conviviales d'entre-elles. Vous l'avez déjà utilisée, mais reprenons un exemple pour en discuter les détails.
+Dans la plupart des cas, vous utiliserez ou collecterez des données stockées dans des formats divers\ : feuilles Excel, fichiers CSV ("comma-separated-values", un format standard d'encodage d'un tableau de données sous forme textuelle), formats spécifiques à divers logiciels statistiques comme SAS, Stata ou Systat, ... Ces données peuvent être sur un disque local ou disponibles depuis un lien URL sur le net^[R permet également d'interroger des bases de données spécialisées, mais nous n'aborderons ce sujet spécifique qu'au cours de Science des Données Biologique 5 en Master 2.]. De nombreuses fonctions existent dans R pour importer toutes ces données. La fonction `read()` du package {data.io} est l'une des plus simples et conviviales d'entre-elles. Vous l'avez déjà utilisée, mais reprenons un exemple pour en discuter les détails.
 
 ```{r}
 (biometry <- read("biometry", package = "BioDataScience", lang = "fr"))
 ```
 
-Le jeu de données `biometry` est disponible dans le package R **BioDataScience**. Dans ce cas, il ne faut pas spécifier de chemin d'accès au fichier : R sait où le trouver tout seul. Il est également spécifié ici que la langue souhaitée est le français avec l'argument `lang = "fr"`. Le résultat de l'importation est assigné à la variable `biometry`(mais elle pourrait tout aussi bien porter un autre nom). Pour finir, le tout est entouré, de manière optionnelle, de parenthèses afin de forcer l'impression du résultat.
+Le jeu de données `biometry` est disponible dans le package R {BioDataScience}. Dans ce cas, il ne faut pas spécifier de chemin d'accès au fichier : R sait où le trouver tout seul. Il est également spécifié ici que la langue souhaitée est le français avec l'argument `lang = "fr"`. Le résultat de l'importation est assigné à la variable `biometry`(mais elle pourrait tout aussi bien porter un autre nom). Pour finir, le tout est entouré, de manière optionnelle, de parenthèses afin de forcer l'impression du résultat.
 
 ```{block, type = 'note'}
 **Visualisez toujours votre tableau de données juste après l'importation.** Vérifiez que les différentes colonnes ont été importées au bon format. *En particulier*,
@@ -50,7 +50,7 @@ Le jeu de données `biometry` est disponible dans le package R **BioDataScience*
 
 - Les variables qualitatives ou semi-quantitatives sont importées comme chaines de caractères (`<chr>`) et doivent éventuellement être converties en variables de type **facteur** à l'aide de `as.factor()` ou **facteur ordonné** avec `as.ordered()`, voir plus loin.
 
-L'impression du tableau de données est une façon de voir cela, mais il y en a bien d'autres : essayez `View(biometry)`, `str(biometry)`, ou cliquez sur la petite icône bleue avec une flèche devant `biometry` dans l'onglet **Environnement**.
+L'impression du tableau de données est une façon de voir cela, mais il y en a bien d'autres : essayez `View(biometry)`, `str(biometry)`, ou cliquez sur la petite icône bleue avec une flèche devant `biometry` dans l'onglet **Environment**.
 ```
 
 Avant d'importer vos données dans R, vous devez vous poser les deux questions suivantes\ :
@@ -76,7 +76,7 @@ Lorsque l'extension du fichier reflète le format des données, il vous suffit j
 ```{block, type = 'warning'}
 N'oubliez pas que le chemin d'accès à votre fichier peut s'écrire de manière absolue ou bien de manière relative. **Vous devez autant que possible employer des chemins relatifs** pour que votre projet soit **portable**. Si vous avez du mal à déterminer le chemin relatif par rapport à vos données, le snippet `filerelchoose` vous sera très utile :
 
-1. Assurez-vous que le chemin actif dans la fenêtre **Console** est le même que le répertoire contenant le fichier édité. Pour cela, utilisez l'entrée de menu RStudio `Session -> Set Working Directory -> To Source File Location`.
+1. Assurez-vous que le chemin actif dans l'onglet **Console** est le même que le répertoire contenant le fichier édité. Pour cela, utilisez l'entrée de menu RStudio `Session -> Set Working Directory -> To Source File Location`.
 
 2. Utilisez le snippet `filerelchoose` que vous activez dans une zone de code R (dans un script R, ou à l'intérieur d'un chunk dans un document R Markdown/R Notebook). Entrez `file`, attendez que le menu contextuel de complétion apparaisse, sélectionnez `filerelchoose` dans la liste et tapez `Entrée`. Une boite de dialogue de sélection de fichier apparaît. Sélectionnez le fichier qui vous intéresse et ... `file` est **remplacé par le chemin relatif vers votre fichier** dans l'éditeur.
 ```
@@ -167,9 +167,9 @@ Le jeu de données `urchin_bio` n'est pas véritablement chargé dans l'environn
 head(urchin_bio)
 ```
 
-Regardez à nouveau dans l'onglet **Environnement**. Ce coup-ci `urchin_bio` apparaît bien dans la section **Data** et l'icône en forme de petit tableau à la droite qui permet de le visualiser est enfin accessible.
+Regardez à nouveau dans l'onglet **Environment**. Ce coup-ci `urchin_bio` apparaît bien dans la section **Data** et l'icône en forme de petit tableau à la droite qui permet de le visualiser est enfin accessible.
 
-La fonction `read()` permet de choisir librement le nom que nous souhaitons donner à notre jeu de données. Si nous voulons l'appeler `urchin` au lieu de `urchin_bio`, pas de problèmes. De plus, il est directement chargé et accessible dans l'onglet **Environnement** (en effet, si on utilise une instruction qui charge un jeu de données, c'est *très vraissemblablement* parce que l'on souhaite ensuite le manipuler depuis R, non\ ?) 
+La fonction `read()` permet de choisir librement le nom que nous souhaitons donner à notre jeu de données. Si nous voulons l'appeler `urchin` au lieu de `urchin_bio`, pas de problèmes. De plus, il est directement chargé et accessible dans l'onglet **Environment** (en effet, si on utilise une instruction qui charge un jeu de données, c'est *très vraisemblablement* parce que l'on souhaite ensuite le manipuler depuis R, non\ ?) 
 
 ```{r}
 urchin <- read("urchin_bio", package = "data.io")
@@ -746,10 +746,10 @@ Le pipe permet d'éviter de répéter le nom des objets (version avec variables 
 
 ```{r, echo=FALSE, results='asis'}
 if (exists("assignation"))
-  assignation("A05Ga_transformation", part = NULL,
-    url = "https://github.com/BioDataScience-Course/A05Ga_transformation",
+  assignation("A05Ia_transformation", part = NULL,
+    url = "https://github.com/BioDataScience-Course/A05Ia_transformation",
     course.urls = c(
-      'S-BIOG-006' = "https://classroom.github.com/a/...",
+      'S-BIOG-006' = "https://classroom.github.com/a/h9kvaQ4G",
       'S-BIOG-921' = "https://classroom.github.com/a/..."),
     toc = "Importation et transformation des données")
 ```
@@ -758,7 +758,7 @@ if (exists("assignation"))
 - Afin d'appliquer vos nouvelles connaissances, un challenge vous est proposé afin d'améliorer vos compétences en remaniement de données. 
 
 ```{block2, type='bdd'}
-Réalisez dans le projet sur le zooplankton les exercies suivants\ :
+Réalisez dans le projet sur le zooplankton les exercices suivants\ :
   
   <https://github.com/BioDataScience-Course/sdd_lesson/blob/2019-2020/sdd1_05/exercises/sdd1_05_zooplankton.md>
   
