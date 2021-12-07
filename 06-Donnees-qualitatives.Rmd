@@ -186,7 +186,7 @@ timolol <- tibble(
   patient    = c("sain",    "malade",  "sain",    "malade"),
   freq       = c(44,        116,       19,        128)
 )
-# Creation du tableau de contingence 
+# Création du tableau de contingence 
 timolol_table <- xtabs(data = timolol, freq ~ patient + traitement)
 timolol_table
 ```
@@ -324,7 +324,7 @@ La **variabilité** tant au niveau de la population que de l'échantillon provie
 
 2. Les **erreurs de mesure**.
 
-Ces deux facteurs se cumulent pour contribuer à disperser les valeurs d'un individu à l'autre. Nous n'avons que peu de prise sur la variabilité individuelle, mais nous pouvons parfois réduire les erreurs de mesure si cela s'avère souhaitable en utilisant un appareil de mesure plus précis, par exemple. Quoi qu'il en soit, plus la variabilité est importante, plus la taille de l'échantillon devra également être grande pour concerver une bonne "représentativité" de la population.
+Ces deux facteurs se cumulent pour contribuer à disperser les valeurs d'un individu à l'autre. Nous n'avons que peu de prise sur la variabilité individuelle, mais nous pouvons parfois réduire les erreurs de mesure si cela s'avère souhaitable en utilisant un appareil de mesure plus précis, par exemple. Quoi qu'il en soit, plus la variabilité est importante, plus la taille de l'échantillon devra également être grande pour conserver une bonne "représentativité" de la population.
 
 Du point de vue de la notation mathématique, nous utiliserons une lettre latine majuscule en italique pour représenter une variable, par exemple, *X*. La taille de l'échantillon est souvent notée *n*. Les observations individuelles de la variable *x* pour les *n* individus de l'échantillon seront alors notés avec une lettre minuscule en italique assortie d'un indice compris entre 1 et *n*, donc, *x~i~* de manière générale avec l'indice *i* variant de 1 à *n*. Ainsi, *x*~5~ représente la cinquième observation pour la variable *X* dans notre échantillon, et *x~n~* est la dernière observation.
 
@@ -353,17 +353,17 @@ set.seed(67567)
 ```
 
 ```{r}
-# Echantillon de 5 souris témoins
+# Échantillon de 5 souris témoins
 sample(1:213, size = 5)
-# Echantillon de cinq souris pour le traitement
+# Échantillon de cinq souris pour le traitement
 sample(1:213, size = 5)
 ```
 
-Ici, la sélection aléatoire (en réalité, on parle de "pseudo-aléatoire" pour ces nombres générés par un algorithme, mais qui ont des propriétés très similaires au hasard pur) nous indique que nous devrons aller chercher les souris n°15, 12, 102, 136 er 42 dans notre élevage pour notre groupe témoin, et les souris n°187, 108, 211, 68 et 49 pour le groupe traitement.
+Ici, la sélection aléatoire (en réalité, on parle de "pseudo-aléatoire" pour ces nombres générés par un algorithme, mais qui ont des propriétés très similaires au hasard pur) nous indique que nous devrons aller chercher les souris n°15, 12, 102, 136 et 42 dans notre élevage pour notre groupe témoin, et les souris n°187, 108, 211, 68 et 49 pour le groupe traitement.
 
 Dans le cas où un échantillonnage doit se faire **avec replacement** (l'équivalent de replacer une boule dans l'urne à chaque tirage au sort), nous pouvons indiquer l'argument `replace = TRUE` dans `sample()`. Donc, quelque chose comme `sample(0:9, size = 50, replace = TRUE)` pour échantillon les chiffres 0 à 9 au hasard cinquante fois avec remise (à chaque tirage chaque chiffre a même chance d'être tiré).
 
-L'utilisation de `sample()` est pratique, mais cela rend le code **non reproductible**. En effet, à chaque fois, la fonction génère une série différente au hasard (c'est son rôle\ !) Toutefois, comme la série est pseudo-aléatoire, il est possible de regénérer la même série une seconde fois si on part du même point dans l'algorithme qui la calcule. Cela peut être réalisé à l'aide de `set.seed()`. Vous *devez* indiquer comme argument à cette dernière fonction un nombre aléatoire. Ce nombre représentera une position dans la séquence générée par l'algorithme de sorte que la série suivante obtenue à l'aide de `sample()` sera toujours la même. Voici comment cela fonctionne\ :
+L'utilisation de `sample()` est pratique, mais cela rend le code **non reproductible**. En effet, à chaque fois, la fonction génère une série différente au hasard (c'est son rôle\ !) Toutefois, comme la série est pseudo-aléatoire, il est possible de régénérer la même série une seconde fois si on part du même point dans l'algorithme qui la calcule. Cela peut être réalisé à l'aide de `set.seed()`. Vous *devez* indiquer comme argument à cette dernière fonction un nombre aléatoire. Ce nombre représentera une position dans la séquence générée par l'algorithme de sorte que la série suivante obtenue à l'aide de `sample()` sera toujours la même. Voici comment cela fonctionne\ :
 
 ```{r}
 set.seed(2563) # Utiliser un nombre différent à chaque appel de set.seed() !
@@ -374,9 +374,9 @@ sample(1:10, size = 6)
 
 L'échantillonnage aléatoire n'est pas la seule stratégie correcte. L'**échantillonnage stratifié** consiste à diviser la population en sous-populations identifiables facilement (par exemple, séparer la population en fonction du sexe, ou de l'âge, voire des deux simultanément). Ensuite, un échantillonnage aléatoire est réalisé à l'intérieur de chaque sous-population pour un nombre déterminé d'individus, souvent le même. Cette approche plus complexe est utile si les sous-population sont **très mal balancées** (une sous-population possède bien plus d'individus qu'une autre).
 
-Par exemple, vous voulez comparer des prélèvements sanguins faits sur une population d'européens hospitalisés dans le but de déterminer les critères qui permettent de diagnostiquer une infection nosocomiale^[Une infection nosocomiale est une infection contractée dans un hopital.] rare. Les individus sont suivis en hopital par définition et nous admettrons que l'on sait *a priori* s'ils sont atteints de la maladie ou non grâce à d'autres tests plus lourds et coûteux. La maladie est rare heureusement. Sa prévalence n'est que de 1 cas sur 10.000.
+Par exemple, vous voulez comparer des prélèvements sanguins faits sur une population d'européens hospitalisés dans le but de déterminer les critères qui permettent de diagnostiquer une infection nosocomiale^[Une infection nosocomiale est une infection contractée dans un hôpital.] rare. Les individus sont suivis en hôpital par définition et nous admettrons que l'on sait *a priori* s'ils sont atteints de la maladie ou non grâce à d'autres tests plus lourds et coûteux. La maladie est rare heureusement. Sa prévalence n'est que de 1 cas sur 10.000.
 
-Dans ce cas, si vous effectuez un échantillonnage aléatoire de 100 patients ou même de 1.000 patients hospitalisés, vous avez toutes les chances de ne pas include même un seul patient atteint de l'infection\ ! Ici l'échantillonnage stratifié est utile. Il consiste à séparer les patients en deux sous-populations\ : ceux qui sont atteints et les autres. Ensuite, vous décidez, par exemple, d'analyser 50 prélèvements sanguins dans chacune des deux sous-populations. Vous échantillonnez alors 50 patients aléatoirement comme nous l'avons fait plus haut pour nos souris, mais à l'intérieur de chaque sous-population. Au final, votre échantillon contiendra alors 50 patients infectés et 50 autres qui ne le sont pas. Cet échantillon est également représentatif (sauf, bien sûr, de la prévalence de l'infection).
+Dans ce cas, si vous effectuez un échantillonnage aléatoire de 100 patients ou même de 1.000 patients hospitalisés, vous avez toutes les chances de ne pas inclure même un seul patient atteint de l'infection\ ! Ici l'échantillonnage stratifié est utile. Il consiste à séparer les patients en deux sous-populations\ : ceux qui sont atteints et les autres. Ensuite, vous décidez, par exemple, d'analyser 50 prélèvements sanguins dans chacune des deux sous-populations. Vous échantillonnez alors 50 patients aléatoirement comme nous l'avons fait plus haut pour nos souris, mais à l'intérieur de chaque sous-population. Au final, votre échantillon contiendra alors 50 patients infectés et 50 autres qui ne le sont pas. Cet échantillon est également représentatif (sauf, bien sûr, de la prévalence de l'infection).
 
 ## Acquisition de données
 
@@ -737,21 +737,21 @@ Il existe, en fait, plusieurs versions pour la fusion de tableaux, représentée
 
 `r learnr("A06Lb_multi_tableau", title = "Traitements multi-tableaux", toc = "Traitements multi-tableaux")`
 
-**Note\ : l'assignation GitHub suivante est à réaliser par groupes de trois étudiants, librement formés. Elle requiert d'avoir assimilé l'ensemble de la matière des six premiers modules du cours.**
+**Note\ : l'assignation GitHub ci-dessous est à réaliser par groupes de quatre étudiants. Elle requiert d'avoir assimilé l'ensemble de la matière des six premiers modules du cours.**
 
 ```{r, echo=FALSE, results='asis'}
 if (exists("assignation2"))
   assignation2("A06Ga_belgium_demo", part = NULL,
     url = "https://github.com/BioDataScience-Course/A06Ga_belgium_demo",
     course.urls = c(
-      'S-BIOG-006' = "https://classroom.github.com/g/...",
+      'S-BIOG-006' = "https://classroom.github.com/a/tohMzuaK",
       'S-BIOG-921' = "https://classroom.github.com/g/..."),
-    toc = "Analyse de la démographie en Belgique")
+    toc = "Démographie en Belgique")
 ```
 
 ##### Pour en savoir plus {-}
 
-- Un [aide-mémoire général](https://www.business-science.io/r-cheatsheet.html) en science des données avec lien vers les sites webs importants et les autres aide-mémoires.
+- Un [aide-mémoire général](https://www.business-science.io/r-cheatsheet.html) en science des données avec lien vers les sites Web importants et les autres aide-mémoires.
 
 ## Récapitulatif des exercices
 
