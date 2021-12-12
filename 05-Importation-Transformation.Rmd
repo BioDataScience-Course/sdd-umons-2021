@@ -666,6 +666,14 @@ L'écart type est... `NA` ??? Pour comprendre ce qui s'est passé, il faut lire 
 
 Conclusion\ : ne nommez **jamais** vos variables créées avec `summarise()` exactement comme les variables de votre tableau en entrée.
 
+##### Pour en savoir plus {-}
+
+- Le chapitre consacré à la [transformation des données de **R for Data Science**](https://r4ds.had.co.nz/transform.html) présente le remaniement d'un tableau de données différemment et propose des exemples et exercices complémentaires très utiles.
+
+- La meilleure façon de se familiariser avec les "verbes" du **tidyverse** est de réaliser des transformations de données par soi-même. En cas de blocage, le site https://stackoverflow.com permet de chercher des solutions. Pour une recherche ciblée sur le langage R, précédez vos mots clés par "[R]" (R entre crochets). Par exemple, pour explorer diverses utilisations de la fonction `mutate()`, vous entrerez le texte de recherche suivant: "[R] mutate".
+
+- N'oubliez pas les [aide-mémoires](https://www.rstudio.com/resources/cheatsheets/) de {dplyr} et de {tidyr} qui forment aussi une source d'inspiration utile pour vous guider vers les fonction (les "verbes") adéquats. Ensuite, allez voir l'aide en ligne de la fonction avec `?ma_fonction`.
+
 ## Chaînage des instructions
 
 Le chaînage (ou "pipe" en anglais) permet de combiner une suite d'instructions R. Il permet une représentation facilement lisible et compréhensible d'un traitement décomposé en plusieurs étapes simples de remaniement des données.

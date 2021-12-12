@@ -751,7 +751,9 @@ if (exists("assignation2"))
 
 ##### Pour en savoir plus {-}
 
-- Un [aide-mémoire général](https://www.business-science.io/r-cheatsheet.html) en science des données avec lien vers les sites Web importants et les autres aide-mémoires.
+- Un [aide-mémoire général](https://www.business-science.io/r-cheatsheet.html) en science des données avec lien vers les sites Web importants et les autres aide-mémoires. À partir de là, vous pouvez retrouver les packages, puis les fonctions qui réalisent telle ou telle transformation des données. Allez ensuite voir la page d'aide de la fonction avec `?ma_fonction`. Vous pouvez aussi rechercher sur https://stackoverflow.com, en précédent le nom de la fonction par "[R]" (R entre crochets) pour restreindre la recherche uniquement dans les pages relatives au langage R.
+
+- Le chapitre relatif aux [données cas par variables (tidy data) de **R for Data Science**](https://r4ds.had.co.nz/tidy-data.html) contient divers exemples et exercices supplémentaires de transformation des données à partir de un ou plusieurs tableaux.
 
 ## Récapitulatif des exercices
 
