@@ -437,9 +437,9 @@ Dans la prochaine version de la SciViews Box, il sera également possible de gé
 
 **Note\ :Il est indispensable de pouvoir synthétiser un travail complexe. Dans votre carrière de chercheur, vous serez souvent confronté à devoir réaliser des présentations. Réalisez une présentation de maximum 5 diapositives dans le format de votre souhait.**
 
-```{r assign_A08Ga_human_health_IV, echo=FALSE, results='asis'}
+```{r assign_A12Ga_human_health_IV, echo=FALSE, results='asis'}
 if (exists("assignment2"))
-  assignment2("A08Ga_human_health", part = "IV",
+  assignment2("A12Ga_human_health", part = "IV",
     url = "https://github.com/BioDataScience-Course/A08Ga_human_health",
     course.ids = c(
       'S-BIOG-006' = !"A08Ga_{YY}M_human_health", 

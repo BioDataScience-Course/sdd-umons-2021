@@ -914,13 +914,13 @@ if (exists("challenge"))
   challenge("A04Ca_charts", part = NULL,
     url = "https://github.com/BioDataScience-Course/A04Ca_charts",
     course.ids = c(
-      'S-BIOG-015' = !"A04Ca_{YY}M_charts"),
+      'S-BIOG-006' = !"A04Ca_{YY}M_charts"),
     course.urls = c(
-      'S-BIOG-015' = "https://classroom.github.com/a/8jo-RgSe"),
+      'S-BIOG-006' = "https://classroom.github.com/a/8jo-RgSe"),
     course.starts = c(
-      'S-BIOG-015' = !"{W[9]+5} 08:00:00"),
+      'S-BIOG-006' = !"{W[9]+5} 08:00:00"),
     course.ends = c(
-      'S-BIOG-015' = !"{W[9]+5} 11:00:00"),
+      'S-BIOG-006' = !"{W[9]+5} 11:00:00"),
     toc = "Challenge graphiques")
 ```
 

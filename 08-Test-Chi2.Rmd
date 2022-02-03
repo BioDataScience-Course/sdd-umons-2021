@@ -584,12 +584,12 @@ if (exists("assignment2"))
 
 **Note\ : Le projet suivant est la continuité d'un exercice débuté au premier quadrimestre.**
 
-```{r assign_A03Ga_urchin, echo=FALSE, results='asis'}
+```{r assign_A08Ga_urchin, echo=FALSE, results='asis'}
 if (exists("assignment2"))
-  assignment2("A03Ga_urchin", part = "II",
+  assignment2("A08Ga_urchin", part = "II",
     url = "https://github.com/BioDataScience-Course/A03Ga_urchin",
     course.ids = c(
-      'S-BIOG-006' = !"A03Ga_{YY}M_urchin", # TODO: how to account it in Q2???
+      'S-BIOG-006' = !"A03Ga_{YY}M_urchin",
       'S-BIOG-921' = !"A03Ga_{YY}C_urchin"),
     course.urls = c(
       'S-BIOG-006' = "https://classroom.github.com/g/...", 

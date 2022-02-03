@@ -1013,9 +1013,9 @@ vembedr::embed_youtube("uIx2xvdwIIo", width = 770, height = 433)
 
 Appliquez vos nouvelles connaissances dans le projet GitHub Classroom de groupe que vous avez débuté au module précédent.
 
-```{r assign_A08Ga_human_health_II, echo=FALSE, results='asis'}
+```{r assign_A09Ga_human_health_II, echo=FALSE, results='asis'}
 if (exists("assignment2"))
-  assignment2("A08Ga_human_health", part = "II",
+  assignment2("A09Ga_human_health", part = "II",
     url = "https://github.com/BioDataScience-Course/A08Ga_human_health",
     course.ids = c(
       'S-BIOG-006' = !"A08Ga_{YY}M_human_health", 
@@ -1033,9 +1033,9 @@ if (exists("assignment2"))
 
 **Note\ : Le projet suivant est la continuité d'un exercice débuté au premier quadrimestre et approfondis au module précédent.**
 
-```{r assign_A03Ga_urchin_III, echo=FALSE, results='asis'}
+```{r assign_A09Ga_urchin_III, echo=FALSE, results='asis'}
 if (exists("assignment2"))
-  assignment2("A03Ga_urchin", part = "III",
+  assignment2("A09Ga_urchin", part = "III",
     url = "https://github.com/BioDataScience-Course/A03Ga_urchin",
     course.ids = c(
       'S-BIOG-006' = !"A03Ga_{YY}M_urchin", # TODO: how to account it in Q2???

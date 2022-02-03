@@ -513,9 +513,9 @@ Au final que conclure\ ? Lorsque l'ANOVA peut être utilisée, elle est à préf
 
 Appliquez vos nouvelles connaissances dans le projet de groupe que vous avez débuté aux deux modules précédents.
 
-```{r assign_A08Ga_human_health_III, echo=FALSE, results='asis'}
+```{r assign_A10Ga_human_health_III, echo=FALSE, results='asis'}
 if (exists("assignment2"))
-  assignment2("A08Ga_human_health", part = "III",
+  assignment2("A10Ga_human_health", part = "III",
     url = "https://github.com/BioDataScience-Course/A08Ga_human_health",
     course.ids = c(
       'S-BIOG-006' = !"A08Ga_{YY}M_human_health", 
@@ -533,9 +533,9 @@ if (exists("assignment2"))
 
 **Note\ : Le projet suivant est la continuité d'un exercice débuté au premier quadrimestre et approfondis aux deux modules précédents.**
 
-```{r assign_A03Ga_urchin_IV, echo=FALSE, results='asis'}
+```{r assign_A10Ga_urchin_IV, echo=FALSE, results='asis'}
 if (exists("assignment2"))
-  assignment2("A03Ga_urchin", part = "IV",
+  assignment2("A10Ga_urchin", part = "IV",
     url = "https://github.com/BioDataScience-Course/A03Ga_urchin",
     course.ids = c(
       'S-BIOG-006' = !"A03Ga_{YY}M_urchin", # TODO: how to account it in Q2???

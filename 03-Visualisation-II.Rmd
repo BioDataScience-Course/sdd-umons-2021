@@ -429,9 +429,9 @@ Lorsque vous avez terminé de travailler sur un projet. Il est conseillé de fai
 
 **Note\ : le projet GitHub Classroom suivant est un exercice à réaliser en *binôme*. Ce projet est également transmodule, ce qui signifie que vous reviendrez dessus à plusieurs reprises au fur et à mesure de votre progression dans la matière afin de compléter votre analyse de ces données, toujours en binômes. Vous formez les binômes librement comme bon vous semble.**
 
-```{r assign_A03Ga_urchin, echo=FALSE, results='asis'}
+```{r assign_A03Ga_urchin_I, echo=FALSE, results='asis'}
 if (exists("assignment2"))
-  assignment2("A03Ga_urchin", part = NULL,
+  assignment2("A03Ga_urchin", part = "I",
     url = "https://github.com/BioDataScience-Course/A03Ga_urchin",
     course.ids = c(
       'S-BIOG-006' = !"A03Ga_{YY}M_urchin", 
@@ -444,7 +444,7 @@ if (exists("assignment2"))
     course.ends = c(
       'S-BIOG-006' = !"{W[15]+5} 23:59:59"),
     term = "Q1", level = 4, n = 2,
-    toc = "Biométrie de l'oursin violet")
+    toc = "Biométrie de l'oursin violet, part I")
 ```
 
 ## Récapitulatif des exercices
