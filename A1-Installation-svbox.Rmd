@@ -611,7 +611,7 @@ Pour rappel, il s'agit d'un mot de passe simple et peu sécurisé par défaut\ :
 Dans le cadre de votre utilisation de la SciViews Box pour ce cours, que ce soit sur les machines de la salle de T.P., ou sur votre ordinateur personnel, ne **changez pas le mot de passe\ !** Votre machine virtuelle est _déjà_ protégée par votre système hôte puisque seul un accès local est autorisé.
 ```
 
-La zone en haut à droite permet de configurer votre compte git. Normalement, si vous avez bien suivi les étapes de configuration de la SciViews Box pour le cours, ces données ont été déjà enregistrées pour vous. Vous devriez y lire votre **login GitHub** et votre **mail UMONS** sous la forme **"<prénom>.<nom>@student.umons.ac.be"**, à l'exclusion de toute autre forme si vous êtes étudiant UMONS. Si ce n'est pas le cas, contacter rapidement vos enseignants pour corriger le problème\ !
+La zone en haut à droite permet de configurer votre compte git. Normalement, si vous avez bien suivi les étapes de configuration de la SciViews Box pour le cours, ces données ont été déjà enregistrées pour vous. Vous devriez y lire votre **login GitHub** et votre **mail UMONS** sous la forme **"prénom.nom\@student.umons.ac.be"**, à l'exclusion de toute autre forme si vous êtes étudiant UMONS. Si ce n'est pas le cas, contacter rapidement vos enseignants pour corriger le problème\ !
 
 Pour les autres utilisateurs, *et uniquement pour les autres*, vous pouvez entrer ou modifier votre identité git (et GitHub, Gitlab ou Bitbucket) ici. Dans "Username", indiquer le login GitHub/Gitlab/Bitbucket que vous souhaitez utiliser et dans "Email", indiquer l'email primaire associé à ce compte.
 

@@ -167,23 +167,30 @@ Consultez les liens [Mastering Markdown](https://guides.github.com/features/mast
 
 `r h5p(138, height = 200, toc = "Les ressources supplémentaires")`
 
-On va mettre en pratique les nombreuses nouvelles notions vues jusqu'à présent. On va travailler tous ensemble dans un dépôt bac à sable afin de poser des questions via des Issues sur GitHub en utilisant le Markdown.
+Nous allons mettre en pratique les nombreuses nouvelles notions vues jusqu'à présent. Nous travaillerons tous ensemble dans un dépôt bac à sable afin de poser des questions via des Issues sur GitHub en utilisant les formatages de texte Markdown.
 
-*Note\ : les assignations GitHub sont marquées du logo "Octocat" (mascotte mi-chat mi-poulpe de GitHub). Il s'agit d'exercices de niveau III ou IV. L'accès a cette tâche, qui est ici un travail **en groupe**, se fait en utilisant GitHub Classroom \@ref(github-classroom).*
+*Note\ : les "projets GitHub Classroom" sont marqués du logo "Octocat" (mascotte mi-chat mi-poulpe de GitHub). Il s'agit généralement d'exercices de niveau 3 ou 4. L'accès a cette tâche, qui est ici un travail **de groupe**.*
 
-```{r, echo=FALSE, results='asis'}
-if (exists("assignation2"))
-  assignation2("A01Ga_biology_challenge", part = NULL,
+```{r assign_A01Ga_biology_challenge, echo=FALSE, results='asis'}
+if (exists("assignment2"))
+  assignment2("A01Ga_biology_challenge", part = NULL,
     url = "https://github.com/BioDataScience-Course/A01Ga_biology_challenge",
+    course.ids = c(
+      'S-BIOG-006' = !"A01Ga_{YY}M_biology_challenge", 
+      'S-BIOG-921' = !"A01Ga_{YY}C_biology_challenge"),
     course.urls = c(
-      'S-BIOG-006' = "https://classroom.github.com/g/PgUQBl4h",
+      'S-BIOG-006' = "https://classroom.github.com/g/PgUQBl4h", 
       'S-BIOG-921' = "https://classroom.github.com/a/..."),
-    toc = "Es-tu un as de la biologie ?")
+    course.starts = c(
+      'S-BIOG-006' = !"{W[2]+2} 10:00:00"),
+    course.ends = c(
+      'S-BIOG-006' = !"{W[15]+5} 23:59:59"),
+    term = "Q1", level = 3, n = 100,
+    toc = "Es-tu un as de la biologie ?",
+    clone = FALSE)
 ```
 
-Si vous souhaitez plus d'information sur Github Classroom, vous pouvez vous référer à l'Appendice \@ref(github-classroom).
-
-Vous êtes à présent des experts dans l'utilisation des issues. Il est temps de rejoindre le dépôt dédié aux issues présenté dans le préambule de ce cours (voir [Issues](#issues)).
+Si vous souhaitez plus d'information sur GitHub Classroom, vous pouvez vous référer à l'Appendice \@ref(github-classroom). Après avoir réalisé cet exercice, vous serez des experts dans l'utilisation des "issues" GitHub. À ce stade, vous pourrez rejoindre le dépôt dédié aux issues de ce cours présenté dans le préambule (voir [Issues](#issues)). C'est là que vous poserez vos "vraies" questions relatives à votre apprentissage de la science des données.
 
 ### Gestionnaire de version
 
@@ -423,16 +430,23 @@ Vous allez terminer ce premier module en réalisant votre premier projet individ
 
 ##### À vous de jouer ! {-}
 
-*Note\ : Acceptez cette première assignation **individuelle** en utilisant GitHub Classroom \@ref(github-classroom). Lorsque votre assignation est crée, faites un clone local de votre dépôt. Lisez le README afin de connaitre les consignes de ce projet.*
+*Note\ : créez votre premier projet GitHub Classroom **individuel** \@ref(github-classroom). Lorsque votre projet est créé, faites un clone local de votre dépôt GitHub qui contient ce projet. Lisez le fichier 'README.md' afin de prendre connaissance des consignes pour ce projet.*
 
-
-```{r, echo=FALSE, results='asis'}
-if (exists("assignation"))
-  assignation("A01Ia_21M_covid19", part = NULL,
+```{r assign_A01Ia_21M_covid19, echo=FALSE, results='asis'}
+if (exists("assignment"))
+  assignment("A01Ia_21M_covid19", part = NULL,
     url = "https://github.com/BioDataScience-Course/A01Ia_21M_covid19",
+    course.ids = c(
+      'S-BIOG-006' = !"A01Ia_{YY}M_covid19", 
+      'S-BIOG-921' = !"A01Ia_{YY}C_covid19"),
     course.urls = c(
-      'S-BIOG-006' = "https://classroom.github.com/a/uyNDOTzd",
+      'S-BIOG-006' = "https://classroom.github.com/a/uyNDOTzd", 
       'S-BIOG-921' = "https://classroom.github.com/a/..."),
+    course.starts = c(
+      'S-BIOG-006' = !"{W[2]+5} 08:00:00"),
+    course.ends = c(
+      'S-BIOG-006' = !"{W[15]+5} 23:59:59"),
+    term = "Q1", level = 3,
     toc = "Premier projet en science des données")
 ```
 

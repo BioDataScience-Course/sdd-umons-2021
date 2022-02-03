@@ -356,13 +356,21 @@ Même remarque concernant les ex aequos et valeur *P* très similaire ici à cel
 `r learnr("A12La_correlation", title = "Association de deux variables", toc = "Association de deux variables")`
 
 
-```{r, echo=FALSE, results='asis'}
-if (exists("assignation"))
-  assignation("A12Ia_correlation", part = "I",
+```{r assign_A12Ia_correlation_I, echo=FALSE, results='asis'}
+if (exists("assignment"))
+  assignment("A12Ia_correlation", part = "I",
     url = "https://github.com/BioDataScience-Course/A12Ia_correlation",
+    course.ids = c(
+      'S-BIOG-006' = !"A12Ia_{YY}M_correlation", 
+      'S-BIOG-921' = !"A12Ia_{YY}C_correlation"),
     course.urls = c(
-      'S-BIOG-006' = "https://classroom.github.com/a/...",
+      'S-BIOG-006' = "https://classroom.github.com/a/...", 
       'S-BIOG-921' = "https://classroom.github.com/a/..."),
+    course.starts = c(
+      'S-BIOG-006' = !"{W[35]+1} 13:00:00"),
+    course.ends = c(
+      'S-BIOG-006' = !"{W[37]+1} 23:59:59"),
+    term = "Q2", level = 3,
     toc = "Association entre des variables")
 ```
 
@@ -427,16 +435,24 @@ Dans la prochaine version de la SciViews Box, il sera également possible de gé
 
 ##### À vous de jouer ! {-}
 
-**Note\ :Il est indispensable de savoir synthétiser un travail complexe. Dans votre carrière de chercheur, vous serez souvent confronté à devoir réaliser des présentations. Réalisez une présentation de maximum 5 diapositives dans le format de votre souhait.**
+**Note\ :Il est indispensable de pouvoir synthétiser un travail complexe. Dans votre carrière de chercheur, vous serez souvent confronté à devoir réaliser des présentations. Réalisez une présentation de maximum 5 diapositives dans le format de votre souhait.**
 
-```{r, echo=FALSE, results='asis'}
-if (exists("assignation2"))
-  assignation2("A08Ga_human_health", part = "IV",
+```{r assign_A08Ga_human_health_IV, echo=FALSE, results='asis'}
+if (exists("assignment2"))
+  assignment2("A08Ga_human_health", part = "IV",
     url = "https://github.com/BioDataScience-Course/A08Ga_human_health",
+    course.ids = c(
+      'S-BIOG-006' = !"A08Ga_{YY}M_human_health", 
+      'S-BIOG-921' = !"A08Ga_{YY}C_human_health"),
     course.urls = c(
-      'S-BIOG-006' = "https://classroom.github.com/g/...",
+      'S-BIOG-006' = "https://classroom.github.com/g/...", 
       'S-BIOG-921' = "https://classroom.github.com/g/..."),
-    toc = "La biométrie humaine")
+    course.starts = c(
+      'S-BIOG-006' = !"{W[35]+1} 13:00:00"),
+    course.ends = c(
+      'S-BIOG-006' = !"{W[37]+1} 23:59:59"),
+    term = "Q2", level = 4, n = 2,
+    toc = "Biométrie humaine, part IV")
 ```
 
 
@@ -679,19 +695,27 @@ Par le plus grand des hasards, le numéro 8 est sorti 6 fois en 7 tirages succes
 
 **_La prochaine fois que vous remplirez votre grille de lotto, jouerez-vous le numéro 8 ? Pourquoi ?_**
 
-**_Vous est-il arrivé de jouer la suite 1, 2, 3, 4, 5, 6, 7, 8 au lotto (ou rempliriez-vous une grille avec ces nombres si vous deviez y jouer) ? Pourquoi ?_**
+**_Vous est-il arrivé de jouer la suite 1, 2, 3, 4, 5, 6, 7, 8 au lotto (ou rempliriez-vous une grille avec ces nombres si vous deviez y jouer)\ ? Pourquoi\ ?_**
 
 -----
 
 ##### À vous de jouer ! {-}
 
-```{r, echo=FALSE, results='asis'}
-if (exists("assignation"))
-  assignation("A12Ia_correlation", part = "II",
+```{r assign_A12Ia_correlation_II, echo=FALSE, results='asis'}
+if (exists("assignment"))
+  assignment("A12Ia_correlation", part = "II",
     url = "https://github.com/BioDataScience-Course/A12Ia_correlation",
+    course.ids = c(
+      'S-BIOG-006' = !"A12Ia_{YY}M_correlation", 
+      'S-BIOG-921' = !"A12Ia_{YY}C_correlation"),
     course.urls = c(
-      'S-BIOG-006' = "https://classroom.github.com/a/...",
+      'S-BIOG-006' = "https://classroom.github.com/a/...", 
       'S-BIOG-921' = "https://classroom.github.com/a/..."),
+    course.starts = c(
+      'S-BIOG-006' = !"{W[35]+1} 13:00:00"),
+    course.ends = c(
+      'S-BIOG-006' = !"{W[37]+1} 23:59:59"),
+    term = "Q2", level = 3,
     toc = "Critique statistique")
 ```
 

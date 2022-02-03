@@ -1,7 +1,7 @@
 Type: Book
 Package: placeholder
 Title: SDD I UMONS version 2021
-Version: 2021.0.0
+Version: 2021.1.0
 Depends: 
     learnitdown
 Imports: 
@@ -9,7 +9,6 @@ Imports:
     broom,
     broom.mixed,
     car,
-    DiagrammeR,
     DT,
     faraway,
     fortunes,

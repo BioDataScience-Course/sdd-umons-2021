@@ -800,14 +800,22 @@ La valeur *P* est supérieure à $\alpha$. Nous ne rejettons pas $H_0$. Nous ne 
 
 `r h5p(91, height = 400, toc = "Variantes du test t de Student")`
 
-```{r, echo=FALSE, results='asis'}
-if (exists("assignation"))
-  assignation("A09Ia_cardiovascular", part = NULL,
+```{r assign_A09Ia_cardiovascular, echo=FALSE, results='asis'}
+if (exists("assignment"))
+  assignment("A09Ia_cardiovascular", part = NULL,
     url = "https://github.com/BioDataScience-Course/A09Ia_cardiovascular",
+    course.ids = c(
+      'S-BIOG-006' = !"A09Ia_{YY}M_cardiovascular", 
+      'S-BIOG-921' = !"A09Ia_{YY}C_cardiovascular"),
     course.urls = c(
-      'S-BIOG-006' = "https://classroom.github.com/a/...",
+      'S-BIOG-006' = "https://classroom.github.com/a/...", 
       'S-BIOG-921' = "https://classroom.github.com/a/..."),
-    toc = "Les maladies cardiovasculaires")
+    course.starts = c(
+      'S-BIOG-006' = !"{W[27]+1} 15:00:00"),
+    course.ends = c(
+      'S-BIOG-006' = !"{W[29]+1} 23:59:59"),
+    term = "Q2", level = 3,
+    toc = "Maladies cardiovasculaires")
 ```
 
 ## Test de Wilcoxon
@@ -1003,29 +1011,44 @@ vembedr::embed_youtube("uIx2xvdwIIo", width = 770, height = 433)
 
 ##### À vous de jouer ! {-}
 
-Appliquez vos nouvelles connaissances dans l'assignation de groupe que vous avez débutée lors du module précédent.
+Appliquez vos nouvelles connaissances dans le projet GitHub Classroom de groupe que vous avez débuté au module précédent.
 
-
-```{r, echo=FALSE, results='asis'}
-if (exists("assignation2"))
-  assignation2("A08Ga_human_health", part = "II",
+```{r assign_A08Ga_human_health_II, echo=FALSE, results='asis'}
+if (exists("assignment2"))
+  assignment2("A08Ga_human_health", part = "II",
     url = "https://github.com/BioDataScience-Course/A08Ga_human_health",
+    course.ids = c(
+      'S-BIOG-006' = !"A08Ga_{YY}M_human_health", 
+      'S-BIOG-921' = !"A08Ga_{YY}C_human_health"),
     course.urls = c(
-      'S-BIOG-006' = "https://classroom.github.com/g/...",
+      'S-BIOG-006' = "https://classroom.github.com/g/...", 
       'S-BIOG-921' = "https://classroom.github.com/g/..."),
-    toc = "La biométrie humaine")
+    course.starts = c(
+      'S-BIOG-006' = !"{W[27]+1} 10:00:00"),
+    course.ends = c(
+      'S-BIOG-006' = !"{W[29]+1} 23:59:59"),
+    term = "Q2", level = 4, n = 2,
+    toc = "Biométrie humaine, part II")
 ```
 
-**Note\ : Ce projet est la continuité d'un projet débuté lors que premier quadrimestre. l'assignation GitHub suivante est un exercice à réaliser en *binôme*. Ce projet est également transmodule, ce qui signifie que vous reviendrez dessus à plusieurs reprises au fur et à mesure de votre progression dans la matière afin de compléter votre analyse de ces données, toujours en binômes. Vous formez les binômes librement comme bon vous semble.**
+**Note\ : Le projet suivant est la continuité d'un exercice débuté au premier quadrimestre et approfondis au module précédent.**
 
-```{r, echo=FALSE, results='asis'}
-if (exists("assignation2"))
-  assignation2("A03Ga_urchin", part = "II",
+```{r assign_A03Ga_urchin_III, echo=FALSE, results='asis'}
+if (exists("assignment2"))
+  assignment2("A03Ga_urchin", part = "III",
     url = "https://github.com/BioDataScience-Course/A03Ga_urchin",
+    course.ids = c(
+      'S-BIOG-006' = !"A03Ga_{YY}M_urchin", # TODO: how to account it in Q2???
+      'S-BIOG-921' = !"A03Ga_{YY}C_urchin"),
     course.urls = c(
-      'S-BIOG-006' = "https://classroom.github.com/g/...",
+      'S-BIOG-006' = "https://classroom.github.com/g/...", 
       'S-BIOG-921' = "https://classroom.github.com/g/..."),
-    toc = "Biométrie de l'oursin violet")
+    course.starts = c(
+      'S-BIOG-006' = !"{W[27]+1} 10:00:00"),
+    course.ends = c(
+      'S-BIOG-006' = !"{W[29]+1} 23:59:59"),
+    term = "Q2", level = 4, n = 2,
+    toc = "Biométrie de l'oursin violet, part III")
 ```
 
 ## Récapitulatif des exercices

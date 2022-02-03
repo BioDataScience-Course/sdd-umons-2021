@@ -281,14 +281,22 @@ Nous constatons que la valeur du $\chi^2_{obs}$ dépend de l'effectif. Sa valeur
 `r learnr("A08La_chi2", title = "Loi de distribution du Chi2", toc = "Loi de distribution du Chi2")`
 
 
-```{r, echo=FALSE, results='asis'}
-if (exists("assignation"))
-  assignation("A08Ia_pea", part = NULL,
+```{r assign_A08Ia_pea, echo=FALSE, results='asis'}
+if (exists("assignment"))
+  assignment("A08Ia_pea", part = NULL,
     url = "https://github.com/BioDataScience-Course/A08Ia_pea",
+    course.ids = c(
+      'S-BIOG-006' = !"A08Ia_{YY}M_pea", 
+      'S-BIOG-921' = !"A08Ia_{YY}C_pea"),
     course.urls = c(
-      'S-BIOG-006' = "https://classroom.github.com/a/...",
+      'S-BIOG-006' = "https://classroom.github.com/a/...", 
       'S-BIOG-921' = "https://classroom.github.com/a/..."),
-    toc = "La génétique mendéliénne")
+    course.starts = c(
+      'S-BIOG-006' = !"{W[23]+2} 13:00:00"),
+    course.ends = c(
+      'S-BIOG-006' = !"{W[25]+2} 23:59:59"),
+    term = "Q2", level = 3,
+    toc = "Génétique mendélienne")
 ```
 
 
@@ -556,29 +564,42 @@ Les **métriques** sont des variables issues de calculs plus complexes et qui vi
 
 `r h5p(85, height = 400, toc = "Les variables calculées")`
 
-**Note\ : l'assignation GitHub suivante est à réaliser par groupes de quatre étudiants, librement formés.**
-
-```{r, echo=FALSE, results='asis'}
-if (exists("assignation2"))
-  assignation2("A08Ga_human_health", part = "I",
+```{r assign_A08Ga_human_health_I, echo=FALSE, results='asis'}
+if (exists("assignment2"))
+  assignment2("A08Ga_human_health", part = "I",
     url = "https://github.com/BioDataScience-Course/A08Ga_human_health",
+    course.ids = c(
+      'S-BIOG-006' = !"A08Ga_{YY}M_human_health", 
+      'S-BIOG-921' = !"A08Ga_{YY}C_human_health"),
     course.urls = c(
-      'S-BIOG-006' = "https://classroom.github.com/g/...",
+      'S-BIOG-006' = "https://classroom.github.com/g/...", 
       'S-BIOG-921' = "https://classroom.github.com/g/..."),
-    toc = "La biométrie humaine")
+    course.starts = c(
+      'S-BIOG-006' = !"{W[25]+2} 10:00:00"),
+    course.ends = c(
+      'S-BIOG-006' = !"{W[27]+2} 23:59:59"),
+    term = "Q2", level = 4, n = 2,
+    toc = "Biométrie humaine, part I")
 ```
 
+**Note\ : Le projet suivant est la continuité d'un exercice débuté au premier quadrimestre.**
 
-**Note\ : Ce projet est la continuité d'un projet débuté lors que premier quadrimestre. l'assignation GitHub suivante est un exercice à réaliser en *binôme*. Ce projet est également transmodule, ce qui signifie que vous reviendrez dessus à plusieurs reprises au fur et à mesure de votre progression dans la matière afin de compléter votre analyse de ces données, toujours en binômes. Vous formez les binômes librement comme bon vous semble.**
-
-```{r, echo=FALSE, results='asis'}
-if (exists("assignation2"))
-  assignation2("A03Ga_urchin", part = "II",
+```{r assign_A03Ga_urchin, echo=FALSE, results='asis'}
+if (exists("assignment2"))
+  assignment2("A03Ga_urchin", part = "II",
     url = "https://github.com/BioDataScience-Course/A03Ga_urchin",
+    course.ids = c(
+      'S-BIOG-006' = !"A03Ga_{YY}M_urchin", # TODO: how to account it in Q2???
+      'S-BIOG-921' = !"A03Ga_{YY}C_urchin"),
     course.urls = c(
-      'S-BIOG-006' = "https://classroom.github.com/g/...",
+      'S-BIOG-006' = "https://classroom.github.com/g/...", 
       'S-BIOG-921' = "https://classroom.github.com/g/..."),
-    toc = "Biométrie de l'oursin violet")
+    course.starts = c(
+      'S-BIOG-006' = !"{W[25]+2} 10:00:00"),
+    course.ends = c(
+      'S-BIOG-006' = !"{W[27]+2} 23:59:59"),
+    term = "Q2", level = 4, n = 2,
+    toc = "Biométrie de l'oursin violet, part II")
 ```
 
 <!--- G.E. cette section est redondante. Je la place en commentaire. Il serait intéressant de décider si on la garde ou pas. PhG: pour ma part, on peut l'éliminer... les étudiants ont déjà assez de travail comme cela avec le reste du module.

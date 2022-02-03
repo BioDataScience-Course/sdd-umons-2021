@@ -175,16 +175,24 @@ Vous avez à votre disposition un ensemble de snippets que vous pouvez retrouver
 
 ##### À vous de jouer ! {-}
 
-*Note\ : pour rappel, le travail ci-dessous est une **assignation GitHub**. Créez le dépôt GitHub relatif à cette assignation, ensuite clonez-le dans `shared/projects` dans votre machine virtuelle et vous aurez un nouveau projet  RStudio \@ref(rs-projet) dans lequel vous pourrez travailler.*
+*Note\ : pour rappel, le travail ci-dessous est un **projet GitHub Classroom**. Créez le dépôt GitHub en cliquant sur le lien. Ensuite clonez-le dans `shared/projects` dans votre machine virtuelle et vous aurez un nouveau projet RStudio \@ref(rs-projet) dans lequel vous pourrez travailler. Les instructions sont indiquées dans le fichier `README.md` à la racine de ce projet.*
 
-```{r, echo=FALSE, results='asis'}
-if (exists("assignation"))
-  assignation("A02Ia_21_nuagepoints", part = "I",
+```{r assign_A02Ia_21_nuagepoints_I, echo=FALSE, results='asis'}
+if (exists("assignment"))
+  assignment("A02Ia_21_nuagepoints", part = "I",
     url = "https://github.com/BioDataScience-Course/A02Ia_21_nuagepoints",
+    course.ids = c(
+      'S-BIOG-006' = !"A02Ia_{YY}M_nuagepoints", 
+      'S-BIOG-921' = !"A02Ia_{YY}C_nuagepoints"),
     course.urls = c(
-      'S-BIOG-006' = "https://classroom.github.com/a/iqyTXntV",
+      'S-BIOG-006' = "https://classroom.github.com/a/iqyTXntV", 
       'S-BIOG-921' = "https://classroom.github.com/a/..."),
-    toc = "Graphiques sur `urchin_bio`, partie I : script R")
+    course.starts = c(
+      'S-BIOG-006' = !"{W[4]+1} 13:00:00"),
+    course.ends = c(
+      'S-BIOG-006' = !"{W[15]+5} 23:59:59"),
+    term = "Q1", level = 3,
+    toc = "Graphiques sur `urchin_bio`, partie I")
 ```
 
 
@@ -254,27 +262,43 @@ Vous ne devez bien évidemment pas commencer avec un script R. Vous pouvez comme
 
 ##### À vous de jouer ! {-}
 
-- Vous allez maintenant manipuler un **Rmarkdown** pour construire de manière interactive une analyse en même temps que le rapport associé.
+- Vous allez maintenant manipuler un document **R Markdown** pour construire de manière interactive une analyse en même temps que le rapport associé.
 
-```{r, echo=FALSE, results='asis'}
-if (exists("assignation"))
-  assignation("A02Ia_21_nuagepoints", part = "II",
+```{r assign_A02Ia_21_nuagepoints_II, echo=FALSE, results='asis'}
+if (exists("assignment"))
+  assignment("A02Ia_21_nuagepoints", part = "II",
     url = "https://github.com/BioDataScience-Course/A02Ia_21_nuagepoints",
+    course.ids = c(
+      'S-BIOG-006' = !"A02Ia_{YY}M_nuagepoints", 
+      'S-BIOG-921' = !"A02Ia_{YY}C_nuagepoints"),
     course.urls = c(
-      'S-BIOG-006' = "https://classroom.github.com/a/iqyTXntV",
+      'S-BIOG-006' = "https://classroom.github.com/a/iqyTXntV", 
       'S-BIOG-921' = "https://classroom.github.com/a/..."),
-    toc = "Graphiques sur `urchin_bio`, partie II : R Markdown")
+    course.starts = c(
+      'S-BIOG-006' = !"{W[4]+4} 10:00:00"),
+    course.ends = c(
+      'S-BIOG-006' = !"{W[15]+5} 23:59:59"),
+    term = "Q1", level = 3,
+    toc = "Graphiques sur `urchin_bio`, partie II")
 ```
 
 - Comparaison du flux de travail en biologie en binôme \ : R et Microsoft Word *versus* R et R Markdown.
 
-```{r, echo=FALSE, results='asis'}
-if (exists("assignation"))
-  assignation("A02Ga_21_workflow", part = NULL,
+```{r assign_A02Ga_21_workflow, echo=FALSE, results='asis'}
+if (exists("assignment2"))
+  assignment2("A02Ga_21_workflow", part = NULL,
     url = "https://github.com/BioDataScience-Course/A02Ga_21_workflow",
+    course.ids = c(
+      'S-BIOG-006' = !"A02Ga_{YY}M_workflow", 
+      'S-BIOG-921' = !"A02Ga_{YY}C_workflow"),
     course.urls = c(
-      'S-BIOG-006' = "https://classroom.github.com/a/x7pTmarS",
-      'S-BIOG-921' = "https://classroom.github.com/g/..."),
+      'S-BIOG-006' = "https://classroom.github.com/a/x7pTmarS", 
+      'S-BIOG-921' = "https://classroom.github.com/a/..."),
+    course.starts = c(
+      'S-BIOG-006' = !"{W[4]+4} 10:00:00"),
+    course.ends = c(
+      'S-BIOG-006' = !"{W[15]+5} 23:59:59"),
+    term = "Q1", level = 4, n = 2,
     toc = "Comparaison de workflows R-Word *versus* R-R Markdown")
 ```
 

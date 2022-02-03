@@ -261,15 +261,23 @@ Ici, nous utilisons donc la fonction `geom_density()`.
 
 ##### À vous de jouer ! {-}
 
-**Note\ : cette assignation individuelle couvre l'ensemble de la matière de ce module. N'hésitez pas à la réaliser en parallèle de votre lecture.**
+**Note\ : ce projet GitHub Classroom individuel couvre l'ensemble de la matière de ce module. N'hésitez pas à la réaliser en parallèle de votre lecture.**
 
-```{r, echo=FALSE, results='asis'}
-if (exists("assignation"))
-  assignation("A03Ia_distributions", part = NULL,
+```{r assign_A03Ia_distributions, echo=FALSE, results='asis'}
+if (exists("assignment"))
+  assignment("A03Ia_distributions", part = NULL,
     url = "https://github.com/BioDataScience-Course/A03Ia_distributions",
+    course.ids = c(
+      'S-BIOG-006' = !"A03Ia_{YY}M_distributions", 
+      'S-BIOG-921' = !"A03Ia_{YY}C_distributions"),
     course.urls = c(
-      'S-BIOG-006' = "https://classroom.github.com/a/0LYLOJgj",
+      'S-BIOG-006' = "https://classroom.github.com/a/0LYLOJgj", 
       'S-BIOG-921' = "https://classroom.github.com/a/..."),
+    course.starts = c(
+      'S-BIOG-006' = !"{W[7]+1} 13:00:00"),
+    course.ends = c(
+      'S-BIOG-006' = !"{W[15]+5} 23:59:59"),
+    term = "Q1", level = 3,
     toc = "Graphiques de distribution sur `zooplankton`")
 ```
 
@@ -355,7 +363,7 @@ En pratique, vous ne représenterez pas systématiquement tous ces types de grap
 
 ## Travail collaboratif
 
-Jusqu'à présent vous avez réalisé plusieurs assignations individuelles. Cependant, GitHub est prévu pour collaborer. En tant que scientifiques, vous êtes amenés à collaborer abondamment à l'avenir. 
+Si GitHub permet de travailler seul sur ses dépôts, il est prévu pour collaborer. En tant que scientifique, vous êtes amené à collaborer abondamment à l'avenir. 
 
 ### Ajout d'un collaborateur
 
@@ -419,15 +427,23 @@ Lorsque vous avez terminé de travailler sur un projet. Il est conseillé de fai
 
 ##### À vous de jouer ! {-}
 
-**Note\ : l'assignation GitHub suivante est un exercice à réaliser en *binôme*. Ce projet est également transmodule, ce qui signifie que vous reviendrez dessus à plusieurs reprises au fur et à mesure de votre progression dans la matière afin de compléter votre analyse de ces données, toujours en binômes. Vous formez les binômes librement comme bon vous semble.**
+**Note\ : le projet GitHub Classroom suivant est un exercice à réaliser en *binôme*. Ce projet est également transmodule, ce qui signifie que vous reviendrez dessus à plusieurs reprises au fur et à mesure de votre progression dans la matière afin de compléter votre analyse de ces données, toujours en binômes. Vous formez les binômes librement comme bon vous semble.**
 
-```{r, echo=FALSE, results='asis'}
-if (exists("assignation2"))
-  assignation2("A03Ga_urchin", part = NULL,
+```{r assign_A03Ga_urchin, echo=FALSE, results='asis'}
+if (exists("assignment2"))
+  assignment2("A03Ga_urchin", part = NULL,
     url = "https://github.com/BioDataScience-Course/A03Ga_urchin",
+    course.ids = c(
+      'S-BIOG-006' = !"A03Ga_{YY}M_urchin", 
+      'S-BIOG-921' = !"A03Ga_{YY}C_urchin"),
     course.urls = c(
-      'S-BIOG-006' = "hhttps://classroom.github.com/a/FB5UbPvX",
-      'S-BIOG-921' = "https://classroom.github.com/g/..."),
+      'S-BIOG-006' = "hhttps://classroom.github.com/a/FB5UbPvX", 
+      'S-BIOG-921' = "https://classroom.github.com/a/..."),
+    course.starts = c(
+      'S-BIOG-006' = !"{W[7]+1} 13:00:00"),
+    course.ends = c(
+      'S-BIOG-006' = !"{W[15]+5} 23:59:59"),
+    term = "Q1", level = 4, n = 2,
     toc = "Biométrie de l'oursin violet")
 ```
 

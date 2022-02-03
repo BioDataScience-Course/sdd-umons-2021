@@ -15,8 +15,61 @@ learnitdown <- list(
   courses_names = c(
     "Science des Données Biologiques I à l'UMONS",
     "Bio-Informatique et Science des Données à Charleroi"
-  )
+  ),
+  acad_year = "2021-2022",               # The academic year
+  YY = 21,                               # The academic year short id
+  W = as.Date("2021-09-12") + (0:52)*7,  # Sundays before each academic week
+  Q1 = as.Date("2021-09-19") + (0:13)*7, # We consider 14 weeks from second one
+  Q2 = as.Date("2022-02-06") + c(0:7, 10:15)*7 # Q2 starts 07/02 w22 but w30-31 are holidays
 )
+
+# We use glue() often for variables replacement from learnitdown, so, we
+# define the `!` operator for character objects to glue the string
+# Cons: it slightly slows down the usual `!` operator (10x slower)
+`!` <- function(x) {
+  if (is.character(x)) {
+    as.character(glue::glue_data(learnitdown, x))
+  } else {# Usual ! operator
+    .Primitive('!')(x)
+  }
+}
+
+# Examples:
+#!"svbox{svbox} is for academic year {acad_year}"
+#  -> svbox2021 is for academic year 2021-2022
+#microbenchmark::microbenchmark(!TRUE, .Primitive('!')(TRUE), .Primitive('!'))
+
+# Unary + binary + is nice too, but it slows down additions!
+# We use glue() often for variables replacement from learnitdown, so, we
+# redefine the unary and binary `+` operators for character objects
+#`+` <- function(e1, e2) {
+#  if (missing(e2)) {# Unary operator
+#    if (inherits(e1, "character")) {
+#      glue::glue_data(learnitdown, e1)
+#    } else {# Usual + operator
+#      .Primitive("+")(e1)
+#    }
+#      glue::glue_data(learnitdown, e1)
+#  } else {# Binary operator
+#    if (inherits(e1, "character")) {
+#      glue::as_glue(paste0(e1, glue::glue_data(learnitdown, e2)))
+#    } else {# Usual + operator
+#      .Primitive("+")(e1, e2)
+#    }
+#  }
+#}
+# Examples:
+#+"svbox{svbox} is for academic year {acad_year}"
+#  -> svbox2021 is for academic year 2021-2022
+#+"svbox{svbox}" + " is for" + " academic year {acad_year}"
+#  -> same result
+# With the new R 4.0 character strings syntax:
+#+r"("{courses[1]}" est le cours de {courses_names[1]})"
+#  -> "S-BIOG-015" est le cours de Science des Données Biologiques II à l'UMONS
+# Date are better defined according to the academic calendar. So, W[1]+1 is
+# monday of first week and W[15]+5 is friday of last Q1 week
+#+"Q1 starts {W[1]+1} 08:15:00 and ends {W[15]+5} 17:45:00"
+#  -> Q1 starts 2021-09-13 08:15:00 and ends 2021-12-24 17:45:00
 
 ## Big images (animated gifs, ...) are stored externally, refer them this way:
 #
@@ -32,21 +85,37 @@ learnitdown <- list(
 #
 # `r learnr(id, title = "...", toc = "Short description")`
 #
-#```{r, echo=FALSE, results='asis'}
-#if (exists("assignation"))
-#  assignation("A01a_markdown", part = NULL,
-#    url = "https://github.com/BioDataScience-Course/sdd1_module01",
+#```{r assign_A01Ia_markdown, echo=FALSE, results='asis'}
+#if (exists("assignment"))
+#  assignment("A01Ia_markdown", part = NULL,
+#    url = "https://github.com/BioDataScience-Course/A01Ia_markdown",
+#    course.ids = c(
+#      'S-BIOG-015'         = +"A01Ia_{YY}M_markdown",
+#      'S-BIOG-937-958-959' = +"A01Ia_{YY}C_markdown",
+#      'late_mons'          = +"A01Ia_{YY}M_markdown"),
 #    course.urls = c(
-#      'S-BIOG-006' = "https://classroom.github.com/a/...",
-#      'S-BIOG-921' = "https://classroom.github.com/a/..."),
+#      'S-BIOG-015'         = "https://classroom.github.com/a/...",
+#      'S-BIOG-937-958-959' = "https://classroom.github.com/a/...",
+#      'late_mons'          = "https://classroom.github.com/a/..."),
+#    course.starts = c(
+#      'S-BIOG-015'         = +"{W[1]+1} 08:00:00",
+#      'S-BIOG-937-958-959' = NA, # Nondefined date, or just ignore it
+#      'sdd1late'           = +"{W[1]+1} 08:00:00"),
+#    course.ends = c(
+#      'S-BIOG-015'         = +"{W[3]+5} 23:59:59",
+#      'sdd1late'           = +"{W[5]+5} 23:59:59"),
+#    term = "Q1", level = 3,
 #    toc = "Réalisation d'un premier document en Markdown")
 #```
-# Use assignation2() for group assignation, challenge() or challenge2()
-# for assignations that are linked to challenges
+# Use assignment2() for group assignment, and challenge() or challenge2()
+# for assignments that are linked to challenges
 #
 # Then, at the end of the module, create the exercises toc with:
 #
 # `r show_ex_toc()`
+#
+# Use `r learnitdown::clean_ex_toc()` at the beginning of index.Rmd to
+# make sure the ex dir is clean when the book compiles
 
 img <- function(..., caption = "") {
   path <- paste(learnitdown$imgbaseurl, ..., sep = "/")
@@ -99,39 +168,65 @@ text = "Effectuez maintenant les exercices du tutoriel")
     tuto.img = "images/list-tuto.png",
     tuto.link = paste(learnitdown$baseurl, "tutorial", sep = "/"))
 
-# Note: use course.urls = c(`S-BIOG-006` = "classroom url1", `S-BIOG-921` = "classroom url2"), and url = link to Github template repository for the assignation
-assignation <- function(name, url, course.urls = NULL, part = NULL, toc = "",
-texts = learnitdown::assignation_fr(course = "Assignation GitHub Classroom pour les \u00e9tudiants inscrits au cours de"))
-  learnitdown::assignation(name = name, url = url, course.urls = course.urls,
-    part = part, course.names = stats::setNames(learnitdown$courses_names,
-      learnitdown$courses),
-    toc = toc, texts = texts, assign.img = "images/list-assign.png",
-    assign.link = paste(learnitdown$baseurl, "github_assignation", sep = "/"))
+# Note: use course.urls = c(`S-BIOG-006` = "classroom url1", `S-BIOG-921` = "classroom url2"), and url = link to Github template repository for the assignment
+assignment <- function(name, url, course.ids = NULL, course.urls = NULL,
+  course.starts = NULL, course.ends = NULL, part = NULL, toc = "", clone = TRUE,
+  level = 3, n = 1, type = "ind. github", acad_year = !"{acad_year}",
+  term = "Q1", texts = learnitdown::assignment_fr())
+  learnitdown::assignment(name = name, url = url, course.ids = course.ids,
+    course.urls = course.urls, course.starts = course.starts,
+    course.ends = course.ends, part = part,
+    course.names = stats::setNames(learnitdown$courses_names,
+      learnitdown$courses), toc = toc, clone = clone, level = level, n = n,
+    type = type, acad_year = acad_year, term = term, texts = texts,
+    assign.img = "images/list-assign.png",
+    assign.link = paste(learnitdown$baseurl, "github_assignment", sep = "/"),
+    template = "assignment_fr.html", baseurl = learnitdown$baseurl)
 
-assignation2 <- function(name, url, course.urls = NULL, part = NULL, toc = "",
-  texts = learnitdown::assignation2_fr(course = "Assignation GitHub Classroom en groupe pour les \u00e9tudiants inscrits au cours de"))
-  learnitdown::assignation2(name = name, url = url, course.urls = course.urls,
-    part = part, course.names = stats::setNames(learnitdown$courses_names,
-      learnitdown$courses),
-    toc = toc, texts = texts, assign.img = "images/list-assign2.png",
-    assign.link = paste(learnitdown$baseurl, "github_assignation", sep = "/"))
+assignment2 <- function(name, url, course.ids = NULL, course.urls = NULL,
+  course.starts = NULL, course.ends = NULL, part = NULL, toc = "", clone = TRUE,
+  level = 4, n = 2, type = "group github", acad_year = !"{acad_year}",
+  term = "Q1", texts = learnitdown::assignment2_fr())
+  learnitdown::assignment2(name = name, url = url, course.ids = course.ids,
+    course.urls = course.urls, course.starts = course.starts,
+    course.ends = course.ends, part = part,
+    course.names = stats::setNames(learnitdown$courses_names,
+      learnitdown$courses), toc = toc, clone = clone, level = level, n = n,
+    type = type, acad_year = acad_year, term = term, texts = texts,
+    assign.img = "images/list-assign2.png",
+    assign.link = paste(learnitdown$baseurl, "github_assignment", sep = "/"),
+    template = "assignment_fr.html", baseurl = learnitdown$baseurl)
 
-challenge <- function(name, url, course.urls = NULL, part = NULL, toc = "",
-  texts = learnitdown::challenge_fr(course = "Assignation GitHub Classroom (challenge) pour les \u00e9tudiants inscrits au cours de"))
-  learnitdown::challenge(name = name, url = url, course.urls = course.urls,
-    part = part, course.names = stats::setNames(learnitdown$courses_names,
-      learnitdown$courses),
-    toc = toc, texts = texts, assign.img = "images/list-challenge.png",
-    assign.link = paste(learnitdown$baseurl, "github_challenge", sep = "/"))
+challenge <- function(name, url, course.ids = NULL, course.urls = NULL,
+  course.starts = NULL, course.ends = NULL, part = NULL, toc = "", clone = TRUE,
+  level = 3, n = 1, type = "ind. challenge", acad_year = !"{acad_year}",
+  term = "Q1", texts = learnitdown::challenge_fr())
+  learnitdown::challenge(name = name, url = url, course.ids = course.ids,
+    course.urls = course.urls, course.starts = course.starts,
+    course.ends = course.ends, part = part,
+    course.names = stats::setNames(learnitdown$courses_names,
+      learnitdown$courses), toc = toc, clone = clone, level = level, n = n,
+    type = type, acad_year = acad_year, term = term, texts = texts,
+    assign.img = "images/list-challenge.png",
+    assign.link = paste(learnitdown$baseurl, "github_challenge", sep = "/"),
+    template = "assignment_fr.html", baseurl = learnitdown$baseurl)
 
-challenge2 <- function(name, url, course.urls = NULL, part = NULL, toc = "",
-  texts = learnitdown::challenge2_fr(course = "Assignation GitHub Classroom (challenge en groupe) pour les \u00e9tudiants inscrits au cours de"))
-  learnitdown::challenge2(name = name, url = url, course.urls = course.urls,
-    part = part, course.names = stats::setNames(learnitdown$courses_names,
-      learnitdown$courses),
-    toc = toc, texts = texts, assign.img = "images/list-challenge2.png",
-    assign.link = paste(learnitdown$baseurl, "github_challenge", sep = "/"))
+challenge2 <- function(name, url, course.ids = NULL, course.urls = NULL,
+  course.starts = NULL, course.ends = NULL, part = NULL, toc = "", clone = TRUE,
+  level = 4, n = 2, type = "group challenge", acad_year = !"{acad_year}",
+  term = "Q1", texts = learnitdown::challenge2_fr())
+  learnitdown::challenge2(name = name, url = url, course.ids = course.ids,
+    course.urls = course.urls, course.starts = course.starts,
+    course.ends = course.ends, part = part,
+    course.names = stats::setNames(learnitdown$courses_names,
+      learnitdown$courses), toc = toc, clone = clone, level = level, n = n,
+    type = type, acad_year = acad_year, term = term, texts = texts,
+    assign.img = "images/list-challenge2.png",
+    assign.link = paste(learnitdown$baseurl, "github_challenge", sep = "/"),
+    template = "assignment_fr.html", baseurl = learnitdown$baseurl)
 
+# Note: use `r learnitdown::clean_ex_toc()` at the beginning of index.Rmd to
+# make sure the ex dir is clean when the book compiles.
 show_ex_toc <- function(header = "", clear.it = TRUE)
   learnitdown::show_ex_toc(header = header, clear.it = clear.it)
 
@@ -143,7 +238,6 @@ learnitdown::learnitdown_init(
   hide.code.msg = "Voir le code",
   institutions = learnitdown$institutions,
   courses = learnitdown$courses)
-
 
 # Knitr default options
 knitr::opts_chunk$set(comment = "#", fig.align = "center")

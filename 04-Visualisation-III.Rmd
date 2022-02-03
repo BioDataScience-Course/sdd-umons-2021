@@ -687,13 +687,21 @@ Il existe d'autres fonctions permettant de combiner plusieurs graphiques comme [
 
 `r learnr("A04Ld_fig_composees", title = "Graphiques composés", toc = "Graphiques composés")`
 
-```{r, echo=FALSE, results='asis'}
-if (exists("assignation"))
-  assignation("A04Ia_graphe_avance", part = NULL,
+```{r assign_A04Ia_graphe_avance, echo=FALSE, results='asis'}
+if (exists("assignment"))
+  assignment("A04Ia_graphe_avance", part = NULL,
     url = "https://github.com/BioDataScience-Course/A04Ia_graphe_avance",
+    course.ids = c(
+      'S-BIOG-006' = !"A04Ia_{YY}M_graphe_avance", 
+      'S-BIOG-921' = !"A04Ia_{YY}C_graphe_avance"),
     course.urls = c(
-      'S-BIOG-006' = "https://classroom.github.com/a/ncOdTu9s",
+      'S-BIOG-006' = "https://classroom.github.com/a/ncOdTu9s", 
       'S-BIOG-921' = "https://classroom.github.com/a/..."),
+    course.starts = c(
+      'S-BIOG-006' = !"{W[9]+1} 10:00:00"),
+    course.ends = c(
+      'S-BIOG-006' = !"{W[15]+5} 23:59:59"),
+    term = "Q1", level = 3,
     toc = "Graphiques avancés et libres")
 ```
 
@@ -780,7 +788,7 @@ combine_charts(list(a, b))
 
 ```{block2, type = "bdd"}
 
-Afin de vous exercer à réaliser des graphiques `chart()`/`ggplot()`, proposez trois graphiques inédits (qui n'ont pas été vu jusqu'ici) dans vos différents projets (assignations GitHub Classroom). Employez par exemple les liens suivants pour vous inspirer\ :
+Afin de vous exercer à réaliser des graphiques `chart()`/`ggplot()`, proposez trois graphiques inédits (qui n'ont pas été vu jusqu'ici) dans vos différents projets GitHub Classroom. Employez par exemple les liens suivants pour vous inspirer\ :
 
 - <https://www.r-graph-gallery.com>
 
@@ -901,17 +909,23 @@ Tout au long des quatre premiers modules, vous avez appris à utiliser R et RStu
 
 ##### À vous de jouer ! {-}
 
-```{r, echo=FALSE, results='asis'}
+```{r assign_A04Ca_charts, echo=FALSE, results='asis'}
 if (exists("challenge"))
   challenge("A04Ca_charts", part = NULL,
     url = "https://github.com/BioDataScience-Course/A04Ca_charts",
+    course.ids = c(
+      'S-BIOG-015' = !"A04Ca_{YY}M_charts"),
     course.urls = c(
-      'S-BIOG-006' = "https://classroom.github.com/a/8jo-RgSe"),
-    toc = "Challenge pour reproduire un maximum de graphiques")
+      'S-BIOG-015' = "https://classroom.github.com/a/8jo-RgSe"),
+    course.starts = c(
+      'S-BIOG-015' = !"{W[9]+5} 08:00:00"),
+    course.ends = c(
+      'S-BIOG-015' = !"{W[9]+5} 11:00:00"),
+    toc = "Challenge graphiques")
 ```
 
 ::: {.nocourse}
-Vous n'êtes pas correctement enregistré pour ce cours. Vous ne pouvez pas participer à ce challenge. Si vous êtes étudiant•e de l'UMONS, vérifiez que vous vous êtes bien enregistré via Moodle...
+Vous n'êtes pas correctement enregistré pour ce cours. Vous ne pouvez pas participer à ce challenge. Si vous êtes étudiant•e de l'UMONS, vérifiez que vous vous êtes bien enregistré•e via Moodle...
 :::
 
 ::: {.S-BIOG-006 .S-BIOG-027 .S-BIOG-921}
@@ -919,7 +933,6 @@ Vous pouvez soumettre vos résultats pendant une période de temps précise via 
 
 `r launch_shiny("https://sdd.umons.ac.be/A04Ca_charts/", height = 800, delay = 20, toc = NULL, alt1 = "*Cliquez pour visualiser le classement.*", alt2 = "*Cliquez pour visualiser le classement.*")`
 
-<!-- <iframe width="780" height="800" frameborder="0" scrolling="auto" class="shiny-app" id=\"A04Ca_charts\" src="https://sdd.umons.ac.be/A04CA_charts"></iframe> -->
 :::
 
 ## Récapitulatif des exercices

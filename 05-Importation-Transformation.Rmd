@@ -752,14 +752,22 @@ Le pipe permet d'éviter de répéter le nom des objets (version avec variables 
 
 `r learnr("A05La_traitement", title = "Traitement des données I", toc = "Traitement des données dans R")`
 
-```{r, echo=FALSE, results='asis'}
-if (exists("assignation"))
-  assignation("A05Ia_transformation", part = NULL,
+```{r assign_A05Ia_transformation, echo=FALSE, results='asis'}
+if (exists("assignment"))
+  assignment("A05Ia_transformation", part = NULL,
     url = "https://github.com/BioDataScience-Course/A05Ia_transformation",
+    course.ids = c(
+      'S-BIOG-006' = !"A05Ia_{YY}M_transformation", 
+      'S-BIOG-921' = !"A05Ia_{YY}C_transformation"),
     course.urls = c(
-      'S-BIOG-006' = "https://classroom.github.com/a/h9kvaQ4G",
+      'S-BIOG-006' = "https://classroom.github.com/a/h9kvaQ4G", 
       'S-BIOG-921' = "https://classroom.github.com/a/..."),
-    toc = "Importation et transformation des données")
+    course.starts = c(
+      'S-BIOG-006' = !"{W[11]+1} 13:00:00"),
+    course.ends = c(
+      'S-BIOG-006' = !"{W[15]+5} 23:59:59"),
+    term = "Q1", level = 3,
+    toc = "Importation et transformation de données")
 ```
 
 <!---- A retravailler 

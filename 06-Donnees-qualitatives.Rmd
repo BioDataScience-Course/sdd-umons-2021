@@ -737,15 +737,23 @@ Il existe, en fait, plusieurs versions pour la fusion de tableaux, représentée
 
 `r learnr("A06Lb_multi_tableau", title = "Traitements multi-tableaux", toc = "Traitements multi-tableaux")`
 
-**Note\ : l'assignation GitHub ci-dessous est à réaliser par groupes de quatre étudiants. Elle requiert d'avoir assimilé l'ensemble de la matière des six premiers modules du cours.**
+**Note\ : le projet GitHub Classroom ci-dessous est à réaliser par groupes de quatre étudiants. Il requiert d'avoir assimilé l'ensemble de la matière des six premiers modules du cours.**
 
-```{r, echo=FALSE, results='asis'}
-if (exists("assignation2"))
-  assignation2("A06Ga_belgium_demo", part = NULL,
+```{r assign_A06Ga_belgium_demo, echo=FALSE, results='asis'}
+if (exists("assignment2"))
+  assignment2("A06Ga_belgium_demo", part = NULL,
     url = "https://github.com/BioDataScience-Course/A06Ga_belgium_demo",
+    course.ids = c(
+      'S-BIOG-006' = !"A06Ga_{YY}M_belgium_demo", 
+      'S-BIOG-921' = !"A06Ga_{YY}C_belgium_demo"),
     course.urls = c(
-      'S-BIOG-006' = "https://classroom.github.com/a/tohMzuaK",
-      'S-BIOG-921' = "https://classroom.github.com/g/..."),
+      'S-BIOG-006' = "https://classroom.github.com/a/tohMzuaK", 
+      'S-BIOG-921' = "https://classroom.github.com/a/..."),
+    course.starts = c(
+      'S-BIOG-006' = !"{W[13]+2} 13:00:00"),
+    course.ends = c(
+      'S-BIOG-006' = !"{W[15]+5} 23:59:59"),
+    term = "Q1", level = 4, n = 2,
     toc = "Démographie en Belgique")
 ```
 
