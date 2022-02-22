@@ -286,15 +286,15 @@ if (exists("assignment"))
   assignment("A08Ia_pea", part = NULL,
     url = "https://github.com/BioDataScience-Course/A08Ia_pea",
     course.ids = c(
-      'S-BIOG-006' = !"A08Ia_{YY}M_pea", 
+      'S-BIOG-027' = !"A08Ia_{YY}M_pea", 
       'S-BIOG-921' = !"A08Ia_{YY}C_pea"),
     course.urls = c(
-      'S-BIOG-006' = "https://classroom.github.com/a/...", 
+      'S-BIOG-027' = "https://classroom.github.com/a/...", 
       'S-BIOG-921' = "https://classroom.github.com/a/..."),
     course.starts = c(
-      'S-BIOG-006' = !"{W[23]+2} 13:00:00"),
+      'S-BIOG-027' = !"{W[23]+2} 13:00:00"),
     course.ends = c(
-      'S-BIOG-006' = !"{W[25]+2} 23:59:59"),
+      'S-BIOG-027' = !"{W[25]+2} 23:59:59"),
     term = "Q2", level = 3,
     toc = "Génétique mendélienne")
 ```
@@ -569,17 +569,17 @@ if (exists("assignment2"))
   assignment2("A08Ga_human_health", part = "I",
     url = "https://github.com/BioDataScience-Course/A08Ga_human_health",
     course.ids = c(
-      'S-BIOG-006' = !"A08Ga_{YY}M_human_health", 
+      'S-BIOG-027' = !"A08Ga_{YY}M_human_health", 
       'S-BIOG-921' = !"A08Ga_{YY}C_human_health"),
     course.urls = c(
-      'S-BIOG-006' = "https://classroom.github.com/g/...", 
+      'S-BIOG-027' = "https://classroom.github.com/g/...", 
       'S-BIOG-921' = "https://classroom.github.com/g/..."),
     course.starts = c(
-      'S-BIOG-006' = !"{W[25]+2} 10:00:00"),
+      'S-BIOG-027' = !"{W[25]+2} 10:00:00"),
     course.ends = c(
-      'S-BIOG-006' = !"{W[27]+2} 23:59:59"),
-    term = "Q2", level = 4, n = 2,
-    toc = "Biométrie humaine, part I")
+      'S-BIOG-027' = !"{W[37]+1} 23:59:59"),
+    term = "Q2", level = 4, n = 4,
+    toc = "Biométrie humaine")
 ```
 
 **Note\ : Le projet suivant est la continuité d'un exercice débuté au premier quadrimestre.**
@@ -589,17 +589,17 @@ if (exists("assignment2"))
   assignment2("A08Ga_urchin", part = "II",
     url = "https://github.com/BioDataScience-Course/A03Ga_urchin",
     course.ids = c(
-      'S-BIOG-006' = !"A03Ga_{YY}M_urchin",
+      'S-BIOG-027' = !"A03Ga_{YY}M_urchin",
       'S-BIOG-921' = !"A03Ga_{YY}C_urchin"),
     course.urls = c(
-      'S-BIOG-006' = "https://classroom.github.com/g/...", 
+      'S-BIOG-027' = "https://classroom.github.com/g/...", 
       'S-BIOG-921' = "https://classroom.github.com/g/..."),
     course.starts = c(
-      'S-BIOG-006' = !"{W[25]+2} 10:00:00"),
+      'S-BIOG-027' = !"{W[25]+2} 10:00:00"),
     course.ends = c(
-      'S-BIOG-006' = !"{W[27]+2} 23:59:59"),
+      'S-BIOG-027' = !"{W[37]+1} 23:59:59"),
     term = "Q2", level = 4, n = 2,
-    toc = "Biométrie de l'oursin violet, part II")
+    toc = "Biométrie de l'oursin violet")
 ```
 
 <!--- G.E. cette section est redondante. Je la place en commentaire. Il serait intéressant de décider si on la garde ou pas. PhG: pour ma part, on peut l'éliminer... les étudiants ont déjà assez de travail comme cela avec le reste du module.

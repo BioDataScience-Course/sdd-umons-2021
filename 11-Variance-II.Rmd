@@ -205,15 +205,15 @@ if (exists("assignment"))
   assignment("A11Ia_anova2", part = "I",
     url = "https://github.com/BioDataScience-Course/A11Ia_anova2",
     course.ids = c(
-      'S-BIOG-006' = !"A11Ia_{YY}M_anova2", 
+      'S-BIOG-027' = !"A11Ia_{YY}M_anova2", 
       'S-BIOG-921' = !"A11Ia_{YY}C_anova2"),
     course.urls = c(
-      'S-BIOG-006' = "https://classroom.github.com/a/...", 
+      'S-BIOG-027' = "https://classroom.github.com/a/...", 
       'S-BIOG-921' = "https://classroom.github.com/a/..."),
     course.starts = c(
-      'S-BIOG-006' = !"{W[33]+1} 13:00:00"),
+      'S-BIOG-027' = !"{W[33]+1} 13:00:00"),
     course.ends = c(
-      'S-BIOG-006' = !"{W[35]+1} 23:59:59"),
+      'S-BIOG-027' = !"{W[35]+1} 23:59:59"),
     term = "Q2", level = 3,
     toc = "ANOVA 2 facteurs, part I")
 ```
@@ -506,15 +506,15 @@ if (exists("assignment"))
   assignment("A11Ia_anova2", part = "II",
     url = "https://github.com/BioDataScience-Course/A11Ia_anova2",
     course.ids = c(
-      'S-BIOG-006' = !"A11Ia_{YY}M_anova2", 
+      'S-BIOG-027' = !"A11Ia_{YY}M_anova2", 
       'S-BIOG-921' = !"A11Ia_{YY}C_anova2"),
     course.urls = c(
-      'S-BIOG-006' = "https://classroom.github.com/a/...", 
+      'S-BIOG-027' = "https://classroom.github.com/a/...", 
       'S-BIOG-921' = "https://classroom.github.com/a/..."),
     course.starts = c(
-      'S-BIOG-006' = !"{W[33]+1} 13:00:00"),
+      'S-BIOG-027' = !"{W[33]+1} 13:00:00"),
     course.ends = c(
-      'S-BIOG-006' = !"{W[35]+1} 23:59:59"),
+      'S-BIOG-027' = !"{W[35]+1} 23:59:59"),
     term = "Q2", level = 3,
     toc = "ANOVA 2 facteurs, part II")
 ```

@@ -361,15 +361,15 @@ if (exists("assignment"))
   assignment("A12Ia_correlation", part = "I",
     url = "https://github.com/BioDataScience-Course/A12Ia_correlation",
     course.ids = c(
-      'S-BIOG-006' = !"A12Ia_{YY}M_correlation", 
+      'S-BIOG-027' = !"A12Ia_{YY}M_correlation", 
       'S-BIOG-921' = !"A12Ia_{YY}C_correlation"),
     course.urls = c(
-      'S-BIOG-006' = "https://classroom.github.com/a/...", 
+      'S-BIOG-027' = "https://classroom.github.com/a/...", 
       'S-BIOG-921' = "https://classroom.github.com/a/..."),
     course.starts = c(
-      'S-BIOG-006' = !"{W[35]+1} 13:00:00"),
+      'S-BIOG-027' = !"{W[35]+1} 13:00:00"),
     course.ends = c(
-      'S-BIOG-006' = !"{W[37]+1} 23:59:59"),
+      'S-BIOG-027' = !"{W[37]+1} 23:59:59"),
     term = "Q2", level = 3,
     toc = "Association entre des variables")
 ```
@@ -442,16 +442,16 @@ if (exists("assignment2"))
   assignment2("A12Ga_human_health", part = "IV",
     url = "https://github.com/BioDataScience-Course/A08Ga_human_health",
     course.ids = c(
-      'S-BIOG-006' = !"A08Ga_{YY}M_human_health", 
+      'S-BIOG-027' = !"A08Ga_{YY}M_human_health", 
       'S-BIOG-921' = !"A08Ga_{YY}C_human_health"),
     course.urls = c(
-      'S-BIOG-006' = "https://classroom.github.com/g/...", 
+      'S-BIOG-027' = "https://classroom.github.com/g/...", 
       'S-BIOG-921' = "https://classroom.github.com/g/..."),
     course.starts = c(
-      'S-BIOG-006' = !"{W[35]+1} 13:00:00"),
+      'S-BIOG-027' = !"{W[35]+1} 13:00:00"),
     course.ends = c(
-      'S-BIOG-006' = !"{W[37]+1} 23:59:59"),
-    term = "Q2", level = 4, n = 2,
+      'S-BIOG-027' = !"{W[37]+1} 23:59:59"),
+    term = "Q2", level = 4, n = 4,
     toc = "Biométrie humaine, part IV")
 ```
 
@@ -706,15 +706,15 @@ if (exists("assignment"))
   assignment("A12Ia_correlation", part = "II",
     url = "https://github.com/BioDataScience-Course/A12Ia_correlation",
     course.ids = c(
-      'S-BIOG-006' = !"A12Ia_{YY}M_correlation", 
+      'S-BIOG-027' = !"A12Ia_{YY}M_correlation", 
       'S-BIOG-921' = !"A12Ia_{YY}C_correlation"),
     course.urls = c(
-      'S-BIOG-006' = "https://classroom.github.com/a/...", 
+      'S-BIOG-027' = "https://classroom.github.com/a/...", 
       'S-BIOG-921' = "https://classroom.github.com/a/..."),
     course.starts = c(
-      'S-BIOG-006' = !"{W[35]+1} 13:00:00"),
+      'S-BIOG-027' = !"{W[35]+1} 13:00:00"),
     course.ends = c(
-      'S-BIOG-006' = !"{W[37]+1} 23:59:59"),
+      'S-BIOG-027' = !"{W[37]+1} 23:59:59"),
     term = "Q2", level = 3,
     toc = "Critique statistique")
 ```

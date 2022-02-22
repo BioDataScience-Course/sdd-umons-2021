@@ -753,7 +753,7 @@ if (exists("assignment2"))
       'S-BIOG-006' = !"{W[13]+2} 13:00:00"),
     course.ends = c(
       'S-BIOG-006' = !"{W[15]+5} 23:59:59"),
-    term = "Q1", level = 4, n = 2,
+    term = "Q1", level = 4, n = 4,
     toc = "Démographie en Belgique")
 ```
 

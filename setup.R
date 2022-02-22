@@ -9,11 +9,13 @@ learnitdown <- list(
   package = "BioDataScience1",         # Associated package for the exercices
   institutions = "UMONS",              # Known institutions
   courses = c(
-    "S-BIOG-006",                      # SDD1 Q1 & (Q2 = S-BIOG-027, pas utilisé
+    "S-BIOG-006",                      # SDD1 Q1 Mons
+    "S-BIOG-027",                      # SDD1 Q2 Mons
     "S-BIOG-921"                       # SDD1 Charleroi
   ),
   courses_names = c(
-    "Science des Données Biologiques I à l'UMONS",
+    "Science des Données Biologiques I : visualisation à l'UMONS",
+    "Science des Données Biologiques I : inférence à l'UMONS",
     "Bio-Informatique et Science des Données à Charleroi"
   ),
   acad_year = "2021-2022",               # The academic year

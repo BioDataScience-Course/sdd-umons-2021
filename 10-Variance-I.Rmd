@@ -518,16 +518,16 @@ if (exists("assignment2"))
   assignment2("A10Ga_human_health", part = "III",
     url = "https://github.com/BioDataScience-Course/A08Ga_human_health",
     course.ids = c(
-      'S-BIOG-006' = !"A08Ga_{YY}M_human_health", 
+      'S-BIOG-027' = !"A08Ga_{YY}M_human_health", 
       'S-BIOG-921' = !"A08Ga_{YY}C_human_health"),
     course.urls = c(
-      'S-BIOG-006' = "https://classroom.github.com/g/...", 
+      'S-BIOG-027' = "https://classroom.github.com/g/...", 
       'S-BIOG-921' = "https://classroom.github.com/g/..."),
     course.starts = c(
-      'S-BIOG-006' = !"{W[29]+1} 13:00:00"),
+      'S-BIOG-027' = !"{W[29]+1} 13:00:00"),
     course.ends = c(
-      'S-BIOG-006' = !"{W[33]+1} 23:59:59"),
-    term = "Q2", level = 4, n = 2,
+      'S-BIOG-027' = !"{W[37]+1} 23:59:59"),
+    term = "Q2", level = 4, n = 4,
     toc = "Biométrie humaine, part III")
 ```
 
@@ -538,15 +538,15 @@ if (exists("assignment2"))
   assignment2("A10Ga_urchin", part = "IV",
     url = "https://github.com/BioDataScience-Course/A03Ga_urchin",
     course.ids = c(
-      'S-BIOG-006' = !"A03Ga_{YY}M_urchin", # TODO: how to account it in Q2???
+      'S-BIOG-027' = !"A03Ga_{YY}M_urchin", # TODO: how to account it in Q2???
       'S-BIOG-921' = !"A03Ga_{YY}C_urchin"),
     course.urls = c(
-      'S-BIOG-006' = "https://classroom.github.com/g/...", 
+      'S-BIOG-027' = "https://classroom.github.com/g/...", 
       'S-BIOG-921' = "https://classroom.github.com/g/..."),
     course.starts = c(
-      'S-BIOG-006' = !"{W[29]+1} 13:00:00"),
+      'S-BIOG-027' = !"{W[29]+1} 13:00:00"),
     course.ends = c(
-      'S-BIOG-006' = !"{W[33]+1} 23:59:59"),
+      'S-BIOG-027' = !"{W[37]+1} 23:59:59"),
     term = "Q2", level = 4, n = 2,
     toc = "Biométrie de l'oursin violet, part IV")
 ```
