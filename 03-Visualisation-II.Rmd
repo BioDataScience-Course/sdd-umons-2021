@@ -437,7 +437,7 @@ if (exists("assignment2"))
       'S-BIOG-006' = !"A03Ga_{YY}M_urchin", 
       'S-BIOG-921' = !"A03Ga_{YY}C_urchin"),
     course.urls = c(
-      'S-BIOG-006' = "hhttps://classroom.github.com/a/FB5UbPvX", 
+      'S-BIOG-006' = "https://classroom.github.com/a/FB5UbPvX", 
       'S-BIOG-921' = "https://classroom.github.com/a/..."),
     course.starts = c(
       'S-BIOG-006' = !"{W[7]+1} 13:00:00"),

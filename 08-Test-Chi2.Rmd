@@ -289,12 +289,12 @@ if (exists("assignment"))
       'S-BIOG-027' = !"A08Ia_{YY}M_pea", 
       'S-BIOG-921' = !"A08Ia_{YY}C_pea"),
     course.urls = c(
-      'S-BIOG-027' = "https://classroom.github.com/a/...", 
+      'S-BIOG-027' = "https://classroom.github.com/a/0WgSkM39", 
       'S-BIOG-921' = "https://classroom.github.com/a/..."),
     course.starts = c(
-      'S-BIOG-027' = !"{W[23]+2} 13:00:00"),
+      'S-BIOG-027' = !"{W[25]+2} 10:00:00"),
     course.ends = c(
-      'S-BIOG-027' = !"{W[25]+2} 23:59:59"),
+      'S-BIOG-027' = !"{W[25]+5} 23:59:59"),
     term = "Q2", level = 3,
     toc = "Génétique mendélienne")
 ```
@@ -464,7 +464,7 @@ crabs %>.%
     species = factor(fct_recode(species, `**Variété bleue**` = "B", `**Variété orange**` = "O")),
     sex = factor(fct_recode(sex, `Femelle` = "F", Mâle = "M"))
   ) %>.% # Need to use factor() to drop labels, or tabyl() will warn badly!
-  janitor::tabyl(., species, sex) %>.% # Tableau de contingen ce à 2 entrées
+  janitor::tabyl(., species, sex) %>.% # Tableau de contingence à 2 entrées
   knitr::kable(., caption = "Nombre de crabes mesurés par variété et par sexe.",
     align = "c", escape = FALSE)
 ```
@@ -514,7 +514,7 @@ chart(data = crabs, front ~ width %shape=% species %col=% sex) +
   geom_point()
 ```
 
-Ce graphique, en revanche, sépare les deux variétés, quel que soit leur sexe (la variété bleue en bas, et la varété orange en haut). Cela signifie donc que les données morphométriques contiennent une information permettant de discerner les sexes et les variétés, mais cette information n'est pas visible lorsqu'une seule variable quantitative est représentée en fonction des sous-populations comme dans les graphiques en violons.
+Ce graphique, en revanche, sépare les deux variétés, quel que soit leur sexe (la variété bleue en bas, et la variété orange en haut). Cela signifie donc que les données morphométriques contiennent une information permettant de discerner les sexes et les variétés, mais cette information n'est pas visible lorsqu'une seule variable quantitative est représentée en fonction des sous-populations comme dans les graphiques en violons.
 
 En réalité, les différences de *forme* sont masquées sur les mesures individuelles par une variation encore plus grande liée à la *taille* des animaux. Comment pouvons-nous mettre en évidence un facteur de forme en faisant abstraction de la taille\ ? Pour expliquer cela simplement, considérons un cas facile. Imaginons que nous voulons classer un ensemble de quadrilatères à angles droits. Nous savons tous que ce sont des *rectangles*. Un cas particulier est le *carré* avec ses côtés égaux. Tant que nous représentons la longueur ou la largeur de nos quatrilatères à angles droits de toutes tailles, nous ne pouvons pas distinguer les carrés des rectangles. Par contre, si nous calculons le **ratio** longueur/largeur, nous faisons abstraction de la *taille* pour quantifier la *forme* (allongée ou pas). Tous les quadrilatères à angles droits dont le ratio longueur/largeur vaut un est un carré\ !
 
@@ -572,7 +572,7 @@ if (exists("assignment2"))
       'S-BIOG-027' = !"A08Ga_{YY}M_human_health", 
       'S-BIOG-921' = !"A08Ga_{YY}C_human_health"),
     course.urls = c(
-      'S-BIOG-027' = "https://classroom.github.com/g/...", 
+      'S-BIOG-027' = "https://classroom.github.com/a/Ff0IwHCb", 
       'S-BIOG-921' = "https://classroom.github.com/g/..."),
     course.starts = c(
       'S-BIOG-027' = !"{W[25]+2} 10:00:00"),
@@ -592,7 +592,7 @@ if (exists("assignment2"))
       'S-BIOG-027' = !"A03Ga_{YY}M_urchin",
       'S-BIOG-921' = !"A03Ga_{YY}C_urchin"),
     course.urls = c(
-      'S-BIOG-027' = "https://classroom.github.com/g/...", 
+      'S-BIOG-027' = "https://classroom.github.com/a/FB5UbPvX", 
       'S-BIOG-921' = "https://classroom.github.com/g/..."),
     course.starts = c(
       'S-BIOG-027' = !"{W[25]+2} 10:00:00"),
