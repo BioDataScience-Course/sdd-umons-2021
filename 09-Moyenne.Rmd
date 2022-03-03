@@ -26,7 +26,7 @@ Ce module est élaboré sur les notions vues au module \@ref(proba) concernant l
 
 Les belges, c'est connu, apprécient la bière. Mais ils ne sont pas les seuls, et c'est très heureux\ ! Car c'est en effet grâce à un certain William Sealy Gosset, brasseur et statisticien (et oui, ça ne s'invente pas) que l'un des tests d'hypothèses des plus utilisés en biologie a vu le jour\ : le test de "Student" qui permet de comparer des moyennes.
 
-Pour la petite histoire, Gosset a travaillé pour une certaine brasserie irlandaise du nom de Guiness au début du 20^ème^siècle. C'est en étudiant la variabilité de sa bière d'un cru à l'autre que Gosset a découvert la façon dont la moyenne d'un échantillon se distribue. Il a pu dériver une formulation mathématique de cette distribution, la **distribution *t* de Student**, et à partir de là, nous verrons que de nombreuses applications en découlent. Nous pourrons, par exemple, dire si deux moyennes diffèrent **significativement** l'une de l'autre ou pas.
+Pour la petite histoire, Gosset a travaillé pour une certaine brasserie irlandaise du nom de Guiness au début du 20^e^\ siècle. C'est en étudiant la variabilité de sa bière d'un cru à l'autre que Gosset a découvert la façon dont la moyenne d'un échantillon se distribue. Il a pu dériver une formulation mathématique de cette distribution, la **distribution *t* de Student**, et à partir de là, nous verrons que de nombreuses applications en découlent. Nous pourrons, par exemple, dire si deux moyennes diffèrent **significativement** l'une de l'autre ou pas.
 
 Mais au fait, pourquoi, cette distribution porte-t-elle le nom de "Student"\ ? Visionnez la vidéo suivante (malheureusement en anglais) pour le découvrir^[Vous pouvez activer les sous-titres en anglais via la barre de boutons en bas de la vidéo pour vous aider à comprendre l'histoire.].
 
@@ -209,7 +209,7 @@ Nous pouvons voir sur la Fig. \@ref(fig:tdistri1) que la distribution *t* de Stu
 
 Revenons à nos calculs de quantiles et probabilités. Les questions que l'on se posera seront plutôt\ :
 
-- Quelle est la probabilité que la moyenne d'un échantillon diffère de 0,5 unités de la vraie valeur\ ? Au lieu de considérer l'aire à gauche ou à droite, on considèrera **une aire répartie symétriquement à moitié à gauche et à moitié à droite**. La réponse à la question est\ :
+- Quelle est la probabilité que la moyenne d'un échantillon diffère de 0,5 unités de la vraie valeur\ ? Au lieu de considérer l'aire à gauche ou à droite, on considérera **une aire répartie symétriquement à moitié à gauche et à moitié à droite**. La réponse à la question est\ :
 
 ```{r}
 # Aire à gauche de 8 -0.5 :
@@ -290,7 +290,7 @@ $$\mathrm{IC}(1 - \alpha) \simeq \bar{x} \pm t_{\alpha/2}^{n-1} \cdot \frac{s_x}
 
 ```{block2, type='note'}
 
-Etant donné l'importance que revet $\frac{s_x}{\sqrt{n}}$, nous appelerons cette quantité **erreur standard** de x et nous la noterons $SE_x$.
+Étant donné l'importance que revet $\frac{s_x}{\sqrt{n}}$, nous appelerons cette quantité **erreur standard** de x et nous la noterons $SE_x$.
 
 ```
 
@@ -437,7 +437,7 @@ crabs <- read("crabs", package = "MASS", lang = "fr")
 skimr::skim(crabs)
 ```
 
-Toutes les variables qualtitatives sont des mesures effectuées sur la carapace des crabes. Nous nous posons la question suivante\ :
+Toutes les variables qualitatives sont des mesures effectuées sur la carapace des crabes. Nous nous posons la question suivante\ :
 
 - Les femelles ont-elle une carapace plus large à l'arrière, en moyenne que les mâles\ ?
 
@@ -483,7 +483,7 @@ crabs_stats
 (ic_95 <- c(delta_rear + t * se, delta_rear - t * se))
 ```
 
-Un premier raisonnement consiste à dire que si la valeur attendue sous $H_0$ est comprise dans l'intervalle de confiance, nous ne pouvons pas rejetter l'hypothèse nulle, puisqu'elle représente une des valeurs plausibles à l'intérieur l'IC. Dans le cas présent, l'intervalle de confiance à 95% sur $\Delta rear$ va de 0.81 à 2.19. Il ne contient donc pas zéro. Donc, nous pouvons rejetter $H_0$ au seuil $\alpha$ de 5%.
+Un premier raisonnement consiste à dire que si la valeur attendue sous $H_0$ est comprise dans l'intervalle de confiance, nous ne pouvons pas rejeter l'hypothèse nulle, puisqu'elle représente une des valeurs plausibles à l'intérieur l'IC. Dans le cas présent, l'intervalle de confiance à 95% sur $\Delta rear$ va de 0.81 à 2.19. Il ne contient donc pas zéro. Donc, nous pouvons rejeter $H_0$ au seuil $\alpha$ de 5%.
 
 Nous pouvons effectivement interpréter le test de cette façon, mais le test *t* de Student se définit de manière plus classique en comparant la valeur $t_{obs}$ à la distribution théorique, et en renvoyant une valeur *P* associée au test. Ainsi, le lecteur peut interpréter les résultats avec son propre seuil $\alpha$ éventuellement différent de celui choisi par l'auteur de l'analyse.
 
@@ -535,14 +535,14 @@ Nous pouvons calculer la valeur *P* nous-même comme ceci, sachant la valeur de 
 Ne pas oublier de multiplier la probabilité obtenue par deux, car nous avons un test bilatéral qui considère une probabilité égale à gauche et à droite de la distribution\ !
 ```
 
-Naturellement, R propose une fonction toute faite pour réaliser ce test afin que nous ne devions pas détailler les calculs à chaque fois. Il s'agit de la fonction `t.test()`. Dans la SciViews Box, le snippet équivalent est accessible depuis `.hm` pour `hypothesis tests: means`. Dans le menu qui apparait, vous choisissez `independant Student's t-test`. Les arguments de la fonction sont les suivants. Le jeu de données dans `data =`, une formule qui reprend le nom de la variable quantitative à gauche (`rear`) et celui de la variable qualitative à deux niveaux à droite (`sex`), l'idication du type d'hypothèse alternative, ici `alternative = "two-sided"` pour un test bilatéral, le niveau de confiance égal à $1 - \alpha$, donc `conf.level = 0.95` et enfin si nous considérons les variances comme égales pour les deux sous-populations `var.equal = TRUE`.
+Naturellement, R propose une fonction toute faite pour réaliser ce test afin que nous ne devions pas détailler les calculs à chaque fois. Il s'agit de la fonction `t.test()`. Dans la SciViews Box, le snippet équivalent est accessible depuis `.hm` pour `hypothesis tests: means`. Dans le menu qui apparaît, vous choisissez `independant Student's t-test`. Les arguments de la fonction sont les suivants. Le jeu de données dans `data =`, une formule qui reprend le nom de la variable quantitative à gauche (`rear`) et celui de la variable qualitative à deux niveaux à droite (`sex`), l’indication du type d'hypothèse alternative, ici `alternative = "two-sided"` pour un test bilatéral, le niveau de confiance égal à $1 - \alpha$, donc `conf.level = 0.95` et enfin si nous considérons les variances comme égales pour les deux sous-populations `var.equal = TRUE`.
 
 ```{r}
 t.test(data = crabs, rear ~ sex,
   alternative = "two.sided", conf.level = 0.95, var.equal = TRUE)
 ```
 
-Nous retrouvons exactement toutes les valeurs que nous avons calculées à la main. Dans le cas présent, rappelez-vous la façon d'interpréter le test. Nous comparons la valeur *P* à $\alpha$. Si elle est plus petit, nous rejettons $H_0$, sinon, nous ne la rejettons pas. Ici, nous rejettons $H_0$ et pourrons dire que la largeur à l'arrière de la carapace de *L. variegatus* diffère de manière significative entre les mâles et les femelles au seuil $\alpha$ de 5% (test t bilatéral, *t* = 4,29, ddl = 198, valeur *P* << 10^-3^).
+Nous retrouvons exactement toutes les valeurs que nous avons calculées à la main. Dans le cas présent, rappelez-vous la façon d'interpréter le test. Nous comparons la valeur *P* à $\alpha$. Si elle est plus petit, nous rejetons $H_0$, sinon, nous ne la rejetons pas. Ici, nous rejetons $H_0$ et pourrons dire que la largeur à l'arrière de la carapace de *L. variegatus* diffère de manière significative entre les mâles et les femelles au seuil $\alpha$ de 5% (test t bilatéral, *t* = 4,29, ddl = 198, valeur *P* << 10^-3^).
 
 ##### Conditions d'application {-}
 
@@ -592,7 +592,7 @@ Pour rappel, nous avions considéré ceci\ :
 
 L'hypothèse alternative $H_1$ est ici la plus générale. Parfois, nous avons plus d'information qui nous permet de dire que si $H_0$ n'est pas rencontrée, $\overline{rear_F} - \overline{rear_M}$ ne peut alors qu'être négatif (on parle de test **unilatéral à gauche**) ou positif (test **unilatéral à droite**). En effet, dans ce cas nous placerons la zone de rejet complètement à la gauche ou à la droite de la distribution.
 
-En épluchant la littérature, nous réalisons que les crabes de la famille des Grapsidae dont *L. variegatus* fait partie ont systématiquement un arrière plus large chez la femelle lorsqu'un dymorphisme sexuel existe. Nous pouvons modifier nos hypothèses comme suit\ :
+En épluchant la littérature, nous réalisons que les crabes de la famille des Grapsidae dont *L. variegatus* fait partie ont systématiquement un arrière plus large chez la femelle lorsqu'un dimorphisme sexuel existe. Nous pouvons modifier nos hypothèses comme suit\ :
 
 - $H_0: \overline{rear_F} - \overline{rear_M} = 0$
 - $H_1: \overline{rear_F} - \overline{rear_M} > 0$
@@ -661,7 +661,7 @@ Par exemple, si nous voulons déterminer si la largeur de la carapace de *L. var
 A chaque fois, les dimensions `front` et `rear` sont mesurées sur les mêmes individus. Nous soustrayons l'un de l'autre *d'abord* individu par individu.
 
 ```{block, type='warning'}
-Attention\ ! Les hypothèses se formulent différemment. Il s'agit de la difference des moyennes pour le test *t* indépendant et la moyenne des différences pour le test *t* apparié. Si le résultat du calcul en ce qui concerne la moyenne ne diffère pas, la distribution des valeurs est différente (variance, écart type, erreur standard, ...). 
+Attention\ ! Les hypothèses se formulent différemment. Il s'agit de la différence des moyennes pour le test *t* indépendant et la moyenne des différences pour le test *t* apparié. Si le résultat du calcul en ce qui concerne la moyenne ne diffère pas, la distribution des valeurs est différente (variance, écart type, erreur standard, ...). 
 ```
 
 Nous calculons la moyenne de cette différence notée `delta_f_r`. Nous résumons ces résultats en calculant successivement\ :
@@ -694,14 +694,14 @@ chart(data = crabs, rear ~ front) +
 
 Nous voyons très clairement que tous les points se situent du même côté de la bissectrice, ce qui suggère très fortement que $H_0$ ne tient pas la route ici.
 
-Le test correspondant s'obtient dans la SciViews Box à partir du menu `.hm` pour `hypothesis tests: means` et dans le menu qui apparait, on sélectionne le "snippet" `paired Student's t test`. Il s'agit toujours de la fonction `t.test()` mais cette fois-ci au lieu d'une formule, nous indiquons les deux variables suivant la notation `<data.frame>$<variable>`, et nous spécifions `paired = TRUE`. Fixons notre seuil $\alpha$ à 5% avant de faire le test, puis exécutons l'instruction suivante\ :
+Le test correspondant s'obtient dans la SciViews Box à partir du menu `.hm` pour `hypothesis tests: means` et dans le menu qui apparaît, on sélectionne le "snippet" `paired Student's t test`. Il s'agit toujours de la fonction `t.test()` mais cette fois-ci au lieu d'une formule, nous indiquons les deux variables suivant la notation `<data.frame>$<variable>`, et nous spécifions `paired = TRUE`. Fixons notre seuil $\alpha$ à 5% avant de faire le test, puis exécutons l'instruction suivante\ :
 
 ```{r}
 t.test(crabs$front, crabs$rear,
   alternative = "two.sided", conf.level = 0.95, paired = TRUE)
 ```
 
-Nous rejettons $H_0$ car la valeur *P* est inférieure à $\alpha$. Nous en concluons que le crabe *L. variegatus* a une carapace significativement plus large à l'avant qu'à l'arrière (t test apparié = 25,3, ddl = 199, valeur *P* << 10^-3^). Naturellement, les variantes unilatérales à gauche et à droite existent aussi pour ce test. Par contre, la question des variances égales ou non ne se pose pas dans ce cas^[Pouvez-vous expliquer pourquoi\ ? Réfléchissez, c'est assez évident.]. Notez que le test se limite à indiquer que la valeur *P* < 2,2 . 10^-16^. Effectivement, notre calcul donne 3.7 . 10^-64^.
+Nous rejetons $H_0$ car la valeur *P* est inférieure à $\alpha$. Nous en concluons que le crabe *L. variegatus* a une carapace significativement plus large à l'avant qu'à l'arrière (t test apparié = 25,3, ddl = 199, valeur *P* << 10^-3^). Naturellement, les variantes unilatérales à gauche et à droite existent aussi pour ce test. Par contre, la question des variances égales ou non ne se pose pas dans ce cas^[Pouvez-vous expliquer pourquoi\ ? Réfléchissez, c'est assez évident.]. Notez que le test se limite à indiquer que la valeur *P* < 2,2 . 10^-16^. Effectivement, notre calcul donne 3.7 . 10^-64^.
 
 ##### Conditions d'application {-}
 
@@ -762,7 +762,7 @@ Dans le cas du test *t* de Student univarié, nous comparons la moyenne d'une se
 
 ![](images/sdd1_09/t-tests-univariate.png)
 
-Le calcul est le même que dans le cas du test *t* apparié, avec l'étape de soustration `x1 - x2` en moins. Par exemple dans le jeu de données `sleep2` nous pouvons nous demander si le médicament `med1` change la durée du sommeil. Les hypothèses sont les suivantes\ :
+Le calcul est le même que dans le cas du test *t* apparié, avec l'étape de soustraction `x1 - x2` en moins. Par exemple dans le jeu de données `sleep2` nous pouvons nous demander si le médicament `med1` change la durée du sommeil. Les hypothèses sont les suivantes\ :
 
 - $H_0: \overline{med1} = 0$
 - $H_1: \overline{med1} \neq 0$
@@ -784,7 +784,7 @@ t.test(sleep2$med1,
   alternative = "two.sided", mu = 0, conf.level = 0.95)
 ```
 
-La valeur *P* est supérieure à $\alpha$. Nous ne rejettons pas $H_0$. Nous ne pouvons pas dire que le médicament 1 change de manière significative la durée de sommeil chez les patients au seuil $\alpha$ de 5% (test t univarié = 1,33, ddl = 9, valeur *P* = 0,22). Notez également que dans le cas présent, l'intervalle de confiance [-0,53, 2,03] contient zéro.
+La valeur *P* est supérieure à $\alpha$. Nous ne rejetons pas $H_0$. Nous ne pouvons pas dire que le médicament 1 change de manière significative la durée de sommeil chez les patients au seuil $\alpha$ de 5% (test t univarié = 1,33, ddl = 9, valeur *P* = 0,22). Notez également que dans le cas présent, l'intervalle de confiance [-0,53, 2,03] contient zéro.
 
 ##### Conditions d'application {-}
 
@@ -808,7 +808,7 @@ if (exists("assignment"))
       'S-BIOG-027' = !"A09Ia_{YY}M_cardiovascular", 
       'S-BIOG-921' = !"A09Ia_{YY}C_cardiovascular"),
     course.urls = c(
-      'S-BIOG-027' = "https://classroom.github.com/a/...", 
+      'S-BIOG-027' = "https://classroom.github.com/a/UOQwKFmU", 
       'S-BIOG-921' = "https://classroom.github.com/a/..."),
     course.starts = c(
       'S-BIOG-027' = !"{W[27]+1} 15:00:00"),
@@ -837,7 +837,7 @@ wilcox.test(sleep2$med1,
 
 ```
 
-Le test n'aime pas les ex-aequos et les valeurs nulles, mais ce n'est pas dramatique. C'est la raison pour laquelle R nous averti seulement mais effectue quand même le calcul. La conclusion est la même que pour le test *t* de Student, nous ne pouvons pas rejetter $H_0$.
+Le test n'aime pas les ex-æquos et les valeurs nulles, mais ce n'est pas dramatique. C'est la raison pour laquelle R nous averti seulement mais effectue quand même le calcul. La conclusion est la même que pour le test *t* de Student, nous ne pouvons pas rejeter $H_0$.
 
 Dans le cas d'un test indépendant (comparaison de la largeur de carapace à l'arrière `rear` en fonction du sexe chez *L. variegatus* en considérant que les femelles sont potentiellement plus grosses), nous obtenons\ :
 
@@ -849,13 +849,13 @@ wilcox.test(data = crabs, rear ~ sex,
   alternative = "greater", conf.level = 0.95)
 ```
 
-Nous obtenons un résultat similaire au test *t* de Student indépendant. Nous rejettons $H_0$. Concernant les conditions d'application, elles sont les mêmes que pour le test *t* de Student équivalent à part les contraintes sur la distribution qui disparaissent.
+Nous obtenons un résultat similaire au test *t* de Student indépendant. Nous rejetons $H_0$. Concernant les conditions d'application, elles sont les mêmes que pour le test *t* de Student équivalent à part les contraintes sur la distribution qui disparaissent.
 
 ##### À vous de jouer ! {-}
 
 `r h5p(92, height = 400, toc = "Choix du test d'hypothèse")`
 
-Quand choisir le test *t* de Student ou le test de Wilcoxon\ ? Nous serions tentés d'effectuer un test de Wilcoxon à chaque fois puisqu'ainsi nous sommes certains de ne pas comettre d'impair concernant la distribution des données. Mais en fait, le test *t* de Student est à préférer à chaque fois que c'est possible car il est plus **puissant**. Cela signifie qu'il sera capable de détecter un effet significatif plus tôt que le Wilcoxon. La bonne stratégie est donc d'utiliser le test *t* de Student autant que possible et de ne se rabattre sur le test de Wilcoxon que si on ne peut pas faire autrement, soit *n*  petit et distribution non normale ou inconnue. A noter que quand *n* est vraiment petit, il est impossible d'étudier valablement la distribution des données sur cet échantillon. On doit alors se baser sur un échantillon plus grand prélevé sur des données similaires ou alors jouer la sécurité et effectuer un test de Wilcoxon.
+Quand choisir le test *t* de Student ou le test de Wilcoxon\ ? Nous serions tentés d'effectuer un test de Wilcoxon à chaque fois puisqu'ainsi nous sommes certains de ne pas commettre d'impair concernant la distribution des données. Mais en fait, le test *t* de Student est à préférer à chaque fois que c'est possible car il est plus **puissant**. Cela signifie qu'il sera capable de détecter un effet significatif plus tôt que le Wilcoxon. La bonne stratégie est donc d'utiliser le test *t* de Student autant que possible et de ne se rabattre sur le test de Wilcoxon que si on ne peut pas faire autrement, soit *n*  petit et distribution non normale ou inconnue. A noter que quand *n* est vraiment petit, il est impossible d'étudier valablement la distribution des données sur cet échantillon. On doit alors se baser sur un échantillon plus grand prélevé sur des données similaires ou alors jouer la sécurité et effectuer un test de Wilcoxon.
 
 Cette analyse est valable pour toute paire de test paramétrique *versus* non paramétrique. Le tableau suivant résume cela.
 
@@ -865,23 +865,23 @@ Cette analyse est valable pour toute paire de test paramétrique *versus* non pa
 | **Puissance (même jeu de données)** | plus puissant      | moins puissant                    |
 | **Choix**                           | à privilégier      | à utiliser seulement si test paramétrique non applicable  |
 
-Mais au fait, c'est quoi la "puissance" d'un test d'hypothèse\ ? Considérons les quatres cas possibles.
+Mais au fait, c'est quoi la "puissance" d'un test d'hypothèse\ ? Considérons les quatre cas possibles.
 
-- Ne pas rejetter $H_0$ lorsque $H_0$ est vraie (correct)
-- Rejetter $H_0$ lorsque $H_0$ est fausse (correct)
-- Rejetter $H_0$ lorsque $H_0$ est vraie (erreur de 1^ère^ espèce $\alpha$)
-- Ne pas rejetter $H_0$ lorsque $H_0$ est fausse (erreur de 2^ème^ espèce $\beta$)
+- Ne pas rejeter $H_0$ lorsque $H_0$ est vraie (correct)
+- Rejeter $H_0$ lorsque $H_0$ est fausse (correct)
+- Rejeter $H_0$ lorsque $H_0$ est vraie (erreur de première espèce $\alpha$)
+- Ne pas rejeter $H_0$ lorsque $H_0$ est fausse (erreur de seconde espèce $\beta$)
 
 ![](images/sdd1_09/type_I_and_II_error.jpg)
 
-L'erreur de 1^ère^ espèce est associée au risque $\alpha$. L'erreur de seconde espèce est associée au risque $\beta$. Plus $\beta$ est petit, plus le test est puissant. La puissance est $1 - \beta$. La puissance d'un test peut se calculer à l'aide des fonctions `pwr.xxx()` du package `pwr`. Par exemple dans le test *t* univarié concernant `med1` nous ferons\ :
+L'erreur de première espèce est associée au risque $\alpha$. L'erreur de seconde espèce est associée au risque $\beta$. Plus $\beta$ est petit, plus le test est puissant. La puissance est $1 - \beta$. La puissance d'un test peut se calculer à l'aide des fonctions `pwr.xxx()` du package `pwr`. Par exemple dans le test *t* univarié concernant `med1` nous ferons\ :
 
 ```{r}
 pwr::pwr.t.test(n = 10, d = 1.3, sig.level = 0.05,
   type = "one.sample", alternative = "two.sided")
 ```
 
-La puissance est de 0,954. Donc, $\beta$ vaut 1 - 0,954 = 0,046 ou pratiquement 5%. On a un test bien équilibré entre $\alpha$ et $\beta$, et de plus, $\beta$ nous concerne particulièrement puisqu'ici nous ne rejettons pas $H_0$.
+La puissance est de 0,954. Donc, $\beta$ vaut 1 - 0,954 = 0,046 ou pratiquement 5%. On a un test bien équilibré entre $\alpha$ et $\beta$, et de plus, $\beta$ nous concerne particulièrement puisqu'ici nous ne rejetons pas $H_0$.
 
 ![Le système judiciaire des statistiques, par Hadley Wickham.](images/sdd1_09/statistical-justice.jpg)
 
@@ -893,7 +893,7 @@ La puissance est de 0,954. Donc, $\beta$ vaut 1 - 0,954 = 0,046 ou pratiquement 
 
 Il n'existe pas un graphique de référence afin de présenter un test *t* de Student ou un test de Wilcoxon. On retrouve malheureusement dans la littérature plusieurs graphiques qui coexistent.  Afin de présenter 3 graphiques courants, nous utilisons le jeu de données `crabs`.
 
-On retrouve généralement 2 graphiques montrant la moyenne et l'intervalle de confiance.
+On retrouve généralement deux graphiques montrant la moyenne et l'intervalle de confiance.
 
 ```{r}
 a <- chart(data = crabs, rear ~ sex) +
@@ -910,9 +910,9 @@ b <- chart(data = crabs, rear ~ sex) +
 combine_charts(list(a,b))
 ```
 
-La graphique en barre et le nuage de point représentent identiquement la information. Ils représentent la moyenne avec des barres erreurs qui représentent l'intervalle de confiance à 0.95. Le graphe en dynamite avec des barres d'erreurs ne donne aucune information sur le nombre d'observation. Nous avons déja abordé rapidement cette problématique dans la section \@ref(barres-mean). Il n'est donc pas le graphique optimal pour présenter un test *t* de Student.
+La graphique en barre et le nuage de point représentent identiquement la information. Ils représentent la moyenne avec des barres erreurs qui représentent l'intervalle de confiance à 0.95. Le graphe en dynamite avec des barres d'erreurs ne donne aucune information sur le nombre d'observation. Nous avons déjà abordé rapidement cette problématique dans la section \@ref(barres-mean). Il n'est donc pas le graphique optimal pour présenter un test *t* de Student.
 
-Malgré le fait que le test *t* de Student est un test paramétrique, on retrouve dans la littérature scientifique la boite de dispersion qui est pourtant un graphique associé à des valeurs non paramétriques. Pour le test de wilcoxon, la boite de dispersion est l'outil graphique recommandé. 
+Malgré le fait que le test *t* de Student est un test paramétrique, on retrouve dans la littérature scientifique la boite de dispersion qui est pourtant un graphique associé à des valeurs non paramétriques. Pour le test de Wilcoxon, la boite de dispersion est l'outil graphique recommandé. 
 
 ```{r}
 chart(data = crabs, rear ~ sex) +

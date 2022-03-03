@@ -294,7 +294,7 @@ if (exists("assignment"))
     course.starts = c(
       'S-BIOG-027' = !"{W[25]+2} 10:00:00"),
     course.ends = c(
-      'S-BIOG-027' = !"{W[25]+5} 23:59:59"),
+      'S-BIOG-027' = !"{W[26]+5} 23:59:59"),
     term = "Q2", level = 3,
     toc = "Génétique mendélienne")
 ```
