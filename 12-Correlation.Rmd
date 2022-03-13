@@ -49,11 +49,11 @@ combine_charts(pl, ncol = 3L)
 
 Nous pouvons observer que la **forme du nuage de points** diffère entre ces trois situations. Le graphique **A** est allongé le long d'une oblique proche de la première bissectrice. Cela signifie que, lorsque des valeurs de *X* sont faibles, les valeurs de *Y1* sont faibles aussi. Lorsque les valeurs de *X* sont élevées, celles de *Y1* tendent à l'être également. Nous avons plutôt une **proportionnalité** entre les valeurs observées pour *X* et pour *Y1*. Dans le graphique **C** de droite, c'est l'inverse. Nous avons une **proportionnalité inverse** entre *X*  et *Y3*. Dans le graphique **B** du centre, le nuage de point ne s'étire pas dans une direction oblique particulière. Nous dirons ici qu'il n'y a pas d'association entre *X* et *Y2*. Ce type d'association entre deux variables numérique est un élément important dans notre analyse car un nuage de points qui s'allonge le long d'une direction oblique sur le graphique est signe d'un mécanisme sous-jacent responsable de cette association (mais attention à ne pas conclure directement à un mécanisme de cause à effet direct, voir plus loin). Il serait donc souhaitable de pouvoir quantifier le degré d'une telle association.
 
-Nous pouvons définir la **covariance** comme étant une mesure de la variance dans le même sens pour toutes les paires de valeurs observées entre nos deux vairables numériques. Elle se définit de manière très similaire à la variance mais fait naturellement intervenir simultanément les observations de *X* et *Y*, ainsi que leurs moyennes respectives\ :
+Nous pouvons définir la **covariance** comme étant une mesure de la variance dans le même sens pour toutes les paires de valeurs observées entre nos deux variables numériques. Elle se définit de manière très similaire à la variance mais fait naturellement intervenir simultanément les observations de *X* et *Y*, ainsi que leurs moyennes respectives\ :
 
 $$cov_{X,Y} = \frac{\sum_{i = 1}^n (x_i - \bar{X}) \cdot (y_i - \bar{Y})}{n-1}$$
 
-Voyons ce que cela donne dans notre exemple fictif contenu dans un data frame nommé `df\ :
+Voyons ce que cela donne dans notre exemple fictif contenu dans un data frame nommé `df`\ :
 
 ```{r}
 cov(df$X, df$Y1)
@@ -76,7 +76,7 @@ C'est embêtant, puisque la forme du nuage de points n'a, lui, pas changé du to
 
 `r h5p(127, height = 400, toc = "Covariance entre 2 variables")`
 
-Le **coefficient de corrélation de Pearson**, noté *r*, est une autre mesure qui est *normée* de telle façon qu'il valle +1 pour une proportionnalité directe parfaite (les points sont strictement alignés le long d'une droite) et -1 lorsque la proportionnalité est inverse parfaite (et toujours 0 en cas de non-association).
+Le **coefficient de corrélation de Pearson**, noté *r*, est une autre mesure qui est *normée* de telle façon qu'il prenne la valeur +1 pour une proportionnalité directe parfaite (les points sont strictement alignés le long d'une droite) et -1 lorsque la proportionnalité est inverse parfaite (et toujours 0 en cas de non-association).
 
 $$cor_{X,Y} = r_{X,Y} = \frac{cov_{X,Y}}{\sqrt{S^2_X \cdot S^2_Y}} = \frac{cov_{X,Y}}{\sqrt{S^2_X} \cdot \sqrt{S^2_Y}} = \frac{cov_{X,Y}}{S_X \cdot S_Y}$$
 
@@ -149,17 +149,17 @@ Pour ces raisons seul le triangle inférieur (ou supérieur) est informatif. Le 
 summary(trees_cor)
 ```
 
-Voyez la page d'aide de la fonction `correlation()` pour plus d'information via `?correlation`. Vous pouvez passer un data frame à la fonction, ou encore, l'appeler via `correlation(data = df, ~ var1 + var2 + var3)` en utilisant une formule pour spécifier les variables du tableau à étudier. L'argument `use =` permet de spécifier quoi faire en cas de valeurs manquantes. Si vous indiquez `"complete.obs"`, toute ligne du tableau contenant au moins une valeur manquante sera élimniée avant le calcul. Avec `"pairwise.complete.obs"` les éliminations de valeurs manquantes se font pour chaque paire de variables individuellement des autres.
+Voyez la page d'aide de la fonction `correlation()` pour plus d'information via `?correlation`. Vous pouvez passer un data frame à la fonction, ou encore, l'appeler via `correlation(data = df, ~ var1 + var2 + var3)` en utilisant une formule pour spécifier les variables du tableau à étudier. L'argument `use =` permet de spécifier quoi faire en cas de valeurs manquantes. Si vous indiquez `"complete.obs"`, toute ligne du tableau contenant au moins une valeur manquante sera éliminée avant le calcul. Avec `"pairwise.complete.obs"` les éliminations de valeurs manquantes se font pour chaque paire de variables individuellement des autres.
 
 ### Corrélogramme
 
-Il existe aussi des représentation graphiques spécialisées, appelées **corrélogrammes** pour visualiser les coefficents de corrélations dans un cas multivarié. La fonction `plot()` appliquée à notre objet `Correlation` en offre une version simple.
+Il existe aussi des représentation graphiques spécialisées, appelées **corrélogrammes** pour visualiser les coefficients de corrélations dans un cas multivarié. La fonction `plot()` appliquée à notre objet `Correlation` en offre une version simple.
 
 ```{r}
 plot(trees_cor)
 ```
 
-La matrice est représentée par des ellipses de plus en plus allongées au fur et à mesure que *r* se rapproche de 1. Une couleur bleue est utilisée pour les corrélations positives et une couleur rouge pour les corrélations négatives (mais vous pouvez aussi choisir d'autres couleurs). Ici, toutes les corrélations sot positives. Sur le jeu de données zooplancton, nous pouvons réaliser un corrélogramme plus intéressant qui illustre mieux la diversité de cette représentation graphique. Considérons, à titre d'exemple, les variables contigües `size` jusqu'à `density` (que l'on peu indiquer par `size:density` dans la fonction `select()`)\ :
+La matrice est représentée par des ellipses de plus en plus allongées au fur et à mesure que *r* se rapproche de 1. Une couleur bleue est utilisée pour les corrélations positives et une couleur rouge pour les corrélations négatives (mais vous pouvez aussi choisir d'autres couleurs). Ici, toutes les corrélations sot positives. Sur le jeu de données zooplancton, nous pouvons réaliser un corrélogramme plus intéressant qui illustre mieux la diversité de cette représentation graphique. Considérons, à titre d'exemple, les variables contiguës `size` jusqu'à `density` (que l'on peu indiquer par `size:density` dans la fonction `select()`)\ :
 
 ```{r}
 zoo <- read("zooplankton", package = "data.io")
@@ -278,7 +278,7 @@ De même que nous pouvons calculer une matrice de corrélations, nous pouvons ca
 cov(trees)
 ```
 
-Comme ces descripteurs statistiques ne sont pas normés, ils sont plus difficiles à interpréter. Nous préférons donc la matrice de corrélations pour étudier l'association entre plusieurs variables numériques. Néanmoins, la matrice de variances-covariances interviendra plus tard dans d'autres traitements statistiques et il est utilie de la connaitre (par exemple, dans le cadre de l'ACP que nous étudierons en Science des Données Biologiques II).
+Comme ces descripteurs statistiques ne sont pas normés, ils sont plus difficiles à interpréter. Nous préférons donc la matrice de corrélations pour étudier l'association entre plusieurs variables numériques. Néanmoins, la matrice de variances-covariances interviendra plus tard dans d'autres traitements statistiques et il est utile de la connaitre (par exemple, dans le cadre de l'ACP que nous étudierons en Science des Données Biologiques II).
 
 ##### À vous de jouer ! {-}
 
@@ -307,10 +307,10 @@ correlation(trees, method = "kendall")
 ... à comparer avec la matrice de corrélation de Pearson\ :
 
 ```{r}
-correlation(trees) # Equivalent à method = "pearson"
+correlation(trees) # Équivalent à method = "pearson"
 ```
 
-Les valeurs obtenues diffèrent, mais les tendances restent similaires ici. Les differences sont d'autant plus importantes que le nuage de points est curvilinéaire. A vous de bien choisir votre coefficient en fonction de ce que vous recherchez, une association linéaire (Pearson) ou pas (Spearman, le plus utilisé, ou Kendall éventuellement).
+Les valeurs obtenues diffèrent, mais les tendances restent similaires ici. Les différences sont d'autant plus importantes que le nuage de points est curvilinéaire. A vous de bien choisir votre coefficient en fonction de ce que vous recherchez, une association linéaire (Pearson) ou pas (Spearman, le plus utilisé, ou Kendall éventuellement).
 
 ### Test de corrélation
 
@@ -340,14 +340,14 @@ cor.test(data = trees, ~ diameter + height,
   alternative = "greater", method = "spearman")
 ```
 
-Le test nous averti qu'en présence d'ex aequos, le calcul n'est qu'approchant. Ici aussi nous rejetons $H_0$. Enfin, pour comparaison (en pratique, on ne fait pas systématiquement tous les tests, mais on choisi celui qui est le plus adéquat), que donnerait un test de Kendall\ ?
+Le test nous averti qu'en présence d'ex æquos, le calcul n'est qu'approchant. Ici aussi nous rejetons $H_0$. Enfin, pour comparaison (en pratique, on ne fait pas systématiquement tous les tests, mais on choisi celui qui est le plus adéquat), que donnerait un test de Kendall\ ?
 
 ```{r}
 cor.test(data = trees, ~ diameter + height,
   alternative = "greater", method = "kendall")
 ```
 
-Même remarque concernant les ex aequos et valeur *P* très similaire ici à celle du test de Spearman.
+Même remarque concernant les ex æquos et valeur *P* très similaire ici à celle du test de Spearman.
 
 ##### À vous de jouer ! {-}
 
@@ -364,7 +364,7 @@ if (exists("assignment"))
       'S-BIOG-027' = !"A12Ia_{YY}M_correlation", 
       'S-BIOG-921' = !"A12Ia_{YY}C_correlation"),
     course.urls = c(
-      'S-BIOG-027' = "https://classroom.github.com/a/...", 
+      'S-BIOG-027' = "https://classroom.github.com/a/mPo8NyQU", 
       'S-BIOG-921' = "https://classroom.github.com/a/..."),
     course.starts = c(
       'S-BIOG-027' = !"{W[35]+1} 13:00:00"),
@@ -373,6 +373,27 @@ if (exists("assignment"))
     term = "Q2", level = 3,
     toc = "Association entre des variables")
 ```
+
+**Finalisez maintenant votre gros projet trans-module sur `urchin` en y ajoutant un test de corrélation et en terminant le rapport.**
+
+```{r assign_A10Ga_urchin_VI, echo=FALSE, results='asis'}
+if (exists("assignment2"))
+  assignment2("A10Ga_urchin", part = "VI",
+    url = "https://github.com/BioDataScience-Course/A03Ga_urchin",
+    course.ids = c(
+      'S-BIOG-027' = !"A03Ga_{YY}M_urchin", # TODO: how to account it in Q2???
+      'S-BIOG-921' = !"A03Ga_{YY}C_urchin"),
+    course.urls = c(
+      'S-BIOG-027' = "ttps://classroom.github.com/a/FB5UbPvX", 
+      'S-BIOG-921' = "https://classroom.github.com/g/..."),
+    course.starts = c(
+      'S-BIOG-027' = !"{W[29]+1} 13:00:00"),
+    course.ends = c(
+      'S-BIOG-027' = !"{W[37]+1} 23:59:59"),
+    term = "Q2", level = 4, n = 2,
+    toc = "Biométrie de l'oursin violet, part VI")
+```
+
 
 ## Communication
 
@@ -394,7 +415,7 @@ Le format **[R Presentation](https://support.rstudio.com/hc/en-us/sections/20013
 
 ![](images/sdd1_12/r-presentation1.png)
 
-Ce type de présentation est très bien intégré dans RStudio. Outre l'édition au format R Markdown la présentation elle-même apparait dans un onglet spécial **Presentation** en haut à droite qui n'interfère pas avec les autres onglets. Par contre, les possibilités de personnalisation sont plutôt limitées.
+Ce type de présentation est très bien intégré dans RStudio. Outre l'édition au format R Markdown la présentation elle-même apparaît dans un onglet spécial **Presentation** en haut à droite qui n'interfère pas avec les autres onglets. Par contre, les possibilités de personnalisation sont plutôt limitées.
 
 ![](images/sdd1_12/r-presentation2.png)
 
@@ -404,7 +425,7 @@ Deux formats basés sur le HTML et JavaScript (comprenez, des formats qui s'exé
 
 ![](images/sdd1_12/r-markdown-pres2.png)
 
-Les deux formats Web par défaut sont **ioslides** et **Slidy**. L'apparence et les fonctionnalités des deux systèmes diffèrent quelque peu. Le mieux est de tester les deux et de choisir celui qu'on préfère. La présentation apparait dans une fenêtre séparée. Les possibilités de personnalisation sont plus poussées, mais elles se font à l'aide de feuilles de styles au format CSS. Cela impose de comprendre leur logique.
+Les deux formats Web par défaut sont **ioslides** et **Slidy**. L'apparence et les fonctionnalités des deux systèmes diffèrent quelque peu. Le mieux est de tester les deux et de choisir celui qu'on préfère. La présentation apparaît dans une fenêtre séparée. Les possibilités de personnalisation sont plus poussées, mais elles se font à l'aide de feuilles de styles au format CSS. Cela impose de comprendre leur logique.
 
 ![](images/sdd1_12/r-markdown-pres3.png)
 
@@ -636,7 +657,7 @@ L'espérance de vie est une donnée statistique qui permet de connaître la dur�
 
 ##### Moules {-}
 
-Un scientifique mesure la stabilité de la membrane lysosomale (indice de stress des cellules utilisé en écotoxicologie\ : on sait que les polluants étudiés tendent à déstabiliser la membrane des lysosomes) chez la moule _Mytilus edulis_ en Mer du Nord. Deux régions sont comparées\ : la pleine mer (A), et l’embouchure de l’Escault dans sa partie considérée comme la plus polluée (B). Cinq moules sont prélevées aléatoirement sur les deux sites, et dix mesures sont réalisées sur chaque individu. Le scientifique conclu à une stabilité lysosomale significative plus faible au seuil alpha de 5% dans le site B (test de Student non apparié et unilatéral à gauche, t = -6,5, ddl = 49, valeur *P* < 0.001).
+Un scientifique mesure la stabilité de la membrane lysosomale (indice de stress des cellules utilisé en écotoxicologie\ : on sait que les polluants étudiés tendent à déstabiliser la membrane des lysosomes) chez la moule _Mytilus edulis_ en Mer du Nord. Deux régions sont comparées\ : la pleine mer (A), et l’embouchure de l’Escault dans sa partie considérée comme la plus polluée (B). Cinq moules sont prélevées aléatoirement sur les deux sites, et dix mesures sont réalisées sur chaque individu. Le scientifique conclu à une stabilité lysosomale significative plus faible au seuil alpha de 5% dans le site B (test *t* de Student non apparié et unilatéral à gauche, t = -6,5, ddl = 49, valeur *P* < 0.001).
 
 **_Que pensez-vous de cette étude ?_**
 
@@ -685,7 +706,7 @@ Un chercheur dans une industrie chimique s’intéresse à l’effet d’un nouv
 
 ![](images/sdd1_12/wrong-graph-nbc.jpg)
 
-**_Ca ne s'invente pas\ !_**
+**_Cela ne s'invente pas\ !_**
 
 -----
 

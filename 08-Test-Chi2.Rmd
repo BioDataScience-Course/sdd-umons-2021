@@ -579,7 +579,7 @@ if (exists("assignment2"))
     course.ends = c(
       'S-BIOG-027' = !"{W[37]+1} 23:59:59"),
     term = "Q2", level = 4, n = 4,
-    toc = "Biométrie humaine")
+    toc = "Biométrie humaine, part I")
 ```
 
 **Note\ : Le projet suivant est la continuité d'un exercice débuté au premier quadrimestre.**
@@ -599,7 +599,7 @@ if (exists("assignment2"))
     course.ends = c(
       'S-BIOG-027' = !"{W[37]+1} 23:59:59"),
     term = "Q2", level = 4, n = 2,
-    toc = "Biométrie de l'oursin violet")
+    toc = "Biométrie de l'oursin violet, part II")
 ```
 
 <!--- G.E. cette section est redondante. Je la place en commentaire. Il serait intéressant de décider si on la garde ou pas. PhG: pour ma part, on peut l'éliminer... les étudiants ont déjà assez de travail comme cela avec le reste du module.

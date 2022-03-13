@@ -31,7 +31,7 @@ crabs %>.%
   crabs2
 ```
 
-La Fig. \@ref(fig:crabs-rear) montre la largeur à l'arrière de la carapace chez les quatre groupes ainsi individualisés. Une représentation graphique adéquate avant de réaliser notre analyse ici lorsque le nombre de répliquats est important est le graphique en violon sur lequel nous superposons au moins les moyennes, et de préférence, les points également. Si le nombre de répliquats est plus faible, mais toujours supérieur à 7-8, nous pourrions utiliser le même type de graphique mais avec des boites de dispersion plutôt (voir plus loin, Fig. \@ref(fig:anova2)). Avec encore moins de répliquats nous présenterons les points et les moyennes uniquement.
+La Fig. \@ref(fig:crabs-rear) montre la largeur à l'arrière de la carapace chez les quatre groupes ainsi individualisés. Une représentation graphique adéquate avant de réaliser notre analyse ici lorsque le nombre de répliquas est important est le graphique en violon sur lequel nous superposons au moins les moyennes, et de préférence, les points également. Si le nombre de répliquas est plus faible, mais toujours supérieur à 7-8, nous pourrions utiliser le même type de graphique mais avec des boites de dispersion plutôt (voir plus loin, Fig. \@ref(fig:anova2)). Avec encore moins de répliquas nous présenterons les points et les moyennes uniquement.
 
 ```{r crabs-rear, fig.cap="Largeur arrière en fonction du groupe de crabes *L. variegatus*. Graphique adéquat pour comparer les moyennes et distributions dans le cas d'un nombre important de répliquats (moyennes en rouge + observations individuelles en noir semi-transparent superposées à des graphiques en violon)."}
 chart(data = crabs2, rear ~ group) +
@@ -55,7 +55,7 @@ crabs2 %>.%
 skimr::skim(crabs2)
 ```
 
-Nous avons 50 individus dans chacun des quatre groupes. **Lorsqu'il y a le même nombre de réplicats dans tous les groupes, on appelle cela un plan balancé**. C'est une situation optimale. Nous devons toujours essayer de nous en rapprocher le plus possible car, si le nombre d'individus mesurés diffère fortement d'un groupe à l'autre, nous aurons forcément moins d'information disponible dans le ou les groupes moins nombreux, ce qui déforcera notre analyse.
+Nous avons 50 individus dans chacun des quatre groupes. **Lorsqu'il y a le même nombre de répliquas dans tous les groupes, on appelle cela un plan balancé**. C'est une situation optimale. Nous devons toujours essayer de nous en rapprocher le plus possible car, si le nombre d'individus mesurés diffère fortement d'un groupe à l'autre, nous aurons forcément moins d'information disponible dans le ou les groupes moins nombreux, ce qui déforcera notre analyse.
 
 Nous voyons également que la variable `aspect` semble avoir une distribution bimodale d'après le petit histogramme représenté dans le résumé. La Fig. \@ref(fig:anova0) avec `aspect montre une différence plus qu'avec `rear` seul, à la Fig. \@ref(fig:crabs-rear).
 
@@ -69,11 +69,11 @@ chart(data = crabs2, aspect ~ group) +
   
 ```
 
-Nous voyons ici beaucoup mieux que la distribution bimodale est essentiellement dûe au dimorphisme sexuel plutôt qu'à des différences entre les variétés, mais qu'en est-il plus précisément car si nous regardons attentivement, il semble que les moyennes pour les crabes bleus sont légèrement inférieures à ces des crabes oranges.
+Nous voyons ici beaucoup mieux que la distribution bimodale est essentiellement due au dimorphisme sexuel plutôt qu'à des différences entre les variétés, mais qu'en est-il plus précisément car si nous regardons attentivement, il semble que les moyennes pour les crabes bleus sont légèrement inférieures à ces des crabes oranges.
 
-Comment comparer valablement ces quatre groupes\ ? Comme nous savons maintenant comparer deux groupes à l'aide d'un test *t* de Student, il est tentant d'effectuer toutes les comparaisons deux à deux et de résumer l'ensemble, par exemple, dans un tableau synthétique. Ca fait quant même beaucoup de comparaisons (`B-F` <-> `B-M`, `B-F` <-> `O-F`, `B-F` <-> `O-M`, `B-M` <-> `O-F`, `B-M`<-> `O-M`, et finalement `O-F` <-> `O-M`). Cela fait six comparaisons à réaliser.
+Comment comparer valablement ces quatre groupes\ ? Comme nous savons maintenant comparer deux groupes à l'aide d'un test *t* de Student, il est tentant d'effectuer toutes les comparaisons deux à deux et de résumer l'ensemble, par exemple, dans un tableau synthétique. Cela fait quant même beaucoup de comparaisons (`B-F` <-> `B-M`, `B-F` <-> `O-F`, `B-F` <-> `O-M`, `B-M` <-> `O-F`, `B-M`<-> `O-M`, et finalement `O-F` <-> `O-M`). Cela fait six comparaisons à réaliser.
 
-N'oublions pas que, à chaque test, nous prenons un risque de nous tromper. **Le risque de se tromper au moins une fois dans l'ensemble des tests est alors décuplé en cas de tests multiples.** Prenons un point de vue naïf, mais qui suffira ici pour démontrer le problème qui apparaît. Admettons que le risque de nous tromper est constant, que nous rejettons ou non $H_0$, et qu'il est de l'ordre de 10% dans chaque test individuellement^[Attention\ ! vous savez bien que c'est plus compliqué que cela. D'une part, le risque de se tromper est probablement différent si on rejette $H_0$ ($\alpha$) ou non ($\beta$), et ces risques sont encore à moduler en fonction de la probabilité *a priori*, un cas similaire au dépistage d'une maladie plus ou moins rare, rappelez-vous, au module \@ref(proba).]. La seule solution acceptable est que *tous* les tests soient corrects. Considérant chaque interprétation indépendante, nous pouvons multiplier les probabilités d'avoir un test correct (90%) le nombre de fois que nous faisons le test, soit $0,9 \times 0,9 \times 0,9 \times 0,9 \times 0,9 \times 0,9 = 0,9^6 = 0,53$. Tous les autres cas ayant au moins un test faux, nous constatons que notre analyse globale sera incorrecte $1 - 0,53 = 47\%$ du temps^[Dans R, vous pouvez utiliser `choose(n, j)` pour calculer le coefficient binomial. Donc votre calcul du risque de se tromper au moins une fois dans un ensemble de `n` tests dont le risque individuel est `r` sera `1 - (1 - r)^choose(n, 2)`.]. **Notre analyse sera incorrecte une fois sur deux environ.**
+N'oublions pas que, à chaque test, nous prenons un risque de nous tromper. **Le risque de se tromper au moins une fois dans l'ensemble des tests est alors décuplé en cas de tests multiples.** Prenons un point de vue naïf, mais qui suffira ici pour démontrer le problème qui apparaît. Admettons que le risque de nous tromper est constant, que nous rejetons ou non $H_0$, et qu'il est de l'ordre de 10% dans chaque test individuellement^[Attention\ ! vous savez bien que c'est plus compliqué que cela. D'une part, le risque de se tromper est probablement différent si on rejette $H_0$ ($\alpha$) ou non ($\beta$), et ces risques sont encore à moduler en fonction de la probabilité *a priori*, un cas similaire au dépistage d'une maladie plus ou moins rare, rappelez-vous, au module \@ref(proba).]. La seule solution acceptable est que *tous* les tests soient corrects. Considérant chaque interprétation indépendante, nous pouvons multiplier les probabilités d'avoir un test correct (90%) le nombre de fois que nous faisons le test, soit $0,9 \times 0,9 \times 0,9 \times 0,9 \times 0,9 \times 0,9 = 0,9^6 = 0,53$. Tous les autres cas ayant au moins un test faux, nous constatons que notre analyse globale sera incorrecte $1 - 0,53 = 47\%$ du temps^[Dans R, vous pouvez utiliser `choose(n, j)` pour calculer le coefficient binomial. Donc votre calcul du risque de se tromper au moins une fois dans un ensemble de `n` tests dont le risque individuel est `r` sera `1 - (1 - r)^choose(n, 2)`.]. **Notre analyse sera incorrecte une fois sur deux environ.**
 
 ```{block, type='info'}
 De manière générale, le nombre de combinaisons deux à deux possibles dans un set de `n` groupes distincts sera calculé à l'aide du coefficient binomial que nous avions déjà rencontré avec la distribution du même nom, ici avec $j$ valant deux.
@@ -104,7 +104,7 @@ Au lieu de s'attaquer aux comparaisons deux à deux, nous pouvons aussi considé
 
 - $H_1: \exists(i, j) \mathrm{\ tel\ que\ } \mu_i \neq \mu_j$
 
-Notre hypothèse nulle est très restrictive, mais par contre, l'hypothèse alternative est très vague car nous ne savons pas **où** sont les différences à ce stade si nous rejettons $H_0$, mais nous nous en occuperons plus tard.
+Notre hypothèse nulle est très restrictive, mais par contre, l'hypothèse alternative est très vague car nous ne savons pas **où** sont les différences à ce stade si nous rejetons $H_0$, mais nous nous en occuperons plus tard.
 
 ```{block, type='info'}
 **Propriété d'additivité des parts de variance**. La variance se calcule comme\ :
@@ -172,7 +172,7 @@ chart(data = dat, Réponse ~ Population %col=% Population) +
   annotate("text", x = 2.85, y = 5.2, color = 3, label = "intra ~epsilon[i]", parse = TRUE)
 ```
 
-Notons que ce modèle à trois termes représente bien la situation qui nous intéresse, mais aussi, qu'il décompose la variance totale (entre $\mu$ et chaque point observé) en deux\ : ce que nous appelerons le terme **inter** représentant l'écart entre la moyenne globale $\mu$ et la moyenne de la sous-population concernées ($\tau_j$) et le terme **intra** depuis cette moyenne de la sous-population jusqu'au point observé ($\epsilon_i$).
+Notons que ce modèle à trois termes représente bien la situation qui nous intéresse, mais aussi, qu'il décompose la variance totale (entre $\mu$ et chaque point observé) en deux\ : ce que nous appellerons le terme **inter** représentant l'écart entre la moyenne globale $\mu$ et la moyenne de la sous-population concernées ($\tau_j$) et le terme **intra** depuis cette moyenne de la sous-population jusqu'au point observé ($\epsilon_i$).
 
 ##### À vous de jouer ! {-}
 
@@ -213,7 +213,7 @@ Calcul des sommes des carrés (inter- et intragroupes). Considérant\ :
 
 - _i_ = indice des observations au sein du jeu de données de 1 à _n_,
 - _j_ = facteurs (sous-populations de 1 à _k_),
-- $\bar{y}$ = moyenne generale de l'échantillon,
+- $\bar{y}$ = moyenne générale de l'échantillon,
 - $\bar{y_j}$ = moyenne de la _j_^ème^ population.
 
 La somme des carrés inter $SC_{inter}$ et la somme des carrés intra $SC_{intra}$ se calculent comme suit\ :
@@ -327,7 +327,7 @@ invisible(car::qqPlot(.anova2[[".std.resid"]], distribution = "norm",
   ylab = "Résidus"))
 ```
 
-La condition d'homoscédasticité est plus sensible. Elle mérite donc d'être vérifiée systématiquement et précisément. Différents tests d'hypothèse existent pour le vérifier, comme le test de Batlett, le test de Levene, etc. Nous vous proposns ici d'utiliser le test de Batlett. Ses hypothèses sont\ :
+La condition d'homoscédasticité est plus sensible. Elle mérite donc d'être vérifiée systématiquement et précisément. Différents tests d'hypothèse existent pour le vérifier, comme le test de Batlett, le test de Levene, etc. Nous vous proposons ici d'utiliser le test de Batlett. Ses hypothèses sont\ :
 
 - $H_0: var_1 = var_2 = ... = var_k$ (homoscédasticité)
 - $H_1: \exists(i, j) \mathrm{\ tel\ que\ } var_i \neq var_j$ (hétéroscédasticité)
@@ -342,13 +342,13 @@ La SciViews Box propose des snippets pour accéder à ces différentes analyses.
 
 ##### Résolution de notre exemple {-}
 
-Nous commençons par déterminer si nous avons homoscédasticité. Cosidérons un seuil $\alpha$ de 5% pour tous nos tests. Ensuite\ :
+Nous commençons par déterminer si nous avons homoscédasticité. Considérons un seuil $\alpha$ de 5% pour tous nos tests. Ensuite\ :
 
 ```{r}
 bartlett.test(data = crabs2, aspect ~ group)
 ```
 
-Nous rejettons $H_0$. Il n'y a pas homoscédasticité. Calculons par exemple le logarithme népérien de `aspect` et réessayons\ :
+Nous rejetons $H_0$. Il n'y a pas homoscédasticité. Calculons par exemple le logarithme népérien de `aspect` et réessayons\ :
 
 ```{r}
 crabs2 %>.%
@@ -396,7 +396,7 @@ Ensuite l'ANOVA proprement dite\ :
 anova(anova. <- lm(data = crabs2, aspect5 ~ group))
 ```
 
-Nous retrouvons ici le tableau de l'ANOVA. La valeur *P* est très faible et inférieure à $\alpha$. Nous rejettons $H_0$. Nous pouvons dire que le ratio largeur arrière / max à la puissance cinq diffère significativement entre les groupes (ANOVA, F = 150, ddl = 3 & 196, valeur *P* << 10^-3^).
+Nous retrouvons ici le tableau de l'ANOVA. La valeur *P* est très faible et inférieure à $\alpha$. Nous rejetons $H_0$. Nous pouvons dire que le ratio largeur arrière / max à la puissance cinq diffère significativement entre les groupes (ANOVA, F = 150, ddl = 3 & 196, valeur *P* << 10^-3^).
 
 Ce n'est qu'une fois l'ANOVA réalisée que nous pouvons calculer et visionner la distribution des résidus (Fig. \@ref(fig:anova-resid)). Cette distribution s'éloigne aux extrêmes de la distribution normale. Nous sommes dans un cas un peu limite. Soit nous considérons que l'écart est suffisamment léger pour ne pas trop influer sur l'ANOVA, soit nous devons passer à un test non paramétrique. Nous ferons les deux ici à des fins de comparaison.
 
@@ -418,9 +418,9 @@ anova. %>.%
 
 ## Test "post-hoc"
 
-Lorsque nous rejettons $H_0$ dans l'ANOVA comme dans le cas de notre exemple, nous savons qu'il y a au moins deux moyennes qui diffèrent l'une de l'autre, mais nous ne savons pas lesquelles. Notre analyse n'est pas terminée. Nous allons revisiter les tests de comparaison multiples deux à deux, mais en prenant des précautions particulières pour éviter l'inflation du risque d'erreur.
+Lorsque nous rejetons $H_0$ dans l'ANOVA comme dans le cas de notre exemple, nous savons qu'il y a au moins deux moyennes qui diffèrent l'une de l'autre, mais nous ne savons pas lesquelles. Notre analyse n'est pas terminée. Nous allons revisiter les tests de comparaison multiples deux à deux, mais en prenant des précautions particulières pour éviter l'inflation du risque d'erreur.
 
-Tout d'abort, nous mettons en place un garde-fou. Nous effectuons *toujours* une ANOVA en premier lieu, et nous n'envisageons les comparaisons multiples que lorsque $H_0$ est rejettée. Cela évite beaucoup de faux positifs. On appelle cela des tests "post hoc" car ils ne sont pas planifiés d'amblée, mais suivent un conclusion préalable (ici, le rejet de $H_0$ dans un test ANOVA).
+Tout d’abord, nous mettons en place un garde-fou. Nous effectuons *toujours* une ANOVA en premier lieu, et nous n'envisageons les comparaisons multiples que lorsque $H_0$ est rejetée. Cela évite beaucoup de faux positifs. On appelle cela des tests "post hoc" car ils ne sont pas planifiés d’emblée, mais suivent un conclusion préalable (ici, le rejet de $H_0$ dans un test ANOVA).
 
 Une approche simple consisterait à modifier notre seuil $\alpha$ pour chaque test individuel vers le bas afin que le risque de se tromper dans au moins un des tests ne dépasse pas la valeur de $/alpha$ que nous nous sommes fixée. C'est la **correction de Bonferroni**. Elle consiste à diviser la valeur de $/alpha$ par le nombre de tests simultanés nécessaires, et d'utiliser cette valeur corrigée comme seuil $\alpha$ de chaque test de Student individuel. Dans le cas de quatre populations, nous avons vu qu'il y a six comparaisons multiples deux à deux. Donc, en appliquant un seuil corrigé de $\alpha/6 = 0,05 / 6 = 0,00833$ pour chaque test, on aura la probabilité suivante pour $1 - \alpha$\ :
 
@@ -436,7 +436,7 @@ summary(anovaComp. <- confint(multcomp::glht(anova.,
 
 Si nous gardons notre seuil $\alpha$ de 5%, seuls les mâles ne diffèrent (tout juste) pas entre eux (``O-M - B-M`) avec une valeur *P* de 6%. Toutes les autres comparaisons deux à deux sont significativement différentes. Sur le graphique, si les intervalles autour des différences de moyennes comprennent zéro, matérialisé par un trait pointillé vertical, les différences ne sont pas significatives.
 
-En conclusion, tous les groupes diffèrent de manière siginificative sauf les mâles (test HSD de Tukey, valeur *P* < 5%).
+En conclusion, tous les groupes diffèrent de manière significative sauf les mâles (test HSD de Tukey, valeur *P* < 5%).
 
 ##### Conditions d'application {-}
 
@@ -448,13 +448,13 @@ Les conditions d'application pour le test post hoc de Tukey sont les mêmes que 
 
 ## Test de Kruskal-Wallis
 
-Les conditions d'application de l'ANOVA sont assez restrictives, en particuliers l'homoscédasticité et le normalité des résidus. Dans notre example, nous avons pu stabiliser la variance par une transformation puissance cinq, mais la distribution des résidus n'est pas optimale. Nous pouvons tout aussi bien décider de nous orienter vers la version non paramétrique équivalente\ : le **test de Kruskal-Wallis**.
+Les conditions d'application de l'ANOVA sont assez restrictives, en particuliers l'homoscédasticité et le normalité des résidus. Dans notre exemple, nous avons pu stabiliser la variance par une transformation puissance cinq, mais la distribution des résidus n'est pas optimale. Nous pouvons tout aussi bien décider de nous orienter vers la version non paramétrique équivalente\ : le **test de Kruskal-Wallis**.
 
 ```{block, type='warning'}
-Le raisonnement entre ANOVA (test paramétrique) et Kruska-Wallis (test non paramétrique) est le même qu'entre le test de Student ou celui de Wilcoxon. Lorsque les conditions sont remplies, l'ANOVA est un test plus puissant à utiliser en priorité. Nous le préfèrerons donc, sauf dans les cas impossibles où aucune transformation des données ne permet d'obtenir une distribution acceptable des résidus et des variances.
+Le raisonnement entre ANOVA (test paramétrique) et Kruskal-Wallis (test non paramétrique) est le même qu'entre le test de Student ou celui de Wilcoxon. Lorsque les conditions sont remplies, l'ANOVA est un test plus puissant à utiliser en priorité. Nous le préférerons donc, sauf dans les cas impossibles où aucune transformation des données ne permet d'obtenir une distribution acceptable des résidus et des variances.
 ```
 
-Le test de Kruskal-Wallis va comparer la localisation des points sur l'axe plutôt que les moyennes. Nous travaillons ici sur les **rangs**. La transformation en rangs consiste à ranger les observations de la plus petite à la plus grande et à remplacer les valeurs par leur position (leur rang) dans ce classement. Les ex-aequos reçoivent des rangs équivalents. Un petit exemple\ :
+Le test de Kruskal-Wallis va comparer la localisation des points sur l'axe plutôt que les moyennes. Nous travaillons ici sur les **rangs**. La transformation en rangs consiste à ranger les observations de la plus petite à la plus grande et à remplacer les valeurs par leur position (leur rang) dans ce classement. Les ex-æquos reçoivent des rangs équivalents. Un petit exemple\ :
 
 ```{r}
 # Un échantillon
@@ -465,7 +465,7 @@ sort(x)
 rank(sort(x))
 ```
 
-Donc 0,5 donne 1, 2,1 apparait deux fois en position 2 et 3, donc on leurs attribue à tous les deux le rang 2,5. 2,4 est remplacé par 4, 3,5 par 5 et enfin 4,5 est remplacé par 6.
+Donc 0,5 donne 1, 2,1 apparaît deux fois en position 2 et 3, donc on leurs attribue à tous les deux le rang 2,5. 2,4 est remplacé par 4, 3,5 par 5 et enfin 4,5 est remplacé par 6.
 
 Dans le test de Kruskal-Wallis, sous $H_0$ nous avons le même rang moyen (noté $mr$) pour chaque groupe parmi $k$. Sous $H_1$, au moins deux groupes ont des rangs moyens différents. 
 
@@ -481,7 +481,7 @@ Le test est réalisé dans R avec la fonction `kruskal.test()`. Notez que les ar
 kruskal.test(data = crabs2, aspect ~ group)
 ```
 
-Ici, nous rejettons $H_0$ au seuil $\alpha$ de 5%. Nous pouvons dire qu'il y a au moins une différence significative entre les ratios au seuil $\alpha$ de 5% (test Kruskal-Wallis, $\chi^2$ = 140, ddl = 3, valeur *P* << 10^-3^).
+Ici, nous rejetons $H_0$ au seuil $\alpha$ de 5%. Nous pouvons dire qu'il y a au moins une différence significative entre les ratios au seuil $\alpha$ de 5% (test Kruskal-Wallis, $\chi^2$ = 140, ddl = 3, valeur *P* << 10^-3^).
 
 ##### Conditions d'application {-}
 
@@ -495,7 +495,7 @@ Le test de Kruskal-Wallis est naturellement moins contraignant que l'ANOVA.
 
 ### Test "post hoc" non paramétrique
 
-Nous devrions également réaliser des tests "pot hoc" lorsque nous rejettons $H_0$ du Kruskal-Wallis. Les version non paramétriques des tests de comparaisons multiples sont moins connus. Nous pourrions effectuer des comparaisons deux à deux avec des tests de Wilcoxon en appliquant une correction de Bonferroni.
+Nous devrions également réaliser des tests "pot hoc" lorsque nous rejetons $H_0$ du Kruskal-Wallis. Les version non paramétriques des tests de comparaisons multiples sont moins connus. Nous pourrions effectuer des comparaisons deux à deux avec des tests de Wilcoxon en appliquant une correction de Bonferroni.
 
 Une autre option consiste à utiliser une version non paramétrique du test de Tukey basée sur les rangs, dit test pot hoc non paramétrique asymptotique. Les explications assez techniques sont disponibles [ici](https://onlinelibrary.wiley.com/doi/abs/10.1002/1521-4036%28200109%2943%3A5%3C553%3A%3AAID-BIMJ553%3E3.0.CO%3B2-N). Ce test est également disponible dans la SciViews Box depuis `.hn`, en sélectionnant l'entrée `Kruskal-Wallis: multiple comparisons` dans le menu déroulant.
 
@@ -504,7 +504,7 @@ summary(kw_comp. <- nparcomp::nparcomp(data = crabs2, aspect ~ group))
 plot(kw_comp.)
 ```
 
-La présentation des résultats est plus détaillée que pour le HSD de Tukey. Le graphique est très imilaire. Ici, toutes les différences sont considérées comme significatives, même si la comparaison des mâles `B-M - O-M` avec une valeur *P* tout juste significative de 0,049 est à prendre avec des pincettes étant donné sa proximité du seuil.
+La présentation des résultats est plus détaillée que pour le HSD de Tukey. Le graphique est très similaire. Ici, toutes les différences sont considérées comme significatives, même si la comparaison des mâles `B-M - O-M` avec une valeur *P* tout juste significative de 0,049 est à prendre avec des pincettes étant donné sa proximité du seuil.
 
 Au final que conclure\ ? Lorsque l'ANOVA peut être utilisée, elle est à préférer. Ici avec une transformation puissance cinq, nous stabilisons la variance qui est le critère le plus sensible. De plus tant avec l'ANOVA qu'avec le Kruskal-Wallis, nous détectons des différences significatives. Les tests "post hoc" nous indiquent des différences significatives au seuil $\alpha$ de 5% sauf peut-être pour les mâles (il faudrait prévoir des mesures supplémentaires pour confirmer ou infirmer à ce niveau).
 
