@@ -4,17 +4,17 @@
 SciViews::R
 ```
 
-##### Objectifs {-}
+##### Objectifs {.unnumbered}
 
-- Pouvoir comparer plus de deux populations simultanément en utilisant des techniques de décomposition de la variance
- 
-- Découvrir le modèle linéaire, anciennement analyse de variance (ANOVA)
- 
-- Savoir effectuer des tests de comparaison multiples
+-   Pouvoir comparer plus de deux populations simultanément en utilisant des techniques de décomposition de la variance
 
-- Connaitre l'équivalent non paramétrique à un facteur (test de Kruskal-Wallis)
+-   Découvrir le modèle linéaire, anciennement analyse de variance (ANOVA)
 
-##### Prérequis {-}
+-   Savoir effectuer des tests de comparaison multiples
+
+-   Connaitre l'équivalent non paramétrique à un facteur (test de Kruskal-Wallis)
+
+##### Prérequis {.unnumbered}
 
 Ce module continue la comparaison de moyennes entamée, pour deux populations au module \@ref(moyenne). Assurez-vous d'avoir bien compris le test *t* de Student et les subtilités des tests d'hypothèse avant d'entamer la présente section.
 
@@ -43,7 +43,7 @@ chart(data = crabs2, rear ~ group) +
   
 ```
 
-Nous en profitons également pour essayer l'astuce proposée au module précédent. Au lieu de travailler sur la variable `rear` seule, nous allons étudier l'aspect ratio entre largeur à l'arrière (`rear`) et largeur maximale (`width`) de la carapace afin de nous débarrasser d'une source de variabilité triviale qui est qu'un grand crabe est grand partout, et de même un petit crabe est petit pour toutes ses mesures. Nous prenons soin également de libeller cette nouvelle variable correctement avec `labelise()`. Enfin, nous ne conservons que les variables `species`, `sex`, `group` et `aspect` avec `select()`\ :
+Nous en profitons également pour essayer l'astuce proposée au module précédent. Au lieu de travailler sur la variable `rear` seule, nous allons étudier l'aspect ratio entre largeur à l'arrière (`rear`) et largeur maximale (`width`) de la carapace afin de nous débarrasser d'une source de variabilité triviale qui est qu'un grand crabe est grand partout, et de même un petit crabe est petit pour toutes ses mesures. Nous prenons soin également de libeller cette nouvelle variable correctement avec `labelise()`. Enfin, nous ne conservons que les variables `species`, `sex`, `group` et `aspect` avec `select()` :
 
 ```{r}
 crabs2 %>.%
@@ -57,7 +57,7 @@ skimr::skim(crabs2)
 
 Nous avons 50 individus dans chacun des quatre groupes. **Lorsqu'il y a le même nombre de répliquas dans tous les groupes, on appelle cela un plan balancé**. C'est une situation optimale. Nous devons toujours essayer de nous en rapprocher le plus possible car, si le nombre d'individus mesurés diffère fortement d'un groupe à l'autre, nous aurons forcément moins d'information disponible dans le ou les groupes moins nombreux, ce qui déforcera notre analyse.
 
-Nous voyons également que la variable `aspect` semble avoir une distribution bimodale d'après le petit histogramme représenté dans le résumé. La Fig. \@ref(fig:anova0) avec `aspect montre une différence plus qu'avec `rear` seul, à la Fig. \@ref(fig:crabs-rear).
+Nous voyons également que la variable `aspect` semble avoir une distribution bimodale d'après le petit histogramme représenté dans le résumé. La Fig. \@ref(fig:anova0) avec `aspect montre une différence plus qu'avec`rear\` seul, à la Fig. \@ref(fig:crabs-rear).
 
 ```{r anova0, fig.cap="Ratio largeur arrière/largeur max en fonction du groupe de crabes *L. variegatus*. Graphique adéquat pour comparer les moyennes et distributions dans le cas d'un nombre important de répliquat (moyennes en rouge + observations individuelles en noir semi-transparent superposées à des graphiques en violon)."}
 chart(data = crabs2, aspect ~ group) +
@@ -71,9 +71,13 @@ chart(data = crabs2, aspect ~ group) +
 
 Nous voyons ici beaucoup mieux que la distribution bimodale est essentiellement due au dimorphisme sexuel plutôt qu'à des différences entre les variétés, mais qu'en est-il plus précisément car si nous regardons attentivement, il semble que les moyennes pour les crabes bleus sont légèrement inférieures à ces des crabes oranges.
 
-Comment comparer valablement ces quatre groupes\ ? Comme nous savons maintenant comparer deux groupes à l'aide d'un test *t* de Student, il est tentant d'effectuer toutes les comparaisons deux à deux et de résumer l'ensemble, par exemple, dans un tableau synthétique. Cela fait quant même beaucoup de comparaisons (`B-F` <-> `B-M`, `B-F` <-> `O-F`, `B-F` <-> `O-M`, `B-M` <-> `O-F`, `B-M`<-> `O-M`, et finalement `O-F` <-> `O-M`). Cela fait six comparaisons à réaliser.
+Comment comparer valablement ces quatre groupes ? Comme nous savons maintenant comparer deux groupes à l'aide d'un test *t* de Student, il est tentant d'effectuer toutes les comparaisons deux à deux et de résumer l'ensemble, par exemple, dans un tableau synthétique. Cela fait quant même beaucoup de comparaisons (`B-F` \<-\> `B-M`, `B-F` \<-\> `O-F`, `B-F` \<-\> `O-M`, `B-M` \<-\> `O-F`, `B-M`\<-\> `O-M`, et finalement `O-F` \<-\> `O-M`). Cela fait six comparaisons à réaliser.
 
-N'oublions pas que, à chaque test, nous prenons un risque de nous tromper. **Le risque de se tromper au moins une fois dans l'ensemble des tests est alors décuplé en cas de tests multiples.** Prenons un point de vue naïf, mais qui suffira ici pour démontrer le problème qui apparaît. Admettons que le risque de nous tromper est constant, que nous rejetons ou non $H_0$, et qu'il est de l'ordre de 10% dans chaque test individuellement^[Attention\ ! vous savez bien que c'est plus compliqué que cela. D'une part, le risque de se tromper est probablement différent si on rejette $H_0$ ($\alpha$) ou non ($\beta$), et ces risques sont encore à moduler en fonction de la probabilité *a priori*, un cas similaire au dépistage d'une maladie plus ou moins rare, rappelez-vous, au module \@ref(proba).]. La seule solution acceptable est que *tous* les tests soient corrects. Considérant chaque interprétation indépendante, nous pouvons multiplier les probabilités d'avoir un test correct (90%) le nombre de fois que nous faisons le test, soit $0,9 \times 0,9 \times 0,9 \times 0,9 \times 0,9 \times 0,9 = 0,9^6 = 0,53$. Tous les autres cas ayant au moins un test faux, nous constatons que notre analyse globale sera incorrecte $1 - 0,53 = 47\%$ du temps^[Dans R, vous pouvez utiliser `choose(n, j)` pour calculer le coefficient binomial. Donc votre calcul du risque de se tromper au moins une fois dans un ensemble de `n` tests dont le risque individuel est `r` sera `1 - (1 - r)^choose(n, 2)`.]. **Notre analyse sera incorrecte une fois sur deux environ.**
+N'oublions pas que, à chaque test, nous prenons un risque de nous tromper. **Le risque de se tromper au moins une fois dans l'ensemble des tests est alors décuplé en cas de tests multiples.** Prenons un point de vue naïf, mais qui suffira ici pour démontrer le problème qui apparaît. Admettons que le risque de nous tromper est constant, que nous rejetons ou non $H_0$, et qu'il est de l'ordre de 10% dans chaque test individuellement[^variance-i-1]. La seule solution acceptable est que *tous* les tests soient corrects. Considérant chaque interprétation indépendante, nous pouvons multiplier les probabilités d'avoir un test correct (90%) le nombre de fois que nous faisons le test, soit $0,9 \times 0,9 \times 0,9 \times 0,9 \times 0,9 \times 0,9 = 0,9^6 = 0,53$. Tous les autres cas ayant au moins un test faux, nous constatons que notre analyse globale sera incorrecte $1 - 0,53 = 47\%$ du temps[^variance-i-2]. **Notre analyse sera incorrecte une fois sur deux environ.**
+
+[^variance-i-1]: Attention ! vous savez bien que c'est plus compliqué que cela. D'une part, le risque de se tromper est probablement différent si on rejette $H_0$ ($\alpha$) ou non ($\beta$), et ces risques sont encore à moduler en fonction de la probabilité *a priori*, un cas similaire au dépistage d'une maladie plus ou moins rare, rappelez-vous, au module \@ref(proba).
+
+[^variance-i-2]: Dans R, vous pouvez utiliser `choose(n, j)` pour calculer le coefficient binomial. Donc votre calcul du risque de se tromper au moins une fois dans un ensemble de `n` tests dont le risque individuel est `r` sera `1 - (1 - r)^choose(n, 2)`.
 
 ```{block, type='info'}
 De manière générale, le nombre de combinaisons deux à deux possibles dans un set de `n` groupes distincts sera calculé à l'aide du coefficient binomial que nous avions déjà rencontré avec la distribution du même nom, ici avec $j$ valant deux.
@@ -98,11 +102,11 @@ Nous allons donc travailler différemment... Ci-après nous verrons qu'une simpl
 
 ## ANOVA à un facteur
 
-Au lieu de s'attaquer aux comparaisons deux à deux, nous pouvons aussi considérer une hypothèse unique que les moyennes de $k$ populations (nos quatre groupes différents de crabes, par exemple) sont égales. L'hypothèse alternative sera qu'au moins une des moyennes diffère des autres. En formulation mathématique, cela donne\ :
+Au lieu de s'attaquer aux comparaisons deux à deux, nous pouvons aussi considérer une hypothèse unique que les moyennes de $k$ populations (nos quatre groupes différents de crabes, par exemple) sont égales. L'hypothèse alternative sera qu'au moins une des moyennes diffère des autres. En formulation mathématique, cela donne :
 
-- $H_0: \mu_1 = \mu_2 = ... = \mu_k$
+-   $H_0: \mu_1 = \mu_2 = ... = \mu_k$
 
-- $H_1: \exists(i, j) \mathrm{\ tel\ que\ } \mu_i \neq \mu_j$
+-   $H_1: \exists(i, j) \mathrm{\ tel\ que\ } \mu_i \neq \mu_j$
 
 Notre hypothèse nulle est très restrictive, mais par contre, l'hypothèse alternative est très vague car nous ne savons pas **où** sont les différences à ce stade si nous rejetons $H_0$, mais nous nous en occuperons plus tard.
 
@@ -121,17 +125,17 @@ Cette propriété, dite d'additivité des variances, permet de décomposer la va
 
 ```
 
-##### À vous de jouer ! {-}
+##### À vous de jouer ! {.unnumbered}
 
 `r h5p(100, height = 400, toc = "Hypothèse nulle de l'ANOVA")`
 
 ### Modèle de l'ANOVA
 
-Mais qu'est-ce que cette propriété d'additivité des variances vient faire ici\ ? Nous souhaitons comparer des moyennes, non\ ? Effectivement, mais considérons le **modèle mathématique suivant\ :**
+Mais qu'est-ce que cette propriété d'additivité des variances vient faire ici ? Nous souhaitons comparer des moyennes, non ? Effectivement, mais considérons le **modèle mathématique suivant :**
 
 $$y_{ij} = \mu + \tau_j + \epsilon_i \mathrm{\ avec\ } \epsilon \sim N(0, \sigma)$$
 
-Avec l'indice $j = 1 .. k$ populations et l'indice $i = 1 .. n$ observations du jeu de données. Chaque observation $y_{ij}$ correspond à deux écarts successifs de la moyenne globale $\mu$\ : une constante "tau" par population $\tau_j$ d'une part et un terme $\epsilon_i$ que l'on appelle les **résidus** et qui est propre à chaque observation individuelle. C'est ce dernier terme qui représente la partie statistique du modèle avec une distribution normale centrée sur zéro et avec un écart type $\sigma$ que nous admettrons constant et identique pour toutes les populations par construction.
+Avec l'indice $j = 1 .. k$ populations et l'indice $i = 1 .. n$ observations du jeu de données. Chaque observation $y_{ij}$ correspond à deux écarts successifs de la moyenne globale $\mu$ : une constante "tau" par population $\tau_j$ d'une part et un terme $\epsilon_i$ que l'on appelle les **résidus** et qui est propre à chaque observation individuelle. C'est ce dernier terme qui représente la partie statistique du modèle avec une distribution normale centrée sur zéro et avec un écart type $\sigma$ que nous admettrons constant et identique pour toutes les populations par construction.
 
 Le graphique à la Fig. \@ref(fig:anova1) représente une situation typique à trois sous-populations.
 
@@ -172,9 +176,9 @@ chart(data = dat, Réponse ~ Population %col=% Population) +
   annotate("text", x = 2.85, y = 5.2, color = 3, label = "intra ~epsilon[i]", parse = TRUE)
 ```
 
-Notons que ce modèle à trois termes représente bien la situation qui nous intéresse, mais aussi, qu'il décompose la variance totale (entre $\mu$ et chaque point observé) en deux\ : ce que nous appellerons le terme **inter** représentant l'écart entre la moyenne globale $\mu$ et la moyenne de la sous-population concernées ($\tau_j$) et le terme **intra** depuis cette moyenne de la sous-population jusqu'au point observé ($\epsilon_i$).
+Notons que ce modèle à trois termes représente bien la situation qui nous intéresse, mais aussi, qu'il décompose la variance totale (entre $\mu$ et chaque point observé) en deux : ce que nous appellerons le terme **inter** représentant l'écart entre la moyenne globale $\mu$ et la moyenne de la sous-population concernées ($\tau_j$) et le terme **intra** depuis cette moyenne de la sous-population jusqu'au point observé ($\epsilon_i$).
 
-##### À vous de jouer ! {-}
+##### À vous de jouer ! {.unnumbered}
 
 `r h5p(99, height = 400, toc = "Variance intergroupe dans l'ANOVA")`
 
@@ -207,16 +211,16 @@ combine_charts(list(pl1, pl2))
 
 Intuitivement, une comparaison de "inter" et "intra" permet de différencier la situation de gauche de celle de droite dans la Fig. \@ref(fig:anova2). Si cette comparaison est faite sous forme d'un ratio "inter"/"intra", alors ce ratio sera faible et tendra vers zéro sous $H_0$ (cas A), alors qu'il sera d'autant plus élevé que $H_0$ devient de moins en moins plausible (cas B).
 
-##### Calcul de l'ANOVA {-}
+##### Calcul de l'ANOVA {.unnumbered}
 
-Calcul des sommes des carrés (inter- et intragroupes). Considérant\ :
+Calcul des sommes des carrés (inter- et intragroupes). Considérant :
 
-- _i_ = indice des observations au sein du jeu de données de 1 à _n_,
-- _j_ = facteurs (sous-populations de 1 à _k_),
-- $\bar{y}$ = moyenne générale de l'échantillon,
-- $\bar{y_j}$ = moyenne de la _j_^ème^ population.
+-   *i* = indice des observations au sein du jeu de données de 1 à *n*,
+-   *j* = facteurs (sous-populations de 1 à *k*),
+-   $\bar{y}$ = moyenne générale de l'échantillon,
+-   $\bar{y_j}$ = moyenne de la *j*^ème^ population.
 
-La somme des carrés inter $SC_{inter}$ et la somme des carrés intra $SC_{intra}$ se calculent comme suit\ :
+La somme des carrés inter $SC_{inter}$ et la somme des carrés intra $SC_{intra}$ se calculent comme suit :
 
 $$
 \begin{aligned}
@@ -224,27 +228,29 @@ SC_{inter} = \sum_{i=1}^n{(\bar{y_j} - \bar{y})^2} && SC_{intra} = \sum_{i=1}^n{
 \end{aligned}
 $$
 
-A ces sommes des carrés, nous pouvons associer les degrés de liberté suivants\ :
+A ces sommes des carrés, nous pouvons associer les degrés de liberté suivants :
 
-- _k_ – 1 pour l’intergroupe
-- _n_ – _k_ pour l’intragroupe
+-   *k* -- 1 pour l'intergroupe
+-   *n* -- *k* pour l'intragroupe
 
-Sachant que les parts de variances sont les $\frac{SC}{ddl}$ et sont appelés "carrés moyens", nous construisons ce qu'on appelle le **tableau de l’ANOVA** de la façon suivante\ :
+Sachant que les parts de variances sont les $\frac{SC}{ddl}$ et sont appelés "carrés moyens", nous construisons ce qu'on appelle le **tableau de l'ANOVA** de la façon suivante :
 
-| Type            |    Ddl    | Somme carrés | Carré moyen (_CM_)  |       Statistique _F_~obs~       | P (>_F_) |
-|:----------------|:---------:|:------------:|:-------------------:|:----------------------------------:|:-----:|
-| Inter (facteur) | _k_ - 1   | _SC~inter~_ | _SC~inter~/ddl~inter~_ | _CM~inter~/CM~intra~_ |  ...  |
-| Intra (résidus) | _n_ - _k_ | _SC~intra~_  | _SC~intra~/ddl~intra~_ |  |  |
+| Type            |    Ddl    | Somme carrés |   Carré moyen (*CM*)   | Statistique *F*~obs~  | P (\>*F*) |
+|:----------------|:---------:|:------------:|:----------------------:|:---------------------:|:---------:|
+| Inter (facteur) |  *k* - 1  | *SC~inter~*  | *SC~inter~/ddl~inter~* | *CM~inter~/CM~intra~* |    ...    |
+| Intra (résidus) | *n* - *k* | *SC~intra~*  | *SC~intra~/ddl~intra~* |                       |           |
 
-La **statistique _F_~obs~ est le rapport des carrés moyens inter/intra.** Elle représente donc le ratio que nous avons évoqué plus haut comme moyen de quantifier l'écart par rapport à $H_0$. Le test consiste à calculer la valeur *P* associée à cette statistique. Pour cela, il nous faut une distribution statistique théorique de *F* sous $H_0$. C'est un biologiste - statisticien célèbre nommé Ronald Aylmer Fisher qui l'a calculée. C'est la distribution *F* de Fisher.
+La **statistique *F*~obs~ est le rapport des carrés moyens inter/intra.** Elle représente donc le ratio que nous avons évoqué plus haut comme moyen de quantifier l'écart par rapport à $H_0$. Le test consiste à calculer la valeur *P* associée à cette statistique. Pour cela, il nous faut une distribution statistique théorique de *F* sous $H_0$. C'est un biologiste - statisticien célèbre nommé Ronald Aylmer Fisher qui l'a calculée. C'est la distribution *F* de Fisher.
 
-##### À vous de jouer ! {-}
+##### À vous de jouer ! {.unnumbered}
 
 `r h5p(101, height = 400, toc = "Analyse du tableau de l'ANOVA")`
 
 ### Distribution *F*
 
-La distribution *F* est une distribution asymétrique n’admettant que des valeurs nulles ou positives, d'une allure assez similaire à la distribution du $\chi^2$ que nous avons étudiée au module \@ref(chi2). Elle est appelée loi de Fisher, ou encore, loi de Fisher-Snedecor. Elle a une asymptote horizontale à $+\infty$. La distribution *F* admet deux paramètres, respectivement les degrés de liberté au numérateur (inter) et au dénominateur (intra). La Fig. \@ref(fig:fplot) représente la densité de probabilité d'une loi *F* typique^[Les fonctions qui permettent les calculs relatifs à la distribution *F* dans R sont `<x>f()`, et les snippets correspondants dans la SciViews Box sont disponibles à partir de `.if`. Leur utilisation est similaire à celle des distributions vues au module \@ref(proba).].
+La distribution *F* est une distribution asymétrique n'admettant que des valeurs nulles ou positives, d'une allure assez similaire à la distribution du $\chi^2$ que nous avons étudiée au module \@ref(chi2). Elle est appelée loi de Fisher, ou encore, loi de Fisher-Snedecor. Elle a une asymptote horizontale à $+\infty$. La distribution *F* admet deux paramètres, respectivement les degrés de liberté au numérateur (inter) et au dénominateur (intra). La Fig. \@ref(fig:fplot) représente la densité de probabilité d'une loi *F* typique[^variance-i-3].
+
+[^variance-i-3]: Les fonctions qui permettent les calculs relatifs à la distribution *F* dans R sont `<x>f()`, et les snippets correspondants dans la SciViews Box sont disponibles à partir de `.if`. Leur utilisation est similaire à celle des distributions vues au module \@ref(proba).
 
 ```{r fplot, echo=FALSE, fig.cap = "Allure typique de la densité de probabilité de la distribution F (ici ddl inter = 5 et ddl intra = 20). Plus *F~obs* est grand, plus l'hypothèse nulle est suspecte. La zone de rejet est donc positionnée à droite (en rouge)."}
 # Fisher-Snedecor's F distribution (density probability) with parameter:
@@ -282,14 +288,14 @@ chart(data = tibble(Quantiles = .x, Prob = .d(.x)), Prob ~ Quantiles) +
 
 Nous commençons à avoir l'habitude maintenant. La valeur *P* est calculée comme l'aire à droite du quantile correspondant à *F~obs~*. Enfin, nous rejetterons $H_0$ seulement si la valeur *P* est inférieure au seuil $\alpha$ qui a été choisi préalablement au test. Ceci revient à constater que, graphiquement, *F~obs~* vient se positionner dans la zone de rejet en rouge comme sur la Fig. \@ref(fig:fplot).
 
-##### Conditions d’application {-}
+##### Conditions d'application {.unnumbered}
 
-- échantillon représentatif (par exemple, aléatoire),
-- observations indépendantes,
-- variable dite **réponse** quantitative,
-- une variable dite **explicative** qualitative à trois niveaux ou plus,
-- distribution **normale** des résidus $\epsilon_i$,
-- **homoscédasticité** (même variance intragroupes, "homoscedasticity" en anglais, opposé à hétéroscédasticité = variance différente entre les groupes).
+-   échantillon représentatif (par exemple, aléatoire),
+-   observations indépendantes,
+-   variable dite **réponse** quantitative,
+-   une variable dite **explicative** qualitative à trois niveaux ou plus,
+-   distribution **normale** des résidus $\epsilon_i$,
+-   **homoscédasticité** (même variance intragroupes, "homoscedasticity" en anglais, opposé à hétéroscédasticité = variance différente entre les groupes).
 
 Les deux dernières conditions d'applications doivent être vérifiées. La normalité des résidus doit être rencontrée aussi bien que possible. Un graphique quantile-quantile des résidus permet de se faire une idée, comme sur la Fig. \@ref(fig:resid1). Néanmoins, le test étant relativement robuste à des petites variations par rapport à la distribution normale, surtout si ces variations sont symétriques, nous ne seront pas excessivement stricts ici.
 
@@ -327,28 +333,28 @@ invisible(car::qqPlot(.anova2[[".std.resid"]], distribution = "norm",
   ylab = "Résidus"))
 ```
 
-La condition d'homoscédasticité est plus sensible. Elle mérite donc d'être vérifiée systématiquement et précisément. Différents tests d'hypothèse existent pour le vérifier, comme le test de Batlett, le test de Levene, etc. Nous vous proposons ici d'utiliser le test de Batlett. Ses hypothèses sont\ :
+La condition d'homoscédasticité est plus sensible. Elle mérite donc d'être vérifiée systématiquement et précisément. Différents tests d'hypothèse existent pour le vérifier, comme le test de Batlett, le test de Levene, etc. Nous vous proposons ici d'utiliser le test de Batlett. Ses hypothèses sont :
 
-- $H_0: var_1 = var_2 = ... = var_k$ (homoscédasticité)
-- $H_1: \exists(i, j) \mathrm{\ tel\ que\ } var_i \neq var_j$ (hétéroscédasticité)
+-   $H_0: var_1 = var_2 = ... = var_k$ (homoscédasticité)
+-   $H_1: \exists(i, j) \mathrm{\ tel\ que\ } var_i \neq var_j$ (hétéroscédasticité)
 
 Si la valeur *P* est inférieure au seuil $\alpha$ fixé au préalable, nous devrons rechercher une transformation des variables qui stabilisera la variance. La première transformation à essayer en biologie et la transformation logarithmique surtout si les valeurs négatives de la variable réponse ne sont pas possibles, signe d'une distribution qui peut être plutôt de type log-normale pour cette variable. Si aucune transformation ne stabilise la variance, nous devrons nous rabattre vers un test non paramétrique équivalent, le test de Kruskal-Wallis que nous aborderons plus loin dans ce module.
 
 La SciViews Box propose des snippets pour accéder à ces différentes analyses. Dans le menu `hypothesis tests: variances` ou `.hv` nous trouvons trois tests dont celui de Bartlett. Dans le menu `hypothesis tests: means` ou `.hm` se trouvent les templates pour l'ANOVA, ainsi que les graphiques d'analyse des résidus dont le graphique quantile-quantile.
 
-##### À vous de jouer ! {-}
+##### À vous de jouer ! {.unnumbered}
 
 `r h5p(102, height = 400, toc = "Variance intragroupe dans l'ANOVA")`
 
-##### Résolution de notre exemple {-}
+##### Résolution de notre exemple {.unnumbered}
 
-Nous commençons par déterminer si nous avons homoscédasticité. Considérons un seuil $\alpha$ de 5% pour tous nos tests. Ensuite\ :
+Nous commençons par déterminer si nous avons homoscédasticité. Considérons un seuil $\alpha$ de 5% pour tous nos tests. Ensuite :
 
 ```{r}
 bartlett.test(data = crabs2, aspect ~ group)
 ```
 
-Nous rejetons $H_0$. Il n'y a pas homoscédasticité. Calculons par exemple le logarithme népérien de `aspect` et réessayons\ :
+Nous rejetons $H_0$. Il n'y a pas homoscédasticité. Calculons par exemple le logarithme népérien de `aspect` et réessayons :
 
 ```{r}
 crabs2 %>.%
@@ -379,7 +385,9 @@ chart(data = crabs2, aspect5 ~ group) +
   
 ```
 
-Nous poursuivons sur une description des données utile pour l'ANOVA^[Un snippet dédié est disponible dans le menu `hypothesis tests: means` à partir de `.hm`.]\ :
+Nous poursuivons sur une description des données utile pour l'ANOVA[^variance-i-4] :
+
+[^variance-i-4]: Un snippet dédié est disponible dans le menu `hypothesis tests: means` à partir de `.hm`.
 
 ```{r}
 crabs2 %>.%
@@ -390,13 +398,13 @@ crabs2 %>.%
     count = sum(!is.na(aspect5)))
 ```
 
-Ensuite l'ANOVA proprement dite\ :
+Ensuite l'ANOVA proprement dite :
 
 ```{r}
 anova(anova. <- lm(data = crabs2, aspect5 ~ group))
 ```
 
-Nous retrouvons ici le tableau de l'ANOVA. La valeur *P* est très faible et inférieure à $\alpha$. Nous rejetons $H_0$. Nous pouvons dire que le ratio largeur arrière / max à la puissance cinq diffère significativement entre les groupes (ANOVA, F = 150, ddl = 3 & 196, valeur *P* << 10^-3^).
+Nous retrouvons ici le tableau de l'ANOVA. La valeur *P* est très faible et inférieure à $\alpha$. Nous rejetons $H_0$. Nous pouvons dire que le ratio largeur arrière / max à la puissance cinq diffère significativement entre les groupes (ANOVA, F = 150, ddl = 3 & 196, valeur *P* \<\< 10^-3^).
 
 Ce n'est qu'une fois l'ANOVA réalisée que nous pouvons calculer et visionner la distribution des résidus (Fig. \@ref(fig:anova-resid)). Cette distribution s'éloigne aux extrêmes de la distribution normale. Nous sommes dans un cas un peu limite. Soit nous considérons que l'écart est suffisamment léger pour ne pas trop influer sur l'ANOVA, soit nous devons passer à un test non paramétrique. Nous ferons les deux ici à des fins de comparaison.
 
@@ -408,25 +416,27 @@ anova. %>.%
     ylab = "Résidus")
 ```
 
-##### Pour en savoir plus {-}
+##### Pour en savoir plus {.unnumbered}
 
-- [L'ANOVA expliquée en trois minutes](https://www.youtube.com/watch?v=lITNHx2z5FE)
+-   [L'ANOVA expliquée en trois minutes](https://www.youtube.com/watch?v=lITNHx2z5FE)
 
-- Introduction to ANOVA (en anglais). [Part I](https://youtu.be/QUQ6YppWCeg), [part II](https://youtu.be/fFnOD7KBSbw), [part III](https://youtu.be/XdZ7BRqznSA), [part IV](https://youtu.be/WUoVftXvjiQ), and [part V](https://youtu.be/kO8t_q-AXHE).
+-   Introduction to ANOVA (en anglais). [Part I](https://youtu.be/QUQ6YppWCeg), [part II](https://youtu.be/fFnOD7KBSbw), [part III](https://youtu.be/XdZ7BRqznSA), [part IV](https://youtu.be/WUoVftXvjiQ), and [part V](https://youtu.be/kO8t_q-AXHE).
 
-- Explication de l'analyse de variance en détaillant le calcul par la Kahn academy. [Partie I](https://www.youtube.com/watch?v=tjolTrwJhjM), [partie II](https://youtu.be/DMo9yofC5C8) et [partie III](https://youtu.be/y8nRhsixBPs). Assez long\ : près de 3/4h en tout. Ne regardez que si vous n'avez pas compris ce que sont les sommes des carrés.
+-   Explication de l'analyse de variance en détaillant le calcul par la Kahn academy. [Partie I](https://www.youtube.com/watch?v=tjolTrwJhjM), [partie II](https://youtu.be/DMo9yofC5C8) et [partie III](https://youtu.be/y8nRhsixBPs). Assez long : près de 3/4h en tout. Ne regardez que si vous n'avez pas compris ce que sont les sommes des carrés.
 
 ## Test "post-hoc"
 
 Lorsque nous rejetons $H_0$ dans l'ANOVA comme dans le cas de notre exemple, nous savons qu'il y a au moins deux moyennes qui diffèrent l'une de l'autre, mais nous ne savons pas lesquelles. Notre analyse n'est pas terminée. Nous allons revisiter les tests de comparaison multiples deux à deux, mais en prenant des précautions particulières pour éviter l'inflation du risque d'erreur.
 
-Tout d’abord, nous mettons en place un garde-fou. Nous effectuons *toujours* une ANOVA en premier lieu, et nous n'envisageons les comparaisons multiples que lorsque $H_0$ est rejetée. Cela évite beaucoup de faux positifs. On appelle cela des tests "post hoc" car ils ne sont pas planifiés d’emblée, mais suivent un conclusion préalable (ici, le rejet de $H_0$ dans un test ANOVA).
+Tout d'abord, nous mettons en place un garde-fou. Nous effectuons *toujours* une ANOVA en premier lieu, et nous n'envisageons les comparaisons multiples que lorsque $H_0$ est rejetée. Cela évite beaucoup de faux positifs. On appelle cela des tests "post hoc" car ils ne sont pas planifiés d'emblée, mais suivent un conclusion préalable (ici, le rejet de $H_0$ dans un test ANOVA).
 
-Une approche simple consisterait à modifier notre seuil $\alpha$ pour chaque test individuel vers le bas afin que le risque de se tromper dans au moins un des tests ne dépasse pas la valeur de $/alpha$ que nous nous sommes fixée. C'est la **correction de Bonferroni**. Elle consiste à diviser la valeur de $/alpha$ par le nombre de tests simultanés nécessaires, et d'utiliser cette valeur corrigée comme seuil $\alpha$ de chaque test de Student individuel. Dans le cas de quatre populations, nous avons vu qu'il y a six comparaisons multiples deux à deux. Donc, en appliquant un seuil corrigé de $\alpha/6 = 0,05 / 6 = 0,00833$ pour chaque test, on aura la probabilité suivante pour $1 - \alpha$\ :
+Une approche simple consisterait à modifier notre seuil $\alpha$ pour chaque test individuel vers le bas afin que le risque de se tromper dans au moins un des tests ne dépasse pas la valeur de $/alpha$ que nous nous sommes fixée. C'est la **correction de Bonferroni**. Elle consiste à diviser la valeur de $/alpha$ par le nombre de tests simultanés nécessaires, et d'utiliser cette valeur corrigée comme seuil $\alpha$ de chaque test de Student individuel. Dans le cas de quatre populations, nous avons vu qu'il y a six comparaisons multiples deux à deux. Donc, en appliquant un seuil corrigé de $\alpha/6 = 0,05 / 6 = 0,00833$ pour chaque test, on aura la probabilité suivante pour $1 - \alpha$ :
 
 $$(1 - 0,05/6)^6 = 0,951$$
 
-Donc, le risque *global* pour l'ensemble des six tests est bien de 1 - 0,951 = 0,049, soit 5%. Si elle a le mérite d'être simple, cette façon de faire n'est pas considérée comme la plus efficace. Actuellement, la méthode **HSD de Tukey** est préférée. HSD veut dire "Honest Significant Difference". La technique consiste à calculer l'écart minimal des moyennes pour considérer qu'elles sont significativement différentes l'une de l'autre. Ensuite, pour chaque comparaison deux à deux, l'écart entre les moyennes est comparée à cette valeur de référence^[Nous ne détaillons pas le calcul du test de Tukey ici, mais vous pouvez aller voir [ici](https://www.itl.nist.gov/div898/handbook/prc/section4/prc471.htm).]. Le test de comparaisons multiples de Tukey est accessible à partir des "snippets" dans la SciViews Box (`.hm` pour le menu `hypothesis tests: means`, puis `anova - multiple comparisons`). Nous obtenons à la fois une version textuelle et une version graphique qui résume les comparaisons.
+Donc, le risque *global* pour l'ensemble des six tests est bien de 1 - 0,951 = 0,049, soit 5%. Si elle a le mérite d'être simple, cette façon de faire n'est pas considérée comme la plus efficace. Actuellement, la méthode **HSD de Tukey** est préférée. HSD veut dire "Honest Significant Difference". La technique consiste à calculer l'écart minimal des moyennes pour considérer qu'elles sont significativement différentes l'une de l'autre. Ensuite, pour chaque comparaison deux à deux, l'écart entre les moyennes est comparée à cette valeur de référence[^variance-i-5]. Le test de comparaisons multiples de Tukey est accessible à partir des "snippets" dans la SciViews Box (`.hm` pour le menu `hypothesis tests: means`, puis `anova - multiple comparisons`). Nous obtenons à la fois une version textuelle et une version graphique qui résume les comparaisons.
+
+[^variance-i-5]: Nous ne détaillons pas le calcul du test de Tukey ici, mais vous pouvez aller voir [ici](https://www.itl.nist.gov/div898/handbook/prc/section4/prc471.htm).
 
 ```{r}
 summary(anovaComp. <- confint(multcomp::glht(anova.,
@@ -434,27 +444,27 @@ summary(anovaComp. <- confint(multcomp::glht(anova.,
 .oma <- par(oma = c(0, 5.1, 0, 0)); plot(anovaComp.); par(.oma); rm(.oma)
 ```
 
-Si nous gardons notre seuil $\alpha$ de 5%, seuls les mâles ne diffèrent (tout juste) pas entre eux (``O-M - B-M`) avec une valeur *P* de 6%. Toutes les autres comparaisons deux à deux sont significativement différentes. Sur le graphique, si les intervalles autour des différences de moyennes comprennent zéro, matérialisé par un trait pointillé vertical, les différences ne sont pas significatives.
+Si nous gardons notre seuil $\alpha$ de 5%, seuls les mâles ne diffèrent (tout juste) pas entre eux (\``O-M - B-M`) avec une valeur *P* de 6%. Toutes les autres comparaisons deux à deux sont significativement différentes. Sur le graphique, si les intervalles autour des différences de moyennes comprennent zéro, matérialisé par un trait pointillé vertical, les différences ne sont pas significatives.
 
-En conclusion, tous les groupes diffèrent de manière significative sauf les mâles (test HSD de Tukey, valeur *P* < 5%).
+En conclusion, tous les groupes diffèrent de manière significative sauf les mâles (test HSD de Tukey, valeur *P* \< 5%).
 
-##### Conditions d'application {-}
+##### Conditions d'application {.unnumbered}
 
 Les conditions d'application pour le test post hoc de Tukey sont les mêmes que pour l'ANOVA.
 
-##### À vous de jouer ! {-}
+##### À vous de jouer ! {.unnumbered}
 
 `r learnr("A10La_anova", title = "L'ANOVA et tests post-hoc", toc = "L'analyse de variance et les test post-hoc")`
 
 ## Test de Kruskal-Wallis
 
-Les conditions d'application de l'ANOVA sont assez restrictives, en particuliers l'homoscédasticité et le normalité des résidus. Dans notre exemple, nous avons pu stabiliser la variance par une transformation puissance cinq, mais la distribution des résidus n'est pas optimale. Nous pouvons tout aussi bien décider de nous orienter vers la version non paramétrique équivalente\ : le **test de Kruskal-Wallis**.
+Les conditions d'application de l'ANOVA sont assez restrictives, en particuliers l'homoscédasticité et le normalité des résidus. Dans notre exemple, nous avons pu stabiliser la variance par une transformation puissance cinq, mais la distribution des résidus n'est pas optimale. Nous pouvons tout aussi bien décider de nous orienter vers la version non paramétrique équivalente : le **test de Kruskal-Wallis**.
 
 ```{block, type='warning'}
 Le raisonnement entre ANOVA (test paramétrique) et Kruskal-Wallis (test non paramétrique) est le même qu'entre le test de Student ou celui de Wilcoxon. Lorsque les conditions sont remplies, l'ANOVA est un test plus puissant à utiliser en priorité. Nous le préférerons donc, sauf dans les cas impossibles où aucune transformation des données ne permet d'obtenir une distribution acceptable des résidus et des variances.
 ```
 
-Le test de Kruskal-Wallis va comparer la localisation des points sur l'axe plutôt que les moyennes. Nous travaillons ici sur les **rangs**. La transformation en rangs consiste à ranger les observations de la plus petite à la plus grande et à remplacer les valeurs par leur position (leur rang) dans ce classement. Les ex-æquos reçoivent des rangs équivalents. Un petit exemple\ :
+Le test de Kruskal-Wallis va comparer la localisation des points sur l'axe plutôt que les moyennes. Nous travaillons ici sur les **rangs**. La transformation en rangs consiste à ranger les observations de la plus petite à la plus grande et à remplacer les valeurs par leur position (leur rang) dans ce classement. Les ex-æquos reçoivent des rangs équivalents. Un petit exemple :
 
 ```{r}
 # Un échantillon
@@ -467,11 +477,11 @@ rank(sort(x))
 
 Donc 0,5 donne 1, 2,1 apparaît deux fois en position 2 et 3, donc on leurs attribue à tous les deux le rang 2,5. 2,4 est remplacé par 4, 3,5 par 5 et enfin 4,5 est remplacé par 6.
 
-Dans le test de Kruskal-Wallis, sous $H_0$ nous avons le même rang moyen (noté $mr$) pour chaque groupe parmi $k$. Sous $H_1$, au moins deux groupes ont des rangs moyens différents. 
+Dans le test de Kruskal-Wallis, sous $H_0$ nous avons le même rang moyen (noté $mr$) pour chaque groupe parmi $k$. Sous $H_1$, au moins deux groupes ont des rangs moyens différents.
 
-- $H_0:mr_1 = mr_2 = ... = mr_k$
+-   $H_0:mr_1 = mr_2 = ... = mr_k$
 
-- $H_1: \exists(i, j) \mathrm{\ tel\ que\ } mr_i \neq mr_j$
+-   $H_1: \exists(i, j) \mathrm{\ tel\ que\ } mr_i \neq mr_j$
 
 Nous ne détaillons pas les calculs (mais voyez [ici](http://vassarstats.net/textbook/ch14a.html)). Le calcul aboutit en fait à une valeur de $\chi^2_{obs}$ à $k - 1$ degrés de liberté lorsque *k* populations sont comparées. Ainsi, nous avons déjà un loi de distribution théorique pour le calcul de la valeur *P*. La zone de rejet est située à la droite de la distribution comme dans le cas de l'ANOVA et du test de $\chi^2$.
 
@@ -481,17 +491,17 @@ Le test est réalisé dans R avec la fonction `kruskal.test()`. Notez que les ar
 kruskal.test(data = crabs2, aspect ~ group)
 ```
 
-Ici, nous rejetons $H_0$ au seuil $\alpha$ de 5%. Nous pouvons dire qu'il y a au moins une différence significative entre les ratios au seuil $\alpha$ de 5% (test Kruskal-Wallis, $\chi^2$ = 140, ddl = 3, valeur *P* << 10^-3^).
+Ici, nous rejetons $H_0$ au seuil $\alpha$ de 5%. Nous pouvons dire qu'il y a au moins une différence significative entre les ratios au seuil $\alpha$ de 5% (test Kruskal-Wallis, $\chi^2$ = 140, ddl = 3, valeur *P* \<\< 10^-3^).
 
-##### Conditions d'application {-}
+##### Conditions d'application {.unnumbered}
 
 Le test de Kruskal-Wallis est naturellement moins contraignant que l'ANOVA.
 
-- échantillon représentatif (par exemple, aléatoire),
-- observations indépendantes,
-- variable dite **réponse** quantitative,
-- une variable dite **explicative** qualitative à trois niveaux ou plus,
-- les distributions au sein des différentes sous-population sont, si possible, similaires mais de forme quelconque.
+-   échantillon représentatif (par exemple, aléatoire),
+-   observations indépendantes,
+-   variable dite **réponse** quantitative,
+-   une variable dite **explicative** qualitative à trois niveaux ou plus,
+-   les distributions au sein des différentes sous-population sont, si possible, similaires mais de forme quelconque.
 
 ### Test "post hoc" non paramétrique
 
@@ -506,10 +516,9 @@ plot(kw_comp.)
 
 La présentation des résultats est plus détaillée que pour le HSD de Tukey. Le graphique est très similaire. Ici, toutes les différences sont considérées comme significatives, même si la comparaison des mâles `B-M - O-M` avec une valeur *P* tout juste significative de 0,049 est à prendre avec des pincettes étant donné sa proximité du seuil.
 
-Au final que conclure\ ? Lorsque l'ANOVA peut être utilisée, elle est à préférer. Ici avec une transformation puissance cinq, nous stabilisons la variance qui est le critère le plus sensible. De plus tant avec l'ANOVA qu'avec le Kruskal-Wallis, nous détectons des différences significatives. Les tests "post hoc" nous indiquent des différences significatives au seuil $\alpha$ de 5% sauf peut-être pour les mâles (il faudrait prévoir des mesures supplémentaires pour confirmer ou infirmer à ce niveau).
+Au final que conclure ? Lorsque l'ANOVA peut être utilisée, elle est à préférer. Ici avec une transformation puissance cinq, nous stabilisons la variance qui est le critère le plus sensible. De plus tant avec l'ANOVA qu'avec le Kruskal-Wallis, nous détectons des différences significatives. Les tests "post hoc" nous indiquent des différences significatives au seuil $\alpha$ de 5% sauf peut-être pour les mâles (il faudrait prévoir des mesures supplémentaires pour confirmer ou infirmer à ce niveau).
 
-
-##### À vous de jouer ! {-}
+##### À vous de jouer ! {.unnumbered}
 
 Appliquez vos nouvelles connaissances dans le projet de groupe que vous avez débuté aux deux modules précédents.
 
@@ -531,7 +540,7 @@ if (exists("assignment2"))
     toc = "Biométrie humaine, part III")
 ```
 
-**Note\ : Le projet suivant est la continuité d'un exercice débuté au premier quadrimestre et approfondis aux deux modules précédents.**
+**Note : Le projet suivant est la continuité d'un exercice débuté au premier quadrimestre et approfondis aux deux modules précédents.**
 
 ```{r assign_A10Ga_urchin_IV, echo=FALSE, results='asis'}
 if (exists("assignment2"))
@@ -541,7 +550,7 @@ if (exists("assignment2"))
       'S-BIOG-027' = !"A03Ga_{YY}M_urchin", # TODO: how to account it in Q2???
       'S-BIOG-921' = !"A03Ga_{YY}C_urchin"),
     course.urls = c(
-      'S-BIOG-027' = "ttps://classroom.github.com/a/FB5UbPvX", 
+      'S-BIOG-027' = "https://classroom.github.com/a/FB5UbPvX", 
       'S-BIOG-921' = "https://classroom.github.com/g/..."),
     course.starts = c(
       'S-BIOG-027' = !"{W[29]+1} 13:00:00"),
@@ -553,14 +562,15 @@ if (exists("assignment2"))
 
 ## Récapitulatif des exercices
 
-Vous venez de terminer le module 10. Ce module vous a permis d'apprendre une grande partie des subtilités qui se cachent derrière l'analyse de variances. Pour évaluer votre compréhension de cette matière vous aviez les exercices suivants à réaliser\ :
+Vous venez de terminer le module 10. Ce module vous a permis d'apprendre une grande partie des subtilités qui se cachent derrière l'analyse de variances. Pour évaluer votre compréhension de cette matière vous aviez les exercices suivants à réaliser :
 
 `r show_ex_toc()`
 
-##### Progression {-}
+##### Progression {.unnumbered}
 
 `r launch_report("10", height = 800)`
 
+````{=html}
 <!--- G.E. Gardons nous cet exercice ?  
 ## Sciences des données et littérature
 
@@ -574,3 +584,4 @@ Intéressez-vous à la restitution de résultat statistique au sein de la litté
 
 ```
 --->
+````
